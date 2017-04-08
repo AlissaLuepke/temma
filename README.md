@@ -282,6 +282,7 @@ To set the Options:
     </script>
     ```
 **Managing UI Components with jQuery**
+
 Possible but highly recommended to use the new TAU style.
 (for more information see: https://developer.tizen.org/ko/development/guides/web-application/user-interface/tizen-advanced-ui/ui-components)
 ### Service Application
