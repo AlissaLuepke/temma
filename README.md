@@ -197,6 +197,7 @@ document.addEventListener("rotarydetent", function(ev)
     ```
     
 **Setting UI Component Options**
+
 More Information **[Wearable UI Components](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm)**
 
 
