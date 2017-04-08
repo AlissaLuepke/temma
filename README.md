@@ -11,7 +11,7 @@ Tell me more about
 Manage various kinds of UI components like Buttons, Sliders etc.
 Custom JavaScript and CSS can be used they must be imported **after** the default ```<script>``` element.
 
-##### Creating a page
+#### Creating a page
 Body section of the HTML contains 1 or more pages:
 ```html
 <body>
@@ -29,8 +29,8 @@ Body section of the HTML contains 1 or more pages:
    </div>
 </body>
 ```
-##### Managing pages
-###### Page Structure
+#### Managing pages
+##### Page Structure
 * Header area
     Shows the user which page is currently open. The header can contain buttons, menus, and toolbars. The header is optional.
 * Content area
@@ -40,7 +40,7 @@ Body section of the HTML contains 1 or more pages:
 
 All page areas are spcified by a corresponding ```class``` attribute.
 
-###### Popup:
+##### Popup:
 To create a popup:
 
 ```html
@@ -59,7 +59,7 @@ To create a popup:
 The popup works because TAU opens (makes visible) the page whose ```id``` attribute corresponds to the ```#hashtag``` page. This is basic [page routing](https://developer.tizen.org/ko/development/guides/web-application/user-interface/tizen-advanced-ui/managing-pages#pageRouting);
 
 
-##### Page Routing 
+#### Page Routing 
 Works without any additional JavaScript code, but for more powerful page routing functionalities usage of the JavaScript API
 * Routing without JavaScript:
     * based on URL hash changes
@@ -132,8 +132,8 @@ Works without any additional JavaScript code, but for more powerful page routing
     </div>
     ```
 * Load pages from an external resource
-##### Event Handling
-###### Hardware Key Events
+#### Event Handling
+##### Hardware Key Events
 To bind an event callback on the ```tizenhwkey``` events:
 ```javascript
 window.addEventListener("tizenhwkey", function(ev)
@@ -147,7 +147,7 @@ window.addEventListener("tizenhwkey", function(ev)
 });
 ```
 
-###### Rotary Events in Wearable Applications
+##### Rotary Events in Wearable Applications
 Rotary Device 
 * can rotate clockwise (CW) or counter-clockwise (CCW)
 * has points called detents - if rotary device detects detent point it dispateches a seperate new event about the point (Number depends on device)
@@ -164,7 +164,125 @@ document.addEventListener("rotarydetent", function(ev)
    /* Add behavior for detent detected event with a direction value */
 });
 ```
+#### UI Components
+**Defining UI Components:**
+1. With a ```class``` selector (*recommended*)
+    ```class``` selectors are composed with a ```ui``` prefix and <COMPONENT_NAME>
+    
+    ```html
+    <!-- Create an Expandable component -->
+    <div class="ui-expandable" id="expandable-test">
+       <h1>Expandable head</h1>
+       <div>Content</div>
+    </div>
+    
+    <!-- Create a ToggleSwitch component -->
+    <select class="ui-toggleswitch">
+       <option value="off"></option>
+       <option value="on"></option>
+    </select>
+    ```
+2. with a ```data-role``` selector
+    The ```data-role``` is composed with <COMPONENT_NAME> in lowercase
+    ```html
+    <!-- Create a TextEnveloper component -->
+    <div data-role="textenveloper"></div>
+    
+    <!-- Create a Drawer component -->
+    <div data-role="drawer">
+       <ul data-role="listview">
+          <li><a href="#">List item 1</a></li>
+       </ul>
+    </div>
+    ```
+    
+**Setting UI Component Options**
+More Information **[Wearable UI Components](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm)**
 
+
+To set the Options:
+* Initialize options with the ```data-```attribute
+
+    The ```data-circular```and ```data-use-tab``` attributes are the inital options for creating a SectionChanger
+    Example for a SectionChanger code with a ```data-```option:
+    ```html
+        <div id="hasSectionchangerPage" class="ui-page">
+       <header class="ui-header">
+          <h2 class="ui-title">SectionChanger</h2>
+       </header>
+       <div class="ui-section-changer" data-orientation="horizontal" data-circular="true" data-use-tab="true">
+          <div>
+             <section>
+                <h3>LEFT1 PAGE</h3>
+             </section>
+             <section class="ui-section-active">
+                <h3>MAIN PAGE</h3>
+             </section>
+             <section>
+          </div>
+       </div>
+    </div>
+    ```
+* Setting options with a manual constructor 
+    Options can be set as arguments to the component constructor. When using options as arguments, you must use the camelCase name.
+
+    ```html
+    <div id="hasSectionchangerPage" class="ui-page">
+       <header class="ui-header">
+          <h2 class="ui-title">SectionChanger</h2>
+       </header>
+       <div class="ui-section-changer" id="sectionchanger">
+          <div>
+             <section>
+                <h3>LEFT1 PAGE</h3>
+             </section>
+             <section class="ui-section-active">
+                <h3>MAIN PAGE</h3>
+             </section>
+          </div>
+       </div>
+    </div>
+    
+    <script>
+       var sectionEl = document.getElementById("sectionchanger"),
+           sectionChangerWidget = tau.widget.SectionChanger(sectionEl, 
+       { 
+          orientation: "horizontal",
+          circular: true
+          useTab: true
+       });
+    </script>
+    ```
+* Setting options with a method call
+    To set options dynamically, us the ```option()``` method
+    ```html
+    <div id="hasSectionchangerPage" class="ui-page">
+       <header class="ui-header">
+          <h2 class="ui-title">SectionChanger</h2>
+       </header>
+       <div class="ui-section-changer" data-orientation="horizontal" data-circular="true" data-use-tab="true">
+          <div>
+             <section>
+                <h3>LEFT1 PAGE</h3>
+             </section>
+             <section class="ui-section-active">
+                <h3>MAIN PAGE</h3>
+             </section>
+             <section>
+          </div>
+       </div>
+    </div>
+    
+    <script>
+       var sectionEl = document.getElementById("sectionchanger"),
+           sectionChangerWidget = tau.widget.SectionChanger(sectionEl);
+    
+       sectionChangerWidget.option("circular", true);
+    </script>
+    ```
+**Managing UI Components with jQuery**
+Possible but highly recommended to use the new TAU style.
+(for more information see: https://developer.tizen.org/ko/development/guides/web-application/user-interface/tizen-advanced-ui/ui-components)
 ### Service Application
 
 * Application without graphical user interface
