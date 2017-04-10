@@ -409,3 +409,55 @@ Called when the service ends
 ### Application Package Manager 
 * core module
 * responsible for installing, uninstalling and updating packages and storing information
+
+
+### MiniMongo bzw. MongoDB
+* OpenSource NoSQL database (NoSQL = aren't relational, don't have a query language)
+* Document-oriented
+* Great for unstructured data that's still related
+
+Difference between SQL and MongoDB:
+| SQL   | MongoDB          | 
+| ------------- |:-------------:| 
+|Database      |Database | 
+|made up of tables | made up of collections|
+|tables made up of rows | collection made up of documents|
+
+* Collections are simply groups of documents. Since documents exist independently they can have different fields.
+* Documents are JSON-like Objects(called BSON) for example: 
+    ```javascript
+    {
+    "name": "Invisibility",
+    "vendor": "Kettlecooked"
+    }
+    ```
+* Documents must be stored in a collection to store them in a database
+* Each document requires a unique _id - if no id is specified mongoDb creates a new id
+* Documents must be less than 16mb
+
+
+Usefull Update Operators:
+* $max
+* $min
+* $mul
+* $set
+* $push
+* $pop
+* $addToSet
+* $pull
+* $unset
+etc.
+
+
+##### BSON
+BSON [bee · sahn], short for Binary JSON, is a binary-encoded serialization of JSON-like documents. Like JSON, BSON supports the embedding of documents and arrays within other documents and arrays. BSON also contains extensions that allow representation of data types that are not part of the JSON spec. For example, BSON has a Date type and a BinData type.
+BSON can be compared to binary interchange formats, like Protocol Buffers. BSON is more "schema-less" than Protocol Buffers, which can give it an advantage in flexibility but also a slight disadvantage in space efficiency (BSON has overhead for field names within the serialized data).
+BSON was designed to have the following three characteristics:
+* Lightweight
+Keeping spatial overhead to a minimum is important for any data representation format, especially when used over the network.
+* Traversable
+BSON is designed to be traversed easily. This is a vital property in its role as the primary data representation for MongoDB.
+* Efficient
+Encoding data to BSON and decoding from BSON can be performed very quickly in most languages due to the use of C data types.
+
+(see: http://bsonspec.org/)
