@@ -1,18 +1,138 @@
 * {
-    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
+	font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
 }
 
 body {
-    margin: 0px auto;
-    background-color:#222;
+	margin: 0px auto;
+	background-color: #3B3A37;
+}
+#outer{
+	position: absolute;
+	height: 100%;
+	widht: 100%;
+	background-color: blue;
 }
 
-.contents {
+.new_margin_content{
+	margin-top: 0 !important;
+}
+#center {
+	margin: auto;
+    top: 22.5px;
+    /* left: 90px; */
+    padding: 0;
+    width: 315px;
+    height: 315px;
+    border-radius: 157.5px;
+    /*background-color: yellow;*/
+    position: relative;
+    /* left: 200px; */
+    /* top: 100px; */
+}
+
+.point {
+   height: 20px;
+	width: 20px;
+	border-radius: 10px;
+    background: #FF00B2;
+    position:absolute;
+}
+
+ .poi{
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	border-radius: 20%;
+	background-color:#FF00B2 ;
+	top:10px;
+	left: 160px;
+}
+/*
+.poi2{
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: rgba(255, 0 ,178, 0.5) ;
+	top:30px;
+	left: 230px;
+} */
+
+/* .list-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.list-containerbar {
+    position: absolute;
+    top: 142px;
+    left: 0px;
+    width: 100%;
+    height: 76px;
+    pointer-events: none;
+}
+
+.list-selector {
+    width: 76px;
+    height: 76px;
+    position: relative;
+    vertical-align: middle;
+    pointer-events: all;
+}
+
+.list-thumbnail {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(207, 115, 58, 1);
+    background-size: contain;
+    -webkit-mask-image: url("../img/DSC_0195.jpg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.list-focus-area {
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    top: 115px;
+    left: 0px;
+}
+
+.list-focus {
+    position: absolute;
+    width: 100%;
+    height: 108px;
+    top: 11px;
+    left: 0px;
+    background-color: rgba(250, 250, 250, 0.5);
+    -webkit-mask-image: url("../img/DSC_0195.jpg");
+    -webkit-mask-size: 360px 108px;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.list-label {
+    position: absolute;
+    top: 41.5px;
+    left: 100px;
+    font-size: 36px;
+    color: #ffffff;
+    text-align: center;
+    width: 230px;
+    height: 47px;
+    line-height: 47px;
+} */
+/* .contents {
 	display: flex;
 	display: -webkit-flex;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	height:320px;
+	height: 320px;
 }
 
 .content-padding {
@@ -23,7 +143,55 @@ body {
 }
 
 .content_text {
-	font-weight:bold;
-	font-size:5em;
-	color:#fff;
+	font-weight: bold;
+	font-size: 5em;
+	color: #fff;
 }
+
+a {
+	color: #FFF;
+} */
+
+#direction {
+	position: absolute;
+	width: 190px;
+	height: 180px;
+	top: 25%;
+	left: 25%;
+	margin: auto;
+	background-image: url('../img/arrow.svg');
+	background-repeat: no-repeat;
+	transition: all 1s ease-out;
+	transform: rotate(0deg);
+}
+
+#direction-button {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 25%;
+	left: 25%;
+	margin: auto;
+	background-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+	border-color: transparent;
+}
+
+.insider, .sights, .culinary {
+	display: inline-block;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+}
+.insider{
+	background-color: #FF00B2;
+}
+.sights {
+	background-color:#FFDC19;
+	
+}
+
+.culinary {
+	background-color: #14C9CC;
+	
+} 

@@ -11,11 +11,12 @@
     <feature name="tizen.org/feature/screen.shape.circle"/>
     <feature name="tizen.org/feature/sensor.gyroscope"/>
     <feature name="tizen.org/feature/sensor.gyroscope_rotation_vector"/>
+    <feature name="tizen.org/feature/web.service"/>
     <icon src="icon.png"/>
     <name>Temma</name>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
-    <tizen:setting hwkey-event="enable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
 </widget>

@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,user-scalable=no">
-	<title>Temma - Tell me more about</title>
-	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
-	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
-	<!-- load theme file for your application -->
-	<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Temma - Tell me more about</title>
+<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)"
+	href="lib/tau/wearable/theme/default/tau.circle.min.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
 	<div class="ui-page ui-page-active" id="main">
-		<header class="ui-header">
-			<h2 class="ui-title">Temma</h2>
-		</header>
-		<div class="ui-content content-padding">
-			<p>Hello! </p>
-		</div>
+		<div class="ui-content new_margin_content" >
+			<div id="center" ></div>
+			
+			<div id="direction"></div>
+			<input type="button" id="direction-button">
+
+			<!--<div class="poi" id="move"></div>  --> 
+			<!-- <div class="poi2"></div> -->
+			<!-- <div class="list-circle" id="list-buddy">
+                <div class="list-focus-area">
+                    <div class="list-focus">
+                    </div>
+                    <div class="list-label">
+                    </div>
+                </div>
+            </div> -->
+		 </div>
+
+
 	</div>
+
+
+	<div class="ui-page" id="two">
+		<div class="ui-header"></div>
+		<div class="ui-content">
+			<div class="category">
+
+				<div class="insider"></div>
+				<div class="sights"></div>
+				<div class="culinary"></div>
+			</div>
+			<a href="#main">back</a> <a href="#third">orientation</a>
+
+
+		</div>
+
+	</div>
+
+
+	<div class="ui-page" id="third">
+		<div class="ui-header"></div>
+		<div class="ui-content">
+			<div>
+				<p id="alpha"></p>
+				<p id="beta"></p>
+				<p id="gamma"></p>
+			</div>
+
+			<a href="#main">back</a>
+
+
+		</div>
+
+	</div>
+
+
+
+	<script src="lib/jquery.js" type="text/javascript"></script>
 	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
-	<script src="app.js"></script>
-	<script src="lowBatteryCheck.js"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/custom-indicator.js" type="text/javascript"></script>
+	<script src="app.js" type="text/javascript"></script>
+
+	<script src="lowBatteryCheck.js" type="text/javascript"></script>
 </body>
 </html>
