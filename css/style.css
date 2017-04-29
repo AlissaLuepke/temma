@@ -30,13 +30,54 @@ body {
     /* top: 100px; */
 }
 
-.point {
+.point1, .point2 ,.point3 ,.point4 ,.point5 ,.point6 , .point7, .point8, .point9,  .point10 {
    height: 20px;
 	width: 20px;
 	border-radius: 10px;
     background: #FF00B2;
     position:absolute;
 }
+
+.point_insider{
+	opacity: 0.5;
+	 height: 20px;
+	width: 20px;
+	border-radius: 10px;
+    background: #FFDC19;
+    position:absolute;
+}
+.point1 {
+    opacity: 1;
+}
+.point2 {
+    opacity: 0.9;
+}
+.point3 {
+    opacity: 0.8;
+}
+.point4 {
+    opacity: 0.7;
+}
+.point5 {
+    opacity: 0.6;
+}
+.point6 {
+    opacity: 0.5;
+}
+.point7 {
+    opacity: 0.4;
+}
+.point8 {
+    opacity: 0.3;
+}
+.point9 {
+    opacity: 0.2;
+}
+.point10 {
+    opacity: 0.1;
+}
+
+
 
  .poi{
 	position: absolute;
