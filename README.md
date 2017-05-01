@@ -461,3 +461,10 @@ BSON is designed to be traversed easily. This is a vital property in its role as
 Encoding data to BSON and decoding from BSON can be performed very quickly in most languages due to the use of C data types.
 
 (see: http://bsonspec.org/)
+
+#####Creating Certificates
+http://developer.samsung.com/gear/develop/getting-certificates/create
+To get Developer Certivicates please follow the link above and also the instructions in it.
+we will need it when we
+*   will upload our application in to the store
+* worke with de servcie application part of the Gear S3.
