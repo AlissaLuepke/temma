@@ -1,0 +1,56 @@
+{
+  "name": "minimongo",
+  "version": "4.5.0",
+  "description": "Client-side mongo database with server sync over http",
+  "main": "index.js",
+  "scripts": {
+    "test": "testem ci",
+    "prepublish": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mWater/minimongo.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "minimongo",
+    "IndexedDb",
+    "WebSQL",
+    "storage"
+  ],
+  "author": "Clayton Grassick",
+  "license": "LGPLv3",
+  "bugs": {
+    "url": "https://github.com/mWater/minimongo/issues"
+  },
+  "homepage": "https://github.com/mWater/minimongo",
+  "devDependencies": {
+    "browserify": "^3.29.1",
+    "chai": "~1.9.0",
+    "coffee-script": "~1.6.3",
+    "coffeeify": "~0.6.0",
+    "glob": "^3.2.9",
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^1.4.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "^2.2.14",
+    "karma": "^0.13.10",
+    "karma-browserify": "^4.3.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
+    "lolex": "^1.5.0",
+    "sinon": "~1.8.2",
+    "testem": "~0.6.7",
+    "vinyl-buffer": "0.0.0",
+    "vinyl-source-stream": "^0.1.1"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "bowser": "^0.7.1",
+    "idb-wrapper": "^1.4.1",
+    "jquery": "~2.1.0",
+    "lodash": "^3.10.1"
+  }
+}

@@ -13,23 +13,14 @@
 
 
 	<div class="ui-page ui-page-active" id="main">
-		<div class="ui-content new_margin_content" >
-			<div id="center" ></div>
-			
+		<div class="ui-content new_margin_content">
+			<div id="center"></div>
+
 			<div id="direction"></div>
 			<input type="button" id="direction-button">
 
-			<!--<div class="poi" id="move"></div>  --> 
-			<!-- <div class="poi2"></div> -->
-			<!-- <div class="list-circle" id="list-buddy">
-                <div class="list-focus-area">
-                    <div class="list-focus">
-                    </div>
-                    <div class="list-label">
-                    </div>
-                </div>
-            </div> -->
-		 </div>
+
+		</div>
 
 
 	</div>
@@ -40,9 +31,9 @@
 		<div class="ui-content">
 			<div class="category">
 
-				<div class="insider"></div>
-				<div class="sights"></div>
-				<div class="culinary"></div>
+				<div id="insidertip" class="filter"></div>
+				<div id="sights" class="filter"></div>
+				<div id="culinary" class="filter"></div>
 			</div>
 			<a href="#main">back</a> <a href="#third">orientation</a>
 
@@ -72,10 +63,13 @@
 
 	<script src="lib/jquery.js" type="text/javascript"></script>
 	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
-	<script src="js/main.js" type="text/javascript"></script>
-	<script src="js/custom-indicator.js" type="text/javascript"></script>
-	<script src="app.js" type="text/javascript"></script>
-
+	<script src="minimongo/jsdelivr.js" type="text/javascript"></script>
+	<script src="minimongo/dist/minimongo.js"></script>
+	<script src="minimongo/point_of_interest.js" type="text/javascript"></script>
 	<script src="lowBatteryCheck.js" type="text/javascript"></script>
+	<script src="app.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/drawpois.js" type="text/javascript"></script>
+	<!--  <script src="js/calculate_distance.js" type="text/javascript"></script> -->
 </body>
 </html>

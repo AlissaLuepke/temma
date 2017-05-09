@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Temma" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="SvjUT8leVw.Temma" package="SvjUT8leVw" required_version="2.3.2"/>
-    <author>Temma</author>
+    <tizen:application id="lWMJaiWuAl.Temma" package="lWMJaiWuAl" required_version="2.3.2"/>
+    <author>masterprojekt</author>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal"/>
     <feature name="tizen.org/feature/input.rotating_bezel"/>
