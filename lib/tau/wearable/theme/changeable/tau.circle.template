@@ -55,15 +55,6 @@
 /***************************************************************************
                    Selector
 ***************************************************************************/
-/***************************************************************************
-                   Text Input
-***************************************************************************/
-/***************************************************************************
-                   Slider
-***************************************************************************/
-/***************************************************************************
-                   Hyper Link
-***************************************************************************/
 /************************************************************************/
 /*                           fixedUIStyle.less                          */
 /************************************************************************/
@@ -104,51 +95,22 @@ Listview
   If you have duplicate value, please change static value to variable value.
 ***************************************************************************/
 body {
-  background: B015;
+  background: B013;
   color: T011;
 }
 .ui-header {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  height: 5.75rem;
+  height: 115px;
   line-height: 39px;
   background-color: transparent;
-  text-align: center;
-  margin-top: 1.4375rem;
-}
-.ui-header.ui-header-medium {
-  margin-top: 0.75rem;
-}
-.ui-header.ui-header-small {
-  margin-top: 0.125rem;
-}
-.ui-header.ui-header-smaller {
-  margin-top: 0.125rem;
-  height: 5.0625rem;
-  display: flex;
-  justify-content: flex-end;
-}
-.ui-header.ui-header-smaller .ui-title {
-  margin-bottom: 0.3125rem;
 }
 .ui-header .ui-title {
   color: T012;
-  margin: 0.875rem 4rem;
-  padding-left: 0;
-  padding-right: 0;
+  text-align: center;
+  padding-top: 51px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-size: 30px;
   -webkit-mask-image: none;
 }
@@ -156,15 +118,11 @@ body {
   background: none !important;
   padding-left: 1.5rem;
 }
-.ui-header .ui-subtitle {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: T019;
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin: -0.4375rem 2.1875rem 0;
-  line-height: 2rem;
+.ui-header.ui-header-small {
+  height: 76px;
+}
+.ui-header.ui-header-small .ui-title {
+  padding-top: 37px;
 }
 .ui-header.ui-has-more .ui-title {
   padding-right: 1.5rem;
@@ -275,67 +233,24 @@ body {
   transform: translate(0, -50%);
 }
 .ui-page {
-  background: B015;
+  background: B011;
 }
 .ui-page .ui-content {
   text-align: center;
   font-size: 32px;
-  line-height: 2.625rem;
-}
-.ui-page .ui-content.ui-content-padding {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-stretch: ultra-condensed;
-  -webkit-font-stretch: ultra-condensed;
 }
 .ui-page .ui-footer.ui-bottom-button {
   position: fixed !important;
   bottom: 0;
   z-index: 1000;
-  max-height: 6.25rem;
-  font-size: 32px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  -o-justify-content: flex-end;
-  justify-content: flex-end;
+  height: 6.25rem;
 }
 .ui-page .ui-footer.ui-bottom-button .ui-btn {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  line-height: 2.3125rem;
-  height: 4.875rem;
+  line-height: 5.625rem;
+  height: 100%;
   position: relative;
   margin: 0;
-  padding: 0 0 0.3125rem 0;
+  padding: 0 0 0.625rem 0;
   background-color: B065L4;
   -webkit-mask-image: url("images/Bottom_button/tw_bottom_btn_bg.png");
   -moz-mask-image: url("images/Bottom_button/tw_bottom_btn_bg.png");
@@ -364,11 +279,13 @@ body {
   opacity: 0;
   z-index: -1;
 }
-.ui-page .ui-footer.ui-bottom-button .ui-btn.ui-btn-active::after {
-  animation: btn-footer-opacity-press linear 565ms;
-}
-.ui-page .ui-footer.ui-bottom-button .ui-btn.ui-btn-icon-only {
-  padding-bottom: 0;
+.ui-page .ui-footer.ui-bottom-button .ui-btn:active::after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  opacity: 1;
 }
 /***************************************************************************
                    Page Scroll
@@ -446,22 +363,22 @@ a {
   -ms-mask-size: 100% 100%;
   -o-mask-size: 100% 100%;
   mask-size: 100% 100%;
-  -webkit-transition: background-color 300ms linear;
-  -moz-transition: background-color 300ms linear;
-  -o-transition: background-color 300ms linear;
-  -ms-transition: background-color 300ms linear;
-  transition: background-color 300ms linear;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -ms-transition: all 300ms;
+  transition: all 300ms;
 }
 .ui-toggleswitch .ui-switch-input::before {
   content: none;
 }
 .ui-toggleswitch .ui-switch-input:active {
-  -webkit-transition: background-color 300ms linear;
-  -moz-transition: background-color 300ms linear;
-  -o-transition: background-color 300ms linear;
-  -ms-transition: background-color 300ms linear;
-  transition: background-color 300ms linear;
   background-color: W014L2P;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
 }
 .ui-toggleswitch .ui-switch-input:active ~ .ui-switch-activation,
 .ui-toggleswitch .ui-switch-input:active ~ .ui-switch-button {
@@ -469,10 +386,15 @@ a {
 }
 .ui-toggleswitch .ui-switch-input:active ~ .ui-switch-activation::after,
 .ui-toggleswitch .ui-switch-input:active ~ .ui-switch-button::after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
   background-color: W014L4P;
 }
 .ui-toggleswitch .ui-switch-input:disabled {
-  background-color: transparent;
+  background-color: W014L2D;
 }
 .ui-toggleswitch .ui-switch-input:disabled ~ .ui-switch-activation,
 .ui-toggleswitch .ui-switch-input:disabled ~ .ui-switch-button {
@@ -502,11 +424,11 @@ a {
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: transform 100ms 0ms linear;
-  -moz-transition: transform 100ms 0ms linear;
-  -o-transition: transform 100ms 0ms linear;
-  -ms-transition: transform 100ms 0ms linear;
-  transition: transform 100ms 0ms linear;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -ms-transition: all 300ms;
+  transition: all 300ms;
   background-color: W014L3;
   -webkit-mask-size: 100% 100%;
   -moz-mask-size: 100% 100%;
@@ -518,7 +440,6 @@ a {
   -ms-mask-position: 0;
   -o-mask-position: 0;
   mask-position: 0;
-  animation-fill-mode: both;
 }
 .ui-toggleswitch .ui-switch-activation::after,
 .ui-toggleswitch .ui-switch-button::after {
@@ -530,16 +451,6 @@ a {
   -ms-mask-image: url('images/Controller_icon/On_Off/tw_btn_control_off_holo_dark.png');
   -o-mask-image: url('images/Controller_icon/On_Off/tw_btn_control_off_holo_dark.png');
   mask-image: url('images/Controller_icon/On_Off/tw_btn_control_off_holo_dark.png');
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: transform 200ms 100ms linear;
-  -moz-transition: transform 200ms 100ms linear;
-  -o-transition: transform 200ms 100ms linear;
-  -ms-transition: transform 200ms 100ms linear;
-  transition: transform 200ms 100ms linear;
   -webkit-mask-size: 100% 100%;
   -moz-mask-size: 100% 100%;
   -ms-mask-size: 100% 100%;
@@ -550,7 +461,16 @@ a {
   -ms-mask-position: 0;
   -o-mask-position: 0;
   mask-position: 0;
-  animation-fill-mode: both;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: transform 300ms;
+  -moz-transition: transform 300ms;
+  -o-transition: transform 300ms;
+  -ms-transition: transform 300ms;
+  transition: transform 300ms;
   background-color: W014L4;
   position: absolute;
   left: 0;
@@ -568,30 +488,33 @@ a {
 }
 .ui-toggleswitch .ui-switch-input:checked ~ .ui-switch-activation::before,
 .ui-toggleswitch .ui-switch-input:checked ~ .ui-switch-button::before {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
   transform: scale(1);
+  background-color: W014L3;
   -webkit-mask-position: 0;
   -moz-mask-position: 0;
   -ms-mask-position: 0;
   -o-mask-position: 0;
   mask-position: 0;
-  background-color: W014L3;
-  -webkit-transition: transform 200ms 100ms linear;
-  -moz-transition: transform 200ms 100ms linear;
-  -o-transition: transform 200ms 100ms linear;
-  -ms-transition: transform 200ms 100ms linear;
-  transition: transform 200ms 100ms linear;
 }
 .ui-toggleswitch .ui-switch-input:checked ~ .ui-switch-activation::after,
 .ui-toggleswitch .ui-switch-input:checked ~ .ui-switch-button::after {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: transform 100ms 0ms linear;
-  -moz-transition: transform 100ms 0ms linear;
-  -o-transition: transform 100ms 0ms linear;
-  -ms-transition: transform 100ms 0ms linear;
-  transition: transform 100ms 0ms linear;
 }
 .ui-toggleswitch .ui-switch-input:checked:active {
   background-color: W014L1P;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
 }
 .ui-toggleswitch .ui-switch-input:checked:active ~ .ui-switch-activation,
 .ui-toggleswitch .ui-switch-input:checked:active ~ .ui-switch-button {
@@ -599,11 +522,11 @@ a {
 }
 .ui-toggleswitch .ui-switch-input:checked:active ~ .ui-switch-activation::before,
 .ui-toggleswitch .ui-switch-input:checked:active ~ .ui-switch-button::before {
-  -webkit-mask-position: 0;
-  -moz-mask-position: 0;
-  -ms-mask-position: 0;
-  -o-mask-position: 0;
-  mask-position: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
   background-color: W014L3P;
 }
 .ui-toggleswitch .ui-switch-input:checked:disabled {
@@ -615,11 +538,6 @@ a {
 }
 .ui-toggleswitch .ui-switch-input:checked:disabled ~ .ui-switch-activation::before,
 .ui-toggleswitch .ui-switch-input:checked:disabled ~ .ui-switch-button::before {
-  -webkit-mask-position: 0;
-  -moz-mask-position: 0;
-  -ms-mask-position: 0;
-  -o-mask-position: 0;
-  mask-position: 0;
   background-color: W014L3D;
 }
 /***************************************************************************
@@ -689,25 +607,31 @@ a {
   top: 0;
   left: 0;
 }
-.ui-popup .ui-popup-footer.ui-side-button .ui-btn {
+.ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(n) {
   background-color: B065L4;
-  -webkit-mask-size: 100% 100%;
-  -moz-mask-size: 100% 100%;
-  -ms-mask-size: 100% 100%;
-  -o-mask-size: 100% 100%;
-  mask-size: 100% 100%;
 }
-.ui-popup .ui-popup-footer.ui-side-button .ui-btn::before {
+.ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(n)::before {
   left: 50%;
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
 }
-.ui-popup .ui-popup-footer.ui-side-button .ui-btn::after {
-  background-color: B013;
+.ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(n)::after {
+  background-color: B065L4P;
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  transition: opacity 250ms;
+  opacity: 0;
   z-index: -1;
 }
-.ui-popup .ui-popup-footer.ui-side-button .ui-btn.ui-btn-active::after {
-  animation: btn-footer-opacity-press linear 565ms;
+.ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(n):active::after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  opacity: 1;
 }
 .ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(1) {
   -webkit-mask-image: url("images/Popup/tw_ic_popup_left_btn_bg.png");
@@ -715,6 +639,11 @@ a {
   -ms-mask-image: url("images/Popup/tw_ic_popup_left_btn_bg.png");
   -o-mask-image: url("images/Popup/tw_ic_popup_left_btn_bg.png");
   mask-image: url("images/Popup/tw_ic_popup_left_btn_bg.png");
+  -webkit-mask-size: 100% 100%;
+  -moz-mask-size: 100% 100%;
+  -ms-mask-size: 100% 100%;
+  -o-mask-size: 100% 100%;
+  mask-size: 100% 100%;
   left: 0;
 }
 .ui-popup .ui-popup-footer.ui-side-button .ui-btn:nth-child(2) {
@@ -723,6 +652,11 @@ a {
   -ms-mask-image: url("images/Popup/tw_ic_popup_right_btn_bg.png");
   -o-mask-image: url("images/Popup/tw_ic_popup_right_btn_bg.png");
   mask-image: url("images/Popup/tw_ic_popup_right_btn_bg.png");
+  -webkit-mask-size: 100% 100%;
+  -moz-mask-size: 100% 100%;
+  -ms-mask-size: 100% 100%;
+  -o-mask-size: 100% 100%;
+  mask-size: 100% 100%;
   right: 0;
 }
 .ui-popup .ui-popup-footer.ui-bottom-button .ui-btn {
@@ -753,11 +687,21 @@ a {
   left: 0;
   top: 0;
   background-color: B013;
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  transition: opacity 250ms;
   opacity: 0;
   z-index: -1;
 }
-.ui-popup .ui-popup-footer.ui-bottom-button .ui-btn.ui-btn-active::after {
-  animation: btn-footer-opacity-press linear 565ms;
+.ui-popup .ui-popup-footer.ui-bottom-button .ui-btn:active::after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  opacity: 1;
 }
 /***********************
 Popup Container Scroll
@@ -907,13 +851,13 @@ Option Popup
   margin-top: 0.6875rem;
   font-size: 2.25rem;
   min-height: 6.75rem;
-  padding: 0.5625rem 1.875rem 0.5rem;
+  padding: 1.09375rem 2.5rem;
   border: 0 none;
   border-bottom: 1.5px solid transparent;
   border-image: -webkit-linear-gradient(0deg, transparent, #245b85, transparent) 1;
   color: T0211;
   text-align: center;
-  line-height: 2.9375rem;
+  line-height: 4.5625rem;
 }
 .ui-listview li.ui-listview-divider {
   height: 2.0625rem;
@@ -997,18 +941,10 @@ Option Popup
 .ui-listview li > * {
   color: T0211;
 }
-.ui-listview li > a:first-child:last-child,
-.ui-listview li button:first-child:last-child {
-  padding: 0.5625rem 1.875rem 0.5rem;
-  margin: -0.5625rem -1.875rem -0.5rem;
-}
-.ui-listview li.li-has-multiline.li-has-2line-sub {
-  padding-top: 0.5625rem;
-  padding-bottom: 0.5rem;
-}
-.ui-listview li.li-has-multiline.li-has-3line-sub {
-  padding-top: 0.0625rem;
-  padding-bottom: 0.25rem;
+.ui-listview li > a,
+.ui-listview li button {
+  padding: 1.09375rem 2.5rem;
+  margin: -1.09375rem -2.5rem;
 }
 .ui-listview li.ui-li-active {
   background-color: transparent;
@@ -1030,105 +966,9 @@ Option Popup
 .ui-listview li:last-child {
   border: 0;
 }
-.ui-listview.ui-snap-listview .ui-snap-listview-item {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item a {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item a > span {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid {
-  flex-direction: row;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid.ui-li-grid-full {
-  justify-content: space-between;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid.ui-li-grid-full * {
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid.ui-li-grid-full *.ui-btn-icon {
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid > *.ui-btn {
-  padding: 0;
-  margin: 0 1.125rem 0 0;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid > *.ui-btn:last-child {
-  margin-right: 0;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-item.ui-li-grid > *.ui-btn:last-child:first-child {
-  margin-right: 1.25rem;
-}
 .ui-listview.ui-snap-listview .ui-li-sub-text {
   color: T022;
   font-size: 1.5rem;
-  display: block;
-  -webkit-transition-property: opacity, line-height;
-  -moz-transition-property: opacity, line-height;
-  -o-transition-property: opacity, line-height;
-  -ms-transition-property: opacity, line-height;
-  transition-property: opacity, line-height;
-  -webkit-transition-timing-function: ease-in, ease-in;
-  -moz-transition-timing-function: ease-in, ease-in;
-  -o-transition-timing-function: ease-in, ease-in;
-  -ms-transition-timing-function: ease-in, ease-in;
-  transition-timing-function: ease-in, ease-in;
-  -webkit-transition-delay: 0, 0;
-  -moz-transition-delay: 0, 0;
-  -o-transition-delay: 0, 0;
-  -ms-transition-delay: 0, 0;
-  transition-delay: 0, 0;
-  -webkit-transition-duration: 200ms, 150ms;
-  -moz-transition-duration: 200ms, 150ms;
-  -o-transition-duration: 200ms, 150ms;
-  -ms-transition-duration: 200ms, 150ms;
-  transition-duration: 200ms, 150ms;
-  opacity: 0;
-  line-height: 0.01px;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-selected {
-  line-height: 2.9375rem;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-selected .ui-li-sub-text {
-  opacity: 1;
-  line-height: 2rem;
-}
-.ui-listview.ui-snap-listview .ui-snap-listview-selected .ui-li-sub-text:nth-child(2) {
-  padding-top: 0.125rem;
 }
 .ui-listview.ui-snap-listview .ui-snap-listview-selected::before {
   content: "";
@@ -1154,47 +994,11 @@ Option Popup
 .ui-listview.ui-snap-listview .ui-snap-listview-selected.ui-li-active::before {
   background-color: B0210P;
 }
-.ui-listview.ui-snap-listview.li-has-2line-sub .ui-li-sub-text:nth-child(2) {
-  padding-top: 0;
-}
-.ui-listview.ui-snap-listview.li-has-2line-sub .ui-li-sub-text:nth-child(3) {
-  padding-top: 0.125rem;
-}
 .ui-listview.ui-snap-listview li {
   border: none;
 }
 .ui-listview.ui-snap-listview li.ui-li-active::before {
   background-color: transparent;
-}
-.ui-listview.ui-snap-listview input[type=text],
-.ui-listview.ui-snap-listview input[type=password],
-.ui-listview.ui-snap-listview input[type=search],
-.ui-listview.ui-snap-listview input[type=email] {
-  -webkit-mask-image: url("images/TextInput/b_list_edit_field_bg.png");
-  -webkit-mask-size: 100% 100%;
-  width: 18rem;
-  height: 3.875rem;
-  padding: 0.8125rem 1rem;
-  color: T016;
-  font-size: 1.75rem;
-  background-color: B02112;
-  border: none;
-  outline: none;
-}
-.ui-listview.ui-snap-listview input[type=text]:disabled,
-.ui-listview.ui-snap-listview input[type=password]:disabled,
-.ui-listview.ui-snap-listview input[type=search]:disabled,
-.ui-listview.ui-snap-listview input[type=email]:disabled {
-  color: T016D;
-}
-.ui-listview.ui-snap-listview input[type=text]:focus,
-.ui-listview.ui-snap-listview input[type=password]:focus,
-.ui-listview.ui-snap-listview input[type=search]:focus,
-.ui-listview.ui-snap-listview input[type=email]:focus {
-  background-color: transparent;
-  color: B0215;
-  -webkit-text-fill-color: T142;
-  font-size: 1.875rem;
 }
 /***************************************************************************
                   listview extra
@@ -1495,13 +1299,21 @@ input[type="radio"]:disabled:checked::after {
 /***************************************************************************
                   button
 ***************************************************************************/
-.ui-btn {
-  color: T041;
-  background-color: transparent;
-}
 .ui-default {
   color: T041;
-  background-color: transparent;
+  background-color: W011;
+}
+a.ui-default:active:hover,
+.ui-default:enabled:active:hover {
+  background-color: W011P;
+}
+.ui-default:enabled:focus {
+  background-color: W011;
+}
+a.ui-default.ui-state-disabled,
+.ui-default:disabled {
+  color: T041D;
+  background-color: W011D;
 }
 .ui-color-red {
   color: T041;
@@ -1509,15 +1321,15 @@ input[type="radio"]:disabled:checked::after {
 }
 a.ui-color-red:active:hover,
 .ui-color-red:enabled:active:hover {
-  background-color: W012;
+  background-color: W012P;
 }
 .ui-color-red:enabled:focus {
   background-color: W012;
 }
 a.ui-color-red.ui-state-disabled,
 .ui-color-red:disabled {
-  color: T041;
-  background-color: W012;
+  color: T041D;
+  background-color: W012D;
 }
 .ui-color-orange {
   color: T041;
@@ -1525,15 +1337,15 @@ a.ui-color-red.ui-state-disabled,
 }
 a.ui-color-orange:active:hover,
 .ui-color-orange:enabled:active:hover {
-  background-color: W013;
+  background-color: W013P;
 }
 .ui-color-orange:enabled:focus {
   background-color: W013;
 }
 a.ui-color-orange.ui-state-disabled,
 .ui-color-orange:disabled {
-  color: T041;
-  background-color: W013;
+  color: T041D;
+  background-color: W013D;
 }
 .ui-color-green {
   color: T041;
@@ -1541,40 +1353,24 @@ a.ui-color-orange.ui-state-disabled,
 }
 a.ui-color-green:active:hover,
 .ui-color-green:enabled:active:hover {
-  background-color: W014;
+  background-color: W014P;
 }
 .ui-color-green:enabled:focus {
   background-color: W014;
 }
 a.ui-color-green.ui-state-disabled,
 .ui-color-green:disabled {
-  color: T041;
-  background-color: W014;
-}
-.ui-color-blue {
-  color: T041;
-  background-color: W011;
-}
-a.ui-color-blue:active:hover,
-.ui-color-blue:enabled:active:hover {
-  background-color: W011;
-}
-.ui-color-blue:enabled:focus {
-  background-color: W011;
-}
-a.ui-color-blue.ui-state-disabled,
-.ui-color-blue:disabled {
-  color: T041;
-  background-color: W011;
+  color: T041D;
+  background-color: W014D;
 }
 .ui-grid-col-1 > .ui-btn {
-  border-left: solid 1px B011;
+  border-left: solid 1px B013;
 }
 .ui-grid-col-2 > .ui-btn {
-  border-left: solid 1px B011;
+  border-left: solid 1px B013;
 }
 .ui-grid-col-3 > .ui-btn {
-  border-left: solid 1px B011;
+  border-left: solid 1px B013;
 }
 /***************************************************************************
                   circle progress bar
@@ -1623,6 +1419,51 @@ a.ui-color-blue.ui-state-disabled,
 .ui-marquee.ui-marquee-gradient::after {
   background: -webkit-linear-gradient(left, transparent 0%, B0211 100%);
 }
+/****************************************************
+		Page Indicator
+*****************************************************/
+.ui-page-indicator {
+  position: absolute;
+}
+.ui-page-indicator .ui-page-indicator-item {
+  width: 0.625rem;
+  height: 0.625rem;
+  -webkit-mask-image: -webkit-radial-gradient(#000000 0.125rem, transparent 0.25rem);
+  background-color: W1911D;
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  -ms-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  -ms-transition-duration: 250ms;
+  transition-duration: 250ms;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.ui-page-indicator .ui-page-indicator-item.ui-page-indicator-active {
+  background-color: W1911;
+}
+.ui-page-indicator.ui-page-indicator-linear .ui-page-indicator-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5625rem;
+}
+.ui-page-indicator.ui-page-indicator-linear .ui-page-indicator-item:last-child {
+  margin-right: 0;
+}
+.ui-page-indicator.ui-page-indicator-linear .ui-page-indicator-item.ui-page-indicator-active {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5);
+  -moz-transform: scale3d(1.5, 1.5, 1.5);
+  -ms-transform: scale3d(1.5, 1.5, 1.5);
+  -o-transform: scale3d(1.5, 1.5, 1.5);
+  transform: scale3d(1.5, 1.5, 1.5);
+}
 /***************************************************************************
                   progress
 ***************************************************************************/
@@ -1668,38 +1509,11 @@ progress.ui-progress-indeterminate::-webkit-progress-bar {
 /***********************
 Processing
 ***********************/
-.ui-page-active .ui-processing {
-  opacity: 1;
-}
 .ui-processing {
-  opacity: 0;
   background-color: B065L6;
 }
 .ui-processing.ui-processing-full-size {
   background-color: B065L6;
-}
-.ui-processing.ui-processing-alternate {
-  background-color: B082;
-}
-.ui-processing.ui-processing-on-center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.ui-processing.ui-hidden {
-  display: none;
-}
-/** widget interactions **/
-.ui-listview li .ui-processing {
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
 }
 .ui-scrollbar-bouncing-effect {
   -webkit-animation-duration: 0.7s;
@@ -1958,82 +1772,14 @@ Processing
 .ui-selector .ui-selector-indicator {
   font-size: 1.875rem;
 }
+.ui-selector .ui-selector-indicator:active::before {
+  background-color: rgba(33, 41, 47, 0.5);
+}
 .ui-selector .ui-selector-indicator .ui-selector-indicator-text {
   color: T013;
-}
-.ui-selector .ui-selector-indicator .ui-selector-indicator-subtext {
-  color: T018;
+  max-height: 5rem;
+  line-height: 2.5rem;
 }
 .ui-selector .ui-selector-indicator-arrow::before {
   background-color: B057;
-}
-.ui-slider-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.ui-slider-container .ui-slider-icon {
-  width: 9.375rem;
-  height: 9.375rem;
-  margin: 0 auto;
-}
-.ui-slider-container .ui-slider-titles {
-  height: 4.625rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.ui-slider-container .ui-slider-titles .ui-slider-title {
-  color: T117;
-  font-size: 1.875rem;
-  line-height: 1.875rem;
-  margin-top: 0.4375rem;
-}
-.ui-slider-container .ui-slider-titles .ui-slider-subtitle {
-  color: T118;
-  font-size: 1.8125rem;
-  line-height: 1.875rem;
-}
-.ui-slider-container .ui-slider-buttons {
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.ui-slider-container .ui-slider-buttons .ui-slider-minus {
-  width: 2.75rem;
-  height: 100%;
-  background: url('images/Slider/b_slider_icon_minus.png') no-repeat center center;
-  z-index: 1;
-}
-.ui-slider-container .ui-slider-buttons .ui-slider-number {
-  height: 100%;
-  color: T014;
-  font-size: 2.5rem;
-  width: 4.125rem;
-  margin: 0 -1.25rem;
-  line-height: 3.25rem;
-  margin-top: 0.3125rem;
-}
-.ui-slider-container .ui-slider-buttons .ui-slider-plus {
-  background: url('images/Slider/b_slider_icon_plus.png') no-repeat center center;
-  width: 2.75rem;
-  height: 100%;
-  z-index: 1;
-}
-a.ui-hyperlink {
-  color: T1611;
-  text-decoration: underline !important;
-}
-a.ui-hyperlink:active,
-a.ui-hyperlink:hover {
-  color: T1611P;
 }

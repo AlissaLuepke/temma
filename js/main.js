@@ -1,3 +1,34 @@
+var position = false;
+var database = false;
+
+var options = {
+	enableHighAccuracy : true,
+	maximumAge : 30000,
+	timeout : 27000
+};
+
+function success(pos) {
+	var crd = pos.coords;
+	position = true;
+	//var lat1 = crd.latitude;
+	//var lon1 = crd.longitude;
+	 //getDatbase();
+	
+	alert('Your current position is:');
+	alert('Latitude : ' + crd.latitude);
+	alert('Longitude: ' + crd.longitude);
+	alert('More or less ' + crd.accuracy + ' meters.');
+	// return crd;
+
+};
+
+function error(err) {
+	position = false;
+	alert('ERROR(' + err.code + '): ' + err.message);
+	// alert("Please turn your WIFI on");
+};
+navigator.geolocation.getCurrentPosition(success, error, options);
+
 /* Pfeil drehen */
 var lat1 = 48.363715;
 var lon1 = 10.899192;
@@ -24,15 +55,13 @@ function selectPOI() {
 							% radians.length];
 					/*
 					 * if((radians[(index += radians.length -1)%
-					 * radians.length])>180){
-					 *  }
+					 * radians.length])>180){ }
 					 */
 					console.log("deg+1: " + deg);
 					return deg;
 				}
-				
-				
-				// Klasse dem Punkt zuweisen der den selben winkel hat 
+
+				// Klasse dem Punkt zuweisen der den selben winkel hat
 				direction.style.transform = 'rotate(' + deg + 'deg)';
 			}
 
@@ -68,6 +97,7 @@ function selectPOI() {
 	document.addEventListener("rotarydetent", rotaryEventHandler, false);
 };
 
+// function getDatbase() {
 db.POI.find().fetch(function(results) {
 
 	pois = results;
@@ -78,36 +108,27 @@ db.POI.find().fetch(function(results) {
 }, function() {
 	console.log("ERROR")
 })
+// }
 
-// /// Get GEOLOCATION from USER
-/*
- * var options = {enableHighAccuracy: true, maximumAge: 600000, timeout: 0}; var
- * watchID;
- * 
- * function successCallback(position) { console.log(position); }
- * 
- * function errorCallback(error) { console.log(error); } // start watching
- * current location var watchID =
- * navigator.geolocation.watchPosition(successCallback, errorCallback, options); //
- * stop watching navigator.geolocation.clearWatch(watchID);
- */
-
-// //Position of USER
 // //Sights Values
 function displayPOIS() {
+
 	l = pois.length;
 	for (i = 0; i < l; i++) {
+
 		var lat2 = pois[i].geometry.coordinates[1];
 		var lon2 = pois[i].geometry.coordinates[0];
 		var props = pois[i].properties;
-		var d = getDistance(lat1, lon1, lat2, lon2);
-		var coords = calculateBearing(lat1, lon1, lat2, lon2);
-
+		//var d = getDistance(lat1, lon1, lat2, lon2);
+		var d = getDistance.calculate(lat1,lon1,lat2,lon2);
+		console.log("distance: " + d);
+		//var coords = calculateBearing(lat1, lon1, lat2, lon2);
+		var coords = getBearing.calculate(lat1, lon1, lat2, lon2);
 		var c = "point1";
 		var color = "sights"
 
 		if (props.sights === true) {
-			//console.log("sights");
+			// console.log("sights");
 			color = "sights";
 		} else if (props.culinary === true) {
 			color = "culinary";
@@ -124,7 +145,6 @@ function displayPOIS() {
 		 * "point10"; }
 		 */
 
-		
 		cat.forEach(function(i) {
 			active[i] = true
 		});
@@ -152,8 +172,8 @@ function displayPOIS() {
 				updateCats();
 			});
 		});
-		
-		if (d < 300) {
+
+		if (d < 100000) {
 			radians.push(coords[3]);
 
 			$("#center").append(
@@ -172,55 +192,13 @@ function displayPOIS() {
 
 // displayPOIS(latlen, lonlen, filterlen);
 
-// / Get DISTANCE from USERS Position to Sights
 
-function getDistance(lat1, lon1, lat, lon) {
-	var R = 6371; // Radius of the earth in km
-
-	var dLat = (lat - lat1) * Math.PI / 180; // deg2rad below
-	var dLon = (lon - lon1) * Math.PI / 180;
-
-	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1))
-			* Math.cos(deg2rad(lat)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-	var distance = R * c * 1000; // Distance in m
-	console.log("distance: " + distance);
-	//
-	return distance;
-};
 
 function deg2rad(deg) {
 	return deg * (Math.PI / 180)
 };
 
-// // Calculate Bearing from USERS location to POI (from North)
-function calculateBearing(lat1, lon1, lat, lon) {
-	// console.log("lat: " + lat);
-	// console.log("lon: "+ lon);
-	lat1 = lat1 * Math.PI / 180;
-	lon1 = lon1 * Math.PI / 180;
-	lat = lat * Math.PI / 180;
-	lon = lon * Math.PI / 180;
 
-	var dLon = lon - lon1;
-	var y = Math.sin(dLon) * Math.cos(lat);
-	var x = Math.cos(lat1) * Math.sin(lat) - Math.sin(lat1) * Math.cos(lat)
-			* Math.cos(dLon);
-
-	var bearing = (Math.atan2(y, x)) * 180 / Math.PI;
-	console.log("bearing1: " + bearing);
-	bearing2 = (bearing + 360) % 360;
-	console.log("bearing2: " + bearing);
-	bearing = (bearing - 90) * Math.PI / 180;
-	console.log("bearing3: " + bearing);
-
-	// return bearing;
-	var x2 = Math.cos(bearing) * 157.5 + 157.5;
-	var y2 = Math.sin(bearing) * 157.5 + 157.5;
-	return [ x2, y2, bearing, bearing2 ];
-
-};
 
 // // Long Touch Event to set Filter
 

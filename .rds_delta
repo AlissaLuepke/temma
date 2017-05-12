@@ -1,6 +1,15 @@
 #delete
+res/wgt/js/circle-helper.js
 #add
+res/wgt/img/
+res/wgt/img/arrow.svg
+res/wgt/js/calculate_distance.js
+res/wgt/js/custom-indicator.js
+res/wgt/js/drawpois.js
+res/wgt/js/main.js
+res/wgt/js/service.js
 #modify
 res/wgt/author-signature.xml
 res/wgt/signature1.xml
-res/wgt/js/main.js
+res/wgt/css/style.css
+res/wgt/index.html

@@ -11,7 +11,7 @@
 
 		listenBatteryLowState: function(){
 			var self = this;
-			try {
+			try{
 				this.systeminfo.addPropertyValueChangeListener(
 					'BATTERY',
 					function change(battery){
@@ -62,4 +62,5 @@
 	};
 
 	systeminfo.init();
+
 } () );
