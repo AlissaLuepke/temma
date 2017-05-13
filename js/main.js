@@ -1,42 +1,81 @@
 var position = false;
 var database = false;
+// var lat1 = 48.363715;
+// var lon1 = 10.899192;
+var lat1;
+var lon1;
+var active = [];
+var cat = [ "sights", "insidertip", "culinary" ];
+var pois;
+var radians = [];
 
 var options = {
 	enableHighAccuracy : true,
-	maximumAge : 30000,
+	maximumAge : 300000,
 	timeout : 27000
 };
 
-function success(pos) {
-	var crd = pos.coords;
-	position = true;
-	//var lat1 = crd.latitude;
-	//var lon1 = crd.longitude;
-	 //getDatbase();
-	
-	alert('Your current position is:');
-	alert('Latitude : ' + crd.latitude);
-	alert('Longitude: ' + crd.longitude);
-	alert('More or less ' + crd.accuracy + ' meters.');
-	// return crd;
+function initialize() {
 
-};
+	db.Muc.find().fetch(
+			function(results) {
+				pois = results;
+				database = true;
+				console.log("got them");
+				// displayPOIS();
 
-function error(err) {
-	position = false;
-	alert('ERROR(' + err.code + '): ' + err.message);
-	// alert("Please turn your WIFI on");
-};
-navigator.geolocation.getCurrentPosition(success, error, options);
+				// Position
+				navigator.geolocation.watchPosition(function(pos) {
+					var crd = pos.coords;
+					position = true;
+
+					if (typeof lat1 == "undefined"
+							&& typeof lon1 == "undefined") {
+
+						lat1 = crd.latitude;
+						lon1 = crd.longitude;
+
+						displayPOIS();
+
+					} else {
+
+						var d = getDistance.calculate(crd.latitude,
+								crd.longitude, lat1, lon1);
+						if (d > 20) {
+
+							lat1 = crd.latitude;
+							lon1 = crd.longitude;
+
+							displayPOIS();
+						}
+
+					}
+
+					console.log("go postion");
+					/*
+					 * alert('Your current position is:'); alert('Latitude : ' +
+					 * crd.latitude); alert('Longitude: ' + crd.longitude);
+					 * alert('More or less ' + crd.accuracy + ' meters.');
+					 */
+				}, function(err) {
+					position = false;
+					alert('ERROR(' + err.code + '): ' + err.message);
+				}, options);
+
+				console.log(results)
+			}, function(error) {
+				database = false;
+				console.log("ERROR")
+			});
+
+}
+
+initialize();
 
 /* Pfeil drehen */
-var lat1 = 48.363715;
-var lon1 = 10.899192;
-var active = [];
-var cat = [ "sights", "insidertip", "culinary" ];
-
-var pois;
-var radians = [];
+/*
+ * setInterval(function() { }, 10);
+ */
 
 function selectPOI() {
 	var deg = radians[0];
@@ -50,9 +89,20 @@ function selectPOI() {
 			console.log("index: " + index);
 			for (var i = 0; i < radians.length; i++) {
 				if (i === index) {
+					altdeg = radians[(index += radians.length) % radians.length];
 
 					deg = radians[(index += radians.length + 1)
 							% radians.length];
+
+					if (altdeg > 180 && deg < 180) {
+						deg = 360;
+						direction.style.transform = 'rotate(' + deg + 'deg)';
+						deg = 0;
+						direction.style.transform = 'rotate(' + deg + 'deg)';
+						deg = radians[(index += radians.length + 1)
+								% radians.length];
+
+					}
 					/*
 					 * if((radians[(index += radians.length -1)%
 					 * radians.length])>180){ }
@@ -95,34 +145,22 @@ function selectPOI() {
 	/* }; */
 
 	document.addEventListener("rotarydetent", rotaryEventHandler, false);
-};
-
-// function getDatbase() {
-db.POI.find().fetch(function(results) {
-
-	pois = results;
-
-	displayPOIS();
-
-	console.log(results)
-}, function() {
-	console.log("ERROR")
-})
-// }
+}
 
 // //Sights Values
 function displayPOIS() {
-
+	radians = [];
+	$('#center').empty();
 	l = pois.length;
 	for (i = 0; i < l; i++) {
 
 		var lat2 = pois[i].geometry.coordinates[1];
 		var lon2 = pois[i].geometry.coordinates[0];
 		var props = pois[i].properties;
-		//var d = getDistance(lat1, lon1, lat2, lon2);
-		var d = getDistance.calculate(lat1,lon1,lat2,lon2);
+		// var d = getDistance(lat1, lon1, lat2, lon2);
+		var d = getDistance.calculate(lat1, lon1, lat2, lon2);
 		console.log("distance: " + d);
-		//var coords = calculateBearing(lat1, lon1, lat2, lon2);
+		// var coords = calculateBearing(lat1, lon1, lat2, lon2);
 		var coords = getBearing.calculate(lat1, lon1, lat2, lon2);
 		var c = "point1";
 		var color = "sights"
@@ -173,7 +211,8 @@ function displayPOIS() {
 			});
 		});
 
-		if (d < 100000) {
+		if (d < 300000) {
+
 			radians.push(coords[3]);
 
 			$("#center").append(
@@ -190,15 +229,9 @@ function displayPOIS() {
 	console.log("radians: " + radians);
 };
 
-// displayPOIS(latlen, lonlen, filterlen);
-
-
-
 function deg2rad(deg) {
 	return deg * (Math.PI / 180)
 };
-
-
 
 // // Long Touch Event to set Filter
 
@@ -233,15 +266,6 @@ var page1 = document.getElementById("first");
 page1.addEventListener("click", function() {
 	tau.changePage(document.getElementById("main"));
 });
-// /rotate
-function rotatePoint(origin, point, angle) {
-	var radians = angle * Math.PI / 180.0, cos = Math.cos(radians), sin = Math
-			.sin(radians), dX = point.x - origin.x, dY = point.y - origin.y;
-	return {
-		x : cos * dX - sin * dY + origin.x,
-		y : sin * dX + cos * dY + origin.y
-	};
-}
 
 // / Get device orientation of the Watch
 

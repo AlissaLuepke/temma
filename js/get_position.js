@@ -1,8 +1,8 @@
 "use strict";
 
 // Aufruf:
-// getDistance.calculate();
-// Distanz Berechnung
+// getPosition.location();
+// Position des Nutzers
 
 var getPosition = (function () {
 	
@@ -14,28 +14,22 @@ var getPosition = (function () {
 			timeout : 27000
 		};
 
-		function success(pos) {
+		function position_success(pos) {
 			var crd = pos.coords;
 
-			//var lat1 = crd.latitude;
-			//var lon1 = crd.longitude;
-			 //getDatbase();
-			// console.log(lat1);
-			// console.log(lon1);
 			alert('Your current position is:');
 			alert('Latitude : ' + crd.latitude);
 			alert('Longitude: ' + crd.longitude);
 			alert('More or less ' + crd.accuracy + ' meters.');
-			// return crd;
 
 		};
 
-		function error(err) {
+		function position_error(err) {
 			alert('ERROR(' + err.code + '): ' + err.message);
 			// alert("Please turn your WIFI on");
 		};
-		navigator.geolocation.getCurrentPosition(success, error, options);
-
+		navigator.geolocation.getCurrentPosition(position_success, position_error, options);
+		//navigator.geolocation.watchPosition(position_success, position_error, options);
 	
 		
     }
@@ -43,8 +37,8 @@ var getPosition = (function () {
     // Public API
     return {
 
-    	location: function(lat1, lon1, lat, lon){
-			return getLocation(lat1, lon1, lat, lon);
+    	location: function(){
+			return getLocation();
 		}
 
     }

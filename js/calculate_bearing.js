@@ -29,7 +29,7 @@ var getBearing = (function () {
 		var y2 = Math.sin(bearing) * 157.5 + 157.5;
 		return [ x2, y2, bearing, bearing2];
 
-	};
+	}
 
     // Public API
     return {
@@ -38,7 +38,7 @@ var getBearing = (function () {
 			return calculateBearing(lat1, lon1, lat, lon);
 		}
 
-    }
+    };
 
 })();
 
