@@ -4,7 +4,7 @@
 // selectPOIs.select();
 // Auswahl der POIs
 
-var poiManager = (function () {
+var selectPOIs = (function () {
 
 	function selectPOI() {
 		var deg = radians[0];
