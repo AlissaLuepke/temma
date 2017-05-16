@@ -163,6 +163,4 @@ var _pois =	[
 			
 			
 			
-//for (var i = 0; i++; i < _pois.length) {
-	db.POI.upsert(_pois);
-//}
+db.POI.upsert(_pois);
