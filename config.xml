@@ -11,6 +11,8 @@
     <feature name="tizen.org/feature/screen.shape.circle"/>
     <feature name="tizen.org/feature/sensor.gyroscope"/>
     <feature name="tizen.org/feature/web.service"/>
+    <feature name="tizen.org/feature/sensor.accelerometer"/>
+    <feature name="tizen.org/feature/sensor.magnetometer"/>
     <icon src="icon.png"/>
     <name>Temma</name>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>

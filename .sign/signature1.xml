@@ -8,19 +8,19 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>NiHIMZbEQps/vf+buVEpZIIC6oogQZRLI0ScV9FgiMk=</DigestValue>
+<DigestValue>PA65fb8FAiKgKYg9ElADhtQUEvAywZ0r+VDIUKRAF2I=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0qF/vd3/fQ6+g6cVKh39OP2AnkATfRigsSE9P4Q6m9k=</DigestValue>
+<DigestValue>DDPxDPQg8rQntauP2Yx5hhdOk3qk97uEwT72yrTHpsA=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>oGfYsUiwVwHFKFK5ZsrOmmYckgEUPSwPIVlikbleGfo=</DigestValue>
+<DigestValue>AdyZyB5EijllTk9yQtpDHAdCUvCC4oGsh+9OuABU6Pg=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>jRe7JpO8h/oBAeY3yf/bYFHYCO58wREMfi1PyFurCkg=</DigestValue>
+<DigestValue>u1eHG5tNmjrRwvJ4fJ3wzmr4UowFmntINQ2y7utgCxM=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -32,7 +32,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>wCCnatSrF39nWzCiWdIUieMTGLkwA9ho9xmZlIw3ruo=</DigestValue>
+<DigestValue>2tpl8yUmbhrHQVwuoLxJjPXZTkv8keO495M0CFPY0C8=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_bearing.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -56,7 +56,7 @@
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0eUg4/HKbxpX9ukxT5oQm3rKsBJF2OIa5FdyPf0xEr0=</DigestValue>
+<DigestValue>Myw5BkOkO0B22RFspExC6Ug23uMtb12+AP35B5CQZWk=</DigestValue>
 </Reference>
 <Reference URI="js%2Fselect_poi.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1164,11 +1164,19 @@
 </Reference>
 <Reference URI="minimongo%2Fpoi_muc.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>qnojc/9MKKVx/lm8xt/gNk3rvg3+Blgtjua5If1Ze68=</DigestValue>
+<DigestValue>RvqlXISvYN0WJmDqCAiuG9/VkAGMDRxGarhYQ68+O/s=</DigestValue>
 </Reference>
 <Reference URI="minimongo%2Fpoint_of_interest.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>5ZSOqywJ+sAFrPNSDC9h/6qUvlA9Y20BUuOxxojFnpY=</DigestValue>
+<DigestValue>WNJoctHkgsELKJ1ZbLJhK+7t01Q2P+4fFAD1TVpTbeA=</DigestValue>
+</Reference>
+<Reference URI="minimongo%2Fpoint_of_interest_001.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RbgkrqGOFd8vQlwblaTWOgjpfH6gFboeinc6W/H4tEo=</DigestValue>
+</Reference>
+<Reference URI="minimongo%2Fpoint_of_interest_002.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>JnjeBnAz4hajOp/chdcLJkyWMfgglKSM0csXjUlRnMI=</DigestValue>
 </Reference>
 <Reference URI="minimongo%2Fsrc%2FEJSON.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1303,11 +1311,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-KbJnK4mIblIWN+dv3IH+DEo3tddTrKJqreuaa+tnbj9Z+vTzN+0lNQoIWYakQVxYot7XRJAbv3g9
-Exo2G6u6DPoO2B5Uot7ZDUxGMIouE30vv3gZQFcY0vaxNNMacFRL+rAr8gsvOsND6Lr67fyCr64P
-lGjOn1dSjqjUbVf+SDd2KdluiOmWjJELBFlBeud2AwQVREsRCDNn5QihCOYBor3V4zKqvsw0YKSh
-zh6xFAt+RrCVSCpXZ7OiANUQ2efkZgkGi34Yyb3Tjoq0g0Ri02Cjl0vflfxYXn1nN0jeqqsUZQCY
-wCvuQ4PkxaIBr7zfQC2OM+GK8/sY6AxFLMNp/w==
+JKnOZfDe8NybYVB1seyWrbcAnviOSCiXC1qVXkiODCb4S//Bqp0bCEjY28ga2VmuGdVTG7c+UbhL
+lyzyRTL2x2Qg5jOwzdLvNNGhYmNk7V7rxgK0nzGmyocrXDtDUF++OyjjR5T23R+1H/Ala1ZHIgJm
+eEslkBQjETV/LmTQCqdKU1Bl3YWYq+O0OIOeokWAx06YvNCD04TSY6EkNnDQQxTaD027l02BJPPu
+JEsTMfoKOLkqa/t+TAoJCTzf2//eRdsuluPNvmQ/YbUym1+61nE7eSM7EDJYq+2ikAgl1GLC8ekN
+OcZbS8NqtnUrvqCm3L3FJTpcgq2a4cEnozTBfg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

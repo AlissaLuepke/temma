@@ -1,5 +1,8 @@
 var position = false;
 var database = false;
+var coords = [];
+var deg = 0;
+var id;
 // var lat1 = 48.363715;
 // var lon1 = 10.899192;
 var lat1;
@@ -16,10 +19,11 @@ var options = {
 };
 
 function initialize() {
-
-	db.Muc.find().fetch(
+console.log("init");
+	db.POI.find().fetch(
 			function(results) {
 				pois = results;
+
 				database = true;
 				console.log("got them");
 				// displayPOIS();
@@ -27,6 +31,10 @@ function initialize() {
 				// Position
 				navigator.geolocation.watchPosition(function(pos) {
 					var crd = pos.coords;
+					// var heading = crd.heading;
+					// console.log("richtung: " + heading);
+					// direction2.style.transform = 'rotate(' + heading +
+					// 'deg)';
 					position = true;
 
 					if (typeof lat1 == "undefined"
@@ -78,71 +86,100 @@ initialize();
  */
 
 function selectPOI() {
-	var deg = radians[0];
+	// var deg = radians[0].angle;
+	deg = radians[0].angle;
+	$("#" + radians[0].id).addClass('sightsactive');
+	direction.style.transform = 'rotate(' + deg + 'deg)';
+	console.log("default degree: " + deg);
+	// console.log("index2: " + radians.indexOf(deg));
 
 	// $('#sights' ).hasClass('sightsactive');
 	rotaryEventHandler = function(e) {
 
 		if (e.detail.direction === "CW") {
-			// console.log(deg);
-			var index = radians.indexOf(deg);
-			console.log("index: " + index);
+
+			var searchTerm = deg, index = -1;
+			for (var j = 0, len = radians.length; j < len; j++) {
+				if (radians[j].angle === searchTerm) {
+					index = j;
+					break;
+				}
+			}
+
 			for (var i = 0; i < radians.length; i++) {
 				if (i === index) {
-					altdeg = radians[(index += radians.length) % radians.length];
+					// altdeg = radians[(index += radians.length) %
+					// radians.length];
 
 					deg = radians[(index += radians.length + 1)
-							% radians.length];
+							% radians.length].angle;
 
-					if (altdeg > 180 && deg < 180) {
-						deg = 360;
-						direction.style.transform = 'rotate(' + deg + 'deg)';
-						deg = 0;
-						direction.style.transform = 'rotate(' + deg + 'deg)';
-						deg = radians[(index += radians.length + 1)
-								% radians.length];
-
-					}
+					console.log("newdeg: " + deg);
 					/*
-					 * if((radians[(index += radians.length -1)%
-					 * radians.length])>180){ }
+					 * if (altdeg > 180 && deg < 180) { deg = 360;
+					 * direction.style.transform = 'rotate(' + deg + 'deg)'; deg =
+					 * 0; direction.style.transform = 'rotate(' + deg + 'deg)';
+					 * deg = radians[(index += radians.length + 1) %
+					 * radians.length]; }
 					 */
+
 					console.log("deg+1: " + deg);
 					return deg;
 				}
 
+				//if (radians[index].id == $("#center").children().attr('id')) {
+				
+				
+				//var color = (props.sights === true) ? "sights" : (props.culinary === true) ? "culinary" : "insidertip";
+					$("#" + radians[index].id).addClass('sightsactive');
+					$("#" + radians[(index-1)%radians.length].id).removeClass('sightsactive');
+			//	}
+
 				// Klasse dem Punkt zuweisen der den selben winkel hat
 				direction.style.transform = 'rotate(' + deg + 'deg)';
+				console.log("transform" + deg);
 			}
 
 		}
 		if (e.detail.direction === "CCW") {
-			var index = radians.indexOf(deg);
+			// var index = radians.indexOf(deg);
+			var searchTerm = deg, index = -1;
+			for (var j = 0, len = radians.length; j < len; j++) {
+				if (radians[j].angle === searchTerm) {
+					index = j;
+					break;
+				}
+			}
 			console.log("index: " + index);
 			for (var i = 0; i < radians.length; i++) {
+				console.log("id " + radians[i].id);
 				if (i === index) {
 
 					// deg = radians[i - 1];
 					deg = radians[(index += radians.length - 1)
-							% radians.length];
+							% radians.length].angle;
 					console.log("deg-1: " + deg);
 
 					return deg;
 				}
-
+				/*
+				 * if(radians[i].x === coords[0]){
+				 * $("div").addClass('sightsactive'); }
+				 */
 				// $('#sights').addClass('sightsactive');
 				// console.log(deg);
+				//if (radians[index].id == $("#center").children().attr('id')) {
+					$("#" + radians[index].id).addClass('sightsactive');
+					$("#" + radians[(index+1)%radians.length].id).removeClass('sightsactive');
+			//	}
 
 				direction.style.transform = 'rotate(' + deg + 'deg)';
-
+				console.log("transform back" + deg);
 			}
 
 		}
-		// return deg;
 
-		// console.log(direction.style.transform);
 	}
-	/* }; */
 
 	document.addEventListener("rotarydetent", rotaryEventHandler, false);
 }
@@ -151,17 +188,19 @@ function selectPOI() {
 function displayPOIS() {
 	radians = [];
 	$('#center').empty();
+	console.log("Pois: " + JSON.stringify(pois[0]));
 	l = pois.length;
 	for (i = 0; i < l; i++) {
 
 		var lat2 = pois[i].geometry.coordinates[1];
 		var lon2 = pois[i].geometry.coordinates[0];
 		var props = pois[i].properties;
+		id = pois[i]._id;
 		// var d = getDistance(lat1, lon1, lat2, lon2);
 		var d = getDistance.calculate(lat1, lon1, lat2, lon2);
 		console.log("distance: " + d);
 		// var coords = calculateBearing(lat1, lon1, lat2, lon2);
-		var coords = getBearing.calculate(lat1, lon1, lat2, lon2);
+		coords = getBearing.calculate(lat1, lon1, lat2, lon2);
 		var c = "point1";
 		var color = "sights"
 
@@ -211,22 +250,36 @@ function displayPOIS() {
 			});
 		});
 
-		if (d < 300000) {
+		if (d < 2000) {
 
-			radians.push(coords[3]);
+			radians.push({
+				angle : coords[3],
+				properties : props,
+				x : coords[0],
+				y : coords[1],
+				id : id
+			});
 
+			// radians.push(coords[3]);
+			// "id="+i+
 			$("#center").append(
-					"<div class=" + color + " style='left:" + (coords[0] - 10)
-							+ "px;top:" + (coords[1] - 10) + "px'></div>")
+					"<div class=" + color + " id=" + id + " style='left:"
+							+ (coords[0] - 10) + "px;top:" + (coords[1] - 10)
+							+ "px'></div>")
 		}
 		;
 
 	}
 	radians.sort(function(a, b) {
-		return a - b
+		return a.angle - b.angle
 	});
+
 	selectPOI();
-	console.log("radians: " + radians);
+	/*console.log("radians 0: " + radians[0].angle);
+	console.log("radians 1: " + radians[1].angle);
+	console.log("radians 2: " + radians[2].angle);
+	console.log("radians 3: " + radians[3].angle);
+	console.log("id 0: " + radians[0].id);*/
 };
 
 function deg2rad(deg) {
@@ -262,19 +315,54 @@ window.onload = function() {
 	document.getElementById("direction-button").addEventListener("touchend",
 			touchend, false);
 };
-var page1 = document.getElementById("first");
-page1.addEventListener("click", function() {
+
+$('#first').click(function() {
 	tau.changePage(document.getElementById("main"));
 });
 
-// / Get device orientation of the Watch
+/*
+ * function startSensor() { "use strict"; console.log("YAY");
+ * window.addEventListener("deviceorientation", onDeviceOrientation, true); }
+ * 
+ * function onDeviceOrientation(dataEvent) { "use strict"; console.log("Wogoo");
+ * var angleMemory; var angle = dataEvent.alpha; console.log(angle); var text;
+ * 
+ * if (angle < 68 || angle > 292) { text += 'NORTH'; } else if (angle > 112 &&
+ * angle < 248) { text += 'SOUTH'; }
+ * 
+ * if (angle > 22 && angle < 158) { text += 'EAST'; } else if (angle > 202 &&
+ * angle < 338) { text += 'WEST'; }
+ * 
+ * var deltaAngle = angleMemory - angle;
+ * 
+ * 
+ * if (Math.abs(deltaAngle) > 180) { if (deltaAngle > 0) { rotation -= ((360 -
+ * angleMemory) + angle); } else { rotation += (angleMemory + (360 - angle)); } }
+ * else { rotation += deltaAngle; } angleMemory = angle;
+ * 
+ * $('#direct').text(text); $("#angle").html(Math.round(angle) + "<sup>o</sup>");
+ * //$('#rotation').css('-webkit-transform', 'rotate(' + rotation + 'deg)');
+ * $('#rotation').text(rotation); }; startSensor();
+ */
 
-var alphaElem = document.getElementById("alpha");
-var betaElem = document.getElementById("beta");
-var gammaElem = document.getElementById("gamma");
-window.addEventListener("deviceorientation", function(e) {
-	alphaElem.innerHTML = 'alpha value ' + Math.round(e.alpha);
-	betaElem.innerHTML = 'beta value ' + Math.round(e.beta);
-	gammaElem.innerHTML = 'gamma value ' + Math.round(e.gamma);
-}, true);
-console.log("alpha" + alphaElem + "beta" + betaElem + "gamma" + gammaElem);
+/*
+ * window.removeEventListener("deviceorientation", compassListener, false);
+ * 
+ * function compassListener(event) { var degrees = compassHeading(event.alpha,
+ * event.beta, event.gamma); console.log(Math.round(degrees) + '&deg; ' +
+ * getDirection(degrees)); }
+ * 
+ * function compassHeading(alpha, beta, gamma) { var angle = alpha, deltaAngle; //
+ * check angle change and calculate the rotation of the compass deltaAngle =
+ * lastAngle - angle; if (Math.abs(deltaAngle) > 180) { if (deltaAngle > 0) {
+ * rotation -= ((360 - lastAngle) + angle); } else { rotation += (lastAngle +
+ * (360 - angle)); } } else { rotation += deltaAngle; } // save current
+ * measurement lastAngle = angle;
+ * 
+ * return angle; }
+ * 
+ * function getDirection(degrees) { return ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE',
+ * 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW',
+ * 'N'][Math.round(degrees / 11.25 / 2)]; }
+ * 
+ */

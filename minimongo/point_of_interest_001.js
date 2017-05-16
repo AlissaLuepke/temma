@@ -1,15 +1,13 @@
 // JavaScript Document
-
-
 var minimongo = require("minimongo");
 
 var LocalDb = minimongo.MemoryDb;
 
-var db = new LocalDb();
+db = new LocalDb();
 
 db.addCollection("POI");
 
-var _pois =	[
+db.POI.upsert(	
 {"properties": {"title": "Stadtmarkt","s_description": "","l_description": "","sights": true,"insidertip": false,"culinary": true},
         "geometry": {"coordinates": [10.895053, 48.368268],"type": "Point"}},		
 
@@ -159,10 +157,4 @@ var _pois =	[
 			
 {"properties": {"title": "Wollmarkt (Innenhof St. Margareth)","s_description": "","l_description": "","sights": false,"insidertip": true,"culinary": false},
         "geometry": {"coordinates": [10.902951, 48.361772],"type": "Point"}}
-			];
-			
-			
-			
-//for (var i = 0; i++; i < _pois.length) {
-	db.POI.upsert(_pois);
-//}
+			);
