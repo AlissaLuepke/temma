@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2tpl8yUmbhrHQVwuoLxJjPXZTkv8keO495M0CFPY0C8=</DigestValue>
+<DigestValue>6EFB8Q341+NUm8lBqZqgI/5z38W4CBr7Ak36fW5hCv0=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_bearing.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -38,25 +38,21 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2h76qpJGv2peUNjiGxtYKv0OZMOrEiLF6X+lOU9Far0=</DigestValue>
 </Reference>
-<Reference URI="js%2Fdraw_pois.js">
+<Reference URI="js%2Finit.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</DigestValue>
-</Reference>
-<Reference URI="js%2Fget_data.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>yav5dCE6XClMeuSQ4Z3V8TMFaleFScdszj+E/N0CRak=</DigestValue>
-</Reference>
-<Reference URI="js%2Fget_position.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9wS3yxlS1Q+aUVvZvV9to1YNchgtFabW0OkKdBhClmY=</DigestValue>
+<DigestValue>EKD4Y2bx9AMMYKqnlOZ2J/rLUvSbYGGzUesUD6xuUWI=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Myw5BkOkO0B22RFspExC6Ug23uMtb12+AP35B5CQZWk=</DigestValue>
+<DigestValue>26UWatnbm6ZIwQMuu9NNzQ0IW1ACO4Oe9caModuTpWM=</DigestValue>
 </Reference>
-<Reference URI="js%2Fselect_poi.js">
+<Reference URI="js%2Fpoi_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ZsTs7DpEPGyDJiEUgnzFqyLSau57DwuOrnaDm+P3Zg0=</DigestValue>
+<DigestValue>RxSAaV6NNMjm8OlyDocIhoiYiY4hx0OEpjCXqtT/J50=</DigestValue>
+</Reference>
+<Reference URI="js%2Futils.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>IrA6kk4NkGNmDCNDiohR+mzoOK9P7uOGz/e6vO6MN4A=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fjquery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -153,6 +149,10 @@
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fblue%2Fimages%2FController_icon%2Ftw_btn_radiobox_line.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>JXfJFsytb7Ca9bHn2mZ7J5UVde6gr5WIQWFARUEbSAI=</DigestValue>
+</Reference>
+<Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fblue%2Fimages%2FIndicator%2FThumbs.db">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>cItMDPx2YVumoiCJZggQVblG9V6xOfGx6RVJU0aAVNQ=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2Fwearable%2Ftheme%2Fblue%2Fimages%2FIndicator%2Fb_fast_scroll_rollover_bg.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1164,7 +1164,7 @@
 </Reference>
 <Reference URI="minimongo%2Fpoint_of_interest.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WNJoctHkgsELKJ1ZbLJhK+7t01Q2P+4fFAD1TVpTbeA=</DigestValue>
+<DigestValue>poHpl14MzDUudD3rNTpgEavrCrhje0CmFLstZg4DJxA=</DigestValue>
 </Reference>
 <Reference URI="minimongo%2Fpoint_of_interest_001.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1307,11 +1307,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Ez0dYuqT3VUGs7VfjICYJjknFRXKDWgJ4XEtDcpFONlNhrKoaX0veHqlfGPNdDCgkuXWT54nM9JC
-3TUwDCQDLcYH3aeBYffItaeYvJyjPzOk+YMfvEGlG6+Gxz5Cvp4hPCv3eLiucaw4eCwaNEoDwMNv
-FYoE0Zc3oIspxdLG/gq6JXrpLgr8Y2oykV7Bw/qurk2/wura9q99I9xRYd4Bq56FMeQ2WHcIXsRp
-7w0+zk5MxCeyEo8aoN//qrRLK+IP1//OiRQT669hqPEWzujsi+BYbzLZAJuhwHg+2DPQmq091R7n
-yuP/hAdUqx7PIul/1TDy16UyOoaAO5QYhaK+Rg==
+K2rFL08LxUZG2EI5zOew0H35k9300XoJNvRFpRvSp6Qy7Wjk8vvcmOCSPqJi2povGPLRsDbKlxh2
+3igYzBcCKQ26jnrnbYygTpBw/o6RmnRPoeoT8n36dmJMVvzV6MaZ5X3hLI6KQRbjAqxo2ix4rBOp
+Yo203AIPtF0sJ+k3BXUHWtv2UG3q7AItXQt2n7FC/afVE3Uq9IEN/2mEgFLP5O3Bq3y5zxjKeBCB
+Dj2KyPtiMJvds3yEFdhh5f24kTs2fipGdtPA+BiLu+ft7CsEr+1g+lacrWCOP/MTSV8BREcp9ibG
+4XeppoPK7GhNzAzq7BRkzzrXdCHD7pJ6Yn5l0g==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
