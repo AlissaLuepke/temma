@@ -13,7 +13,6 @@
     <feature name="tizen.org/feature/web.service"/>
     <icon src="icon.png"/>
     <name>Temma</name>
-    <tizen:feature name="http://tizen.org/feature/web.service"/>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
