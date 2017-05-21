@@ -13,7 +13,6 @@
     <feature name="tizen.org/feature/web.service"/>
     <icon src="icon.png"/>
     <name>Temma</name>
-    <tizen:feature name="http://tizen.org/feature/web.service"/>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
@@ -21,4 +20,7 @@
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
     <tizen:setting hwkey-event="enable"/>
+    <tizen:service id="org.tizen.test1" auto-restart="true" on-boot="true">
+    <tizen:content src="js/temma_serviceapp.js"/>
+    </tizen:service>
 </widget>
