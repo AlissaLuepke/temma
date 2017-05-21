@@ -14,7 +14,7 @@
     <feature name="tizen.org/feature/sensor.accelerometer"/>
     <feature name="tizen.org/feature/sensor.magnetometer"/>
     <icon src="icon.png"/>
-    <name>Temma</name>
+    <name>Temma</name> 
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
@@ -22,4 +22,9 @@
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
     <tizen:setting hwkey-event="enable"/>
+    <tizen:service id="VeuEdP2j1B.ServiceApplication" auto-restart="true" on-boot="true">
+    	<tizen:content src="js/temma_serviceapp.js"/>
+    	<tizen:name>TemmaWebserviceApplication</tizen:name>
+    	<tizen:description>TemmaWebserviceApplication1</tizen:description>
+    </tizen:service>
 </widget>
