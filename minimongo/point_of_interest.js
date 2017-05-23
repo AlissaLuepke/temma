@@ -185,6 +185,18 @@ var _pois =	[
         "coordinates": [11.639984,48.162806],
         "type": "Point"
     }
+},{
+    "properties": {
+        "title": "DM",
+        "description": "",
+        "sights": false,
+        "insidertip": true,
+        "culinary": false
+    },
+    "geometry": {
+        "coordinates": [11.637035, 48.161222],
+        "type": "Point"
+    }
 }
 
 			];
