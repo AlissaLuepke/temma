@@ -1,4 +1,6 @@
 // JavaScript Document
+var database = (function() {
+    
 
 
 var minimongo = require("minimongo");
@@ -158,11 +160,53 @@ var _pois =	[
         "geometry": {"coordinates": [10.898861, 48.366053],"type": "Point"}},
 			
 {"properties": {"title": "Wollmarkt (Innenhof St. Margareth)","s_description": "","l_description": "","sights": false,"insidertip": true,"culinary": false},
-        "geometry": {"coordinates": [10.902951, 48.361772],"type": "Point"}}
+        "geometry": {"coordinates": [10.902951, 48.361772],"type": "Point"}},
+    {
+    "properties": {
+        "title": "Meistersinger",
+        "description": "",
+        "sights": false,
+        "insidertip": false,
+        "culinary": true
+    },
+    "geometry": {
+        "coordinates": [11.639609,48.157723],
+        "type": "Point"
+    }
+},{
+    "properties": {
+        "title": "DM",
+        "description": "",
+        "sights": true,
+        "insidertip": false,
+        "culinary": false
+    },
+    "geometry": {
+        "coordinates": [11.639984,48.162806],
+        "type": "Point"
+    }
+},{
+    "properties": {
+        "title": "DM",
+        "description": "",
+        "sights": false,
+        "insidertip": true,
+        "culinary": false
+    },
+    "geometry": {
+        "coordinates": [11.637035, 48.161222],
+        "type": "Point"
+    }
+}
+
 			];
 			
 			
 			
 //for (var i = 0; i++; i < _pois.length) {
 	db.POI.upsert(_pois);
+     return {
+            init: db.POI
+        }
 //}
+    })();
