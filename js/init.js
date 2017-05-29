@@ -34,4 +34,4 @@ $('#first').click(function() {
 
 
 
-poiManager.init(database.init);
+poiManager.init(database.db);

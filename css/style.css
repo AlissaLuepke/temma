@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../font/Roboto/Roboto-Regular.ttf');
+}
+
 * {
-    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
+    font-family: 'Roboto-Regular', sans-serif;
 }
 
 body {
@@ -10,7 +15,7 @@ body {
 #outer {
     position: absolute;
     height: 100%;
-    widht: 100%;
+    width: 100%;
     background-color: blue;
 }
 
@@ -32,39 +37,38 @@ body {
     /* top: 100px; */
 }
 
-.text{
-    	position: absolute;
-    	width: 360px;
-    top: 70px;
-    	
-}
-#title
-{
-    width: 200px;
-/*	top: 110px;*/
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.textdist{
+.text {
     position: absolute;
-    	width: 360px;
-        top: 250px;
+    width: 360px;
+    top: 70px;
 }
 
-#distance{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#title {
+    width: 200px;
+    /*	top: 110px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textdist {
+    position: absolute;
+    width: 360px;
+    top: 250px;
+}
+
+#distance {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #direction {
     position: absolute;
-   width: 70px;
+    width: 70px;
     height: 70px;
     top: 145px;
     left: 145px;
-    
     background-image: url('../img/arrow.svg');
     background-repeat: no-repeat;
     transition: all 1s ease-out;
@@ -83,6 +87,15 @@ body {
     border-color: transparent;
 }
 
+
+/* Filter */
+
+.ui-listview li {
+    border-image: none;
+    /*    border-image: -webkit-linear-gradient(0deg,transparent,#245b85,transparent) 1; */
+    */
+}
+
 .filter {
     display: inline-block !important;
     border-radius: 50%;
@@ -91,22 +104,47 @@ body {
     position: relative;
 }
 
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
 #insidertip {
-    border: 2px solid #FF00B2;
+    color: #FF00B2;
+    border-top: 2px solid #FF00B2;
+    border-bottom: 2px solid #FF00B2;
 }
 
 #sights {
-    border: 2px solid #FFDC19;
-
+    color: #FFDC19;
+    border-top: 2px solid #FFDC19;
+    border-bottom: 2px solid #FFDC19;
 }
 
 #culinary {
-    border: 2px solid #14C9CC;
-    
+    color:  #14C9CC;
+    border-top: 2px solid #14C9CC;
+    border-bottom: 2px solid #14C9CC;
+}
+.culinaryfilteractive {
+    color: #000 !important;
+    background-color: #14C9CC;
+}
+
+.sightsfilteractive {
+    color: #000 !important;
+    background-color: #FFDC19;
+}
+
+
+
+.insidertipfilteractive {
+    color: #000 !important;
+    background-color: #FF00B2;
 }
 
 
 /* Kategorien */
+
 .culinary {
     /*opacity: 0.5;*/
     height: 20px;
@@ -124,8 +162,9 @@ body {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
-     z-index: 10;
+    z-index: 10;
 }
+
 .sights {
     /*opacity: 0.5;*/
     height: 20px;
@@ -145,6 +184,7 @@ body {
     -o-transform: scale(1);
     z-index: 10;
 }
+
 .insidertip {
     /*opacity: 0.5;*/
     height: 20px;
@@ -162,7 +202,7 @@ body {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
-     z-index: 10;
+    z-index: 10;
 }
 
 .sightsactive {
@@ -194,4 +234,3 @@ body {
     -ms-transform: scale(1.2);
     z-index: 9999;
 }
-
