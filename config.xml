@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/TAUList" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="VeuEdP2j1B.TAUList" package="VeuEdP2j1B" required_version="2.3.2"/>
+    <tizen:application id="7pVzrlP6Az.Temma" package="7pVzrlP6Az" required_version="2.3.2"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal"/>
     <feature name="tizen.org/feature/input.rotating_bezel"/>
@@ -12,19 +12,20 @@
     <feature name="tizen.org/feature/sensor.gyroscope"/>
     <feature name="tizen.org/feature/web.service"/>
     <feature name="tizen.org/feature/sensor.accelerometer"/>
-    <feature name="tizen.org/feature/sensor.magnetometer"/>
+   <!--  <feature name="tizen.org/feature/sensor.magnetometer"/> -->
     <icon src="icon.png"/>
-    <name>Temma</name> 
+    <name>Temma</name>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
-    <tizen:setting hwkey-event="enable"/>
-    <tizen:service id="VeuEdP2j1B.ServiceApplication" auto-restart="true" on-boot="true">
-    	<tizen:content src="js/temma_serviceapp.js"/>
-    	<tizen:name>TemmaWebserviceApplication</tizen:name>
-    	<tizen:description>TemmaWebserviceApplication1</tizen:description>
-    </tizen:service>
+    <!-- <tizen:service id="7pVzrIP6AZ.ServiceApplication" on-boot="false" auto-restart="true">
+        <tizen:content src="js/temma_serviceapp.js"/>
+        <tizen:name>TemmaWebserviceApplication</tizen:name>
+        <tizen:icon src="icon.png"/>
+        <tizen:description>TemmaWebserviceApplication1</tizen:description>
+    </tizen:service> -->
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
 </widget>
