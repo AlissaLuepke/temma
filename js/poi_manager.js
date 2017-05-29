@@ -1,6 +1,6 @@
 "use strict";
 var poiManager = (function () {
-    var db, deg, lat1, lon1, currentObj;
+    var db, deg, o_deg, lat1, lon1, currentObj;
     var cat = ["sights", "insidertip", "culinary"];
     var pois = [];
     var radians = [];
@@ -149,7 +149,9 @@ var poiManager = (function () {
                 currentIndex = (index += pois.length + (index_change)) % pois.length;
                 //console.log(pois.length);
                 //console.log("current index: " + JSON.stringify(currentIndex));
-                deg = pois[currentIndex]._radian.angle;
+				o_deg = pois[index]._radian.angle;
+                new_deg = pois[currentIndex]._radian.angle;
+				deg =pois[index]._radian.angle + (pois[currentIndex]._radian.angle - pois[index]._radian.angle);
                 pois[currentIndex]._radian.is_active = true;
                 active_poi = pois[currentIndex];
                 // console.log("active Poi: " + JSON.stringify(active_poi));
