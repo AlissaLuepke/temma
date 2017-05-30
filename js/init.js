@@ -1,6 +1,6 @@
 // long touch Event for Filter
 
-var touchtimer, flagLock, touchduration = 200;
+var touchtimer, flagLock, touchduration = 600;
 var onlongtouch = function() {
 	tau.changePage(document.getElementById("two"));
 };
@@ -34,4 +34,8 @@ $('#first').click(function() {
 
 
 
+
+
+positionManager.init();
 poiManager.init(database.db);
+

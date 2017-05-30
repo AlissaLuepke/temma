@@ -198,6 +198,19 @@ var _pois =	[
         "type": "Point"
     }
 }
+,{
+    "properties": {
+        "title": "nähe uni",
+        "description": "",
+        "sights": false,
+        "insidertip": true,
+        "culinary": false
+    },
+    "geometry": {
+        "coordinates": [10.908508, 48.357167],
+        "type": "Point"
+    }
+}
 
 			];
 			
