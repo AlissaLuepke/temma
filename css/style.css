@@ -4,6 +4,7 @@
 }
 * {
     font-family: 'Roboto-Regular', sans-serif;
+    font-size: 2rem !important;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 
 .new_margin_content {
     margin: 0 !important;
-    padding: 0 !important;
+/*    padding: 0 !important;*/
     max-height: 359px !important;
 
 }
@@ -44,7 +45,7 @@ body {
     width: 315px;
     border-radius: 157.5px;
     
-    /*background-color: yellow;*/
+    background-color: rgba(255, 255, 0, 0.31);
     position: relative;
     /* left: 200px; */
     /* top: 100px; */
@@ -136,37 +137,37 @@ body {
 }
 
 #insidertip {
-    color: #FF00B2;
-    border-top: 2px solid #FF00B2;
-    border-bottom: 2px solid #FF00B2;
+    color: #00cdff;
+    border-top: 2px solid #00cdff;
+    border-bottom: 2px solid #00cdff;
 }
 
 #sights {
-    color: #FFDC19;
-    border-top: 2px solid #FFDC19;
-    border-bottom: 2px solid #FFDC19;
+    color: #ff4646;
+    border-top: 2px solid #ff4646;
+    border-bottom: 2px solid #ff4646;
 }
 
 #culinary {
-    color:  #14C9CC;
-    border-top: 2px solid #14C9CC;
-    border-bottom: 2px solid #14C9CC;
+    color:  #67d067;
+    border-top: 2px solid #67d067;
+    border-bottom: 2px solid #67d067;
 }
 .culinaryfilteractive {
     color: #000 !important;
-    background-color: #14C9CC;
+    background-color: #67d067;
 }
 
 .sightsfilteractive {
     color: #000 !important;
-    background-color: #FFDC19;
+    background-color: #ff4646;
 }
 
 
 
 .insidertipfilteractive {
     color: #000 !important;
-    background-color: #FF00B2;
+    background-color: #00cdff;
 }
 
 
@@ -176,10 +177,12 @@ body {
     /*opacity: 0.5;*/
     height: 20px;
     width: 20px;
+    /*height: 5.197px;
+    width: 5.197px;*/
     border-radius: 10px;
-    /*     background: #FFDC19; */
+    /*     background: #ff4646; */
     position: absolute;
-    border: 2px solid #14C9CC;
+    border: 2px solid #67d067;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -197,8 +200,8 @@ body {
     height: 20px;
     width: 20px;
     border-radius: 10px;
-    border: 2px solid #FFDC19;
-    /*background: #FFDC19;*/
+    border: 2px solid #ff4646;
+    /*background: #ff4646;*/
     position: absolute;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -217,8 +220,8 @@ body {
     height: 20px;
     width: 20px;
     border-radius: 10px;
-    border: 2px solid #FF00B2;
-    /*background: #FFDC19;*/
+    border: 2px solid #00cdff;
+    /*background: #ff4646;*/
     position: absolute;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -233,7 +236,7 @@ body {
 }
 
 .sightsactive {
-    background-color: #FFDC19;
+    background-color: #ff4646;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -243,7 +246,7 @@ body {
 }
 
 .insidertipactive {
-    background-color: #FF00B2;
+    background-color: #00cdff;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -253,7 +256,7 @@ body {
 }
 
 .culinaryactive {
-    background-color: #14C9CC;
+    background-color: #67d067;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
