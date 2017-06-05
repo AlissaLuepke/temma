@@ -20,11 +20,11 @@
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
-    <tizen:service id="7pVzrIP6AZ.ServiceApplication" on-boot="false" auto-restart="false">
+    <!-- <tizen:service id="7pVzrIP6AZ.ServiceApplication" on-boot="false" auto-restart="false">
         <tizen:content src="js/temma_serviceapp.js"/>
         <tizen:name>TemmaWebserviceApplication</tizen:name>
         <tizen:icon src="icon.png"/>
         <tizen:description>TemmaWebserviceApplication1</tizen:description>
-    </tizen:service>
+    </tizen:service> -->
     <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
 </widget>
