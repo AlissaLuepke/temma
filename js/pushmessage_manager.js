@@ -7,9 +7,7 @@ var pushmessageManager = (function () {
     
     // Public API
     return {
-       message: function(poi){
-			return message(poi);
-		}
+       message: message
 
        
     }

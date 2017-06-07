@@ -1,64 +1,103 @@
 "use strict";
 var positionManager = (function () {
     var _watchPosition_options = {
-        enableHighAccuracy: true
-        , maximumAge: 300000
-        , timeout: 27000
+        enableHighAccuracy: true,
+        maximumAge: 300000,
+        timeout: 27000
     };
+    var DEBUG = true;
+    var _success_functions = [];
+    var _error_functions = [];
     var _debug_fake_positions = [
 
     ];
     var _current_position = null;
+    var _last_position = null;
 
     function init() {
         if (DEBUG)
         // eigene Implemenierung
         {
-            window.setTimeout(_fake_next_position, 1000);
-        }
-        else {
-            navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition _watchPosition_options);
+            window.setInterval(function () {
+
+                _last_position = _current_position;
+                _current_position = {
+                    latitude: 48.15961,
+                    longitude: 11.64087,
+                    heading: 200,
+                    is_heading_accurate: true
+                };
+                
+                _call_success_functions(_current_position);
+            }, 1000);
+        } else {
+            navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition, _watchPosition_options);
         }
     }
 
-    function register(success, error) {}
+    function register(success, error) {
+        if (!!success) {
+            _success_functions.push(success);
+
+        }
+        if (!!error) {
+            _error_functions.push(error);
+        }
+
+    }
     //Überwachung der Position 
     function _event_watchPosition(pos) {
-        
+        var crd = pos.coords;
+        _last_position = _current_position;
         //eigene Parameter
         _current_position = {
-            lat: "latitude"
-            , lon: "longitude"
-            , heading: "heading"
-            , is_heading_accurate: false
-         };
-        
-        
+            latitude: crd.latitude,
+            longitude: crd.longitude,
+            heading: crd.heading,
+            is_heading_accurate: true
+        };
+
+
         $('#divGeoWait').hide();
-        
-        
-        
-        var crd = pos.coords;
-        if (typeof lat1 == "undefined" && typeof lon1 == "undefined") {
-            call_success_functions(_current_position);
-        }
-        else {
-            var d = getDistance.calculate(crd.latitude, crd.longitude, lat1, lon1);
+
+
+
+
+        if (!_last_position) {
+            _call_success_functions(_current_position);
+        } else {
+            var d = getDistance.calculate(crd.latitude, crd.longitude, _last_position.latitude, _last_position.longitude);
             if (d > 20) { //20
-                call_success_functions(_current_position);
+                _call_success_functions(_current_position);
             }
+        }
+
+    }
+
+
+    function _call_success_functions(pos) {
+        for (var i = 0; i < _success_functions.length; i++) {
+            _success_functions[i](pos);
+        }
+    }
+
+    function _call_error_functions(err) {
+        for (var i = 0; i < _error_functions.length; i++) {
+            _error_functions[i](err);
         }
     }
 
     function _event_errorPosition(err) {
+        $('#divGeoWait').show();
+        _last_position = null;
         _current_position = null;
-        call_error_functions(err);
+        _call_error_functions(err);
     }
     // Public API
     return {
-        init: init
-        , register: register
-        , get: function () {
+        init: init,
+        register: register,
+        get: function () {
             return _current_position;
         }
     }

@@ -21,8 +21,7 @@ var poiManager = (function () {
         // $('#divGeoWait').show();
         // $('#divGeoWait').hide();
         positionManager.register(_event_watchPosition, function (err) {
-            $('#divGeoWait').hide();
-            alert('ERROR(' + err.code + '): ' + err.message);
+                        alert('ERROR(' + err.code + '): ' + err.message);
         });
         document.addEventListener("rotarydetent", _event_rotaryEventHandler, false);
         redraw();
@@ -139,29 +138,20 @@ var poiManager = (function () {
     }
     //Überwachung der Position 
     function _event_watchPosition(pos) {
-        $('#divGeoWait').hide();
+        
         console.log("watch");
-        var crd = pos.coords;
+        lat1 = pos.latitude;
+        console.log(pos);
+        lon1 = pos.longitude;
+        heading = pos.heading;
         // var heading = crd.heading;
         // console.log("richtung: " + heading);
         // direction2.style.transform = 'rotate(' + heading +
         // 'deg)';
-        if (typeof lat1 == "undefined" && typeof lon1 == "undefined") {
-            lat1 = crd.latitude;
-            lon1 = crd.longitude;
-            heading = crd.heading;
-            updatePOIS();
+        
+        updatePOIS();
             redraw();
-        }
-        else {
-            var d = getDistance.calculate(crd.latitude, crd.longitude, lat1, lon1);
-            if (d > 20) { //20
-                lat1 = crd.latitude;
-                lon1 = crd.longitude;
-                updatePOIS();
-                redraw();
-            }
-        }
+       
     }
     //Vibration ausführen für x Sekunden     
     function singleVibration() {
