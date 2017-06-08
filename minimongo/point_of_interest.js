@@ -185,7 +185,8 @@ var _pois =	[
         "coordinates": [11.639984,48.162806],
         "type": "Point"
     }
-},{
+},
+	{
     "properties": {
         "title": "DM",
         "description": "",
@@ -197,8 +198,8 @@ var _pois =	[
         "coordinates": [11.637035, 48.161222],
         "type": "Point"
     }
-}
-,{
+},
+{
     "properties": {
         "title": "nähe uni",
         "description": "",
@@ -210,9 +211,29 @@ var _pois =	[
         "coordinates": [10.908508, 48.357167],
         "type": "Point"
     }
-}
+},
 
-			];
+	{"properties": {"title": "Alt Athen","s_description": "Grichisches Restaurant","l_description": "Restaurant Öffnungszeiten: Di-Fr, So: 11:00-14:00 17:30-24:00 Sa:17:30-24:00 Mo: Ruhetag","sights": false,"insidertip": false,"culinary": true, "poi_img": "..\img\PointImgs\Test-Route-HSA\AltAthen.png"},
+        "geometry": {"coordinates": [10.9065143, 48.3564486],"type": "Point"}},
+	
+	{"properties": {"title": "Finas","s_description": "Scene bar","l_description": "Finas Cafe/Bar/Restaurant Öffnungszeiten: Mo,Di,Do,Fr: 11:30-01:00 Mi: 09:00-24:00 Sa:14:00-01:00","sights": false,"insidertip": false,"culinary": true, "poi_img": "..\img\PointImgs\Test-Route-HSA\Finas.png"},
+        "geometry": {"coordinates": [10.9025668, 48.3551092],"type": "Point"}},
+	
+	{"properties": {"title": "Glücksbach","s_description": "aka Brunnenlech","l_description": "Glücksbach Kanalbau: 1999 Beliebter Ort für studentisches Treiben. Studenten werfen vor Klausuren gerne einen Glückspfennig in den Bach","sights": true,"insidertip": false,"culinary": false, "poi_img": "..\img\PointImgs\Test-Route-HSA\Glücksbach.png"},
+        "geometry": {"coordinates": [10.9041288, 48.3552360],"type": "Point"}},
+	
+	{"properties": {"title": "Flying Pig","s_description": "Kunstwerk","l_description": "Künstler: Robert Mayer Fertigstellung: 2010 Intention: Wer hoch hinaus will, muss fliegen lernen","sights": true,"insidertip": false,"culinary": false, "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_02_Schwein-Blume.png"},
+        "geometry": {"coordinates": [10.9055179, 48.3585586],"type": "Point"}},
+	
+	{"properties": {"title": "Cafeteria","s_description": "Fh Cafeteria","l_description": "Cafeteria HSA Öffnungszeiten: Mo-Do: 07:30-16:30 Fr: 07:30-14:00 Sa/So: geschlossen","sights": false,"insidertip": false,"culinary": true, "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_04_Cafeteria_Rotes_Tor.png"},
+        "geometry": {"coordinates": [10.9062763, 48.3584731],"type": "Point"}},
+	
+	{"properties": {"title": "Smoking Man","s_description": "Graffiti","l_description": "Künstler: Graffiti King Fertigstellung: 2016 Intention: Ist noch was zum rauchen da?","sights": false,"insidertip": true,"culinary": false, "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_05_Graffiti_Men.png"},
+        "geometry": {"coordinates": [10.904621, 48.357507],"type": "Point"}},
+	
+	
+
+];
 			
 			
 			
