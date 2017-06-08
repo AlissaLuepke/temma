@@ -1,14 +1,29 @@
 "use strict";
 var positionManager = (function () {
     var _watchPosition_options = {
-        enableHighAccuracy: true,
-        maximumAge: 300000,
-        timeout: 27000
+        enableHighAccuracy: true
+        , maximumAge: 300000
+        , timeout: 27000
     };
     var DEBUG = true;
     var _success_functions = [];
     var _error_functions = [];
-    var _debug_fake_positions = [
+    var _debug_fake_positions = [{
+            latitude: 48.15961
+            , longitude: 11.64087
+            , heading: 200
+            , is_heading_accurate: true
+    },{
+            latitude: 48.159680 
+            , longitude: 11.641373
+            , heading: 220
+            , is_heading_accurate: true
+    },{
+            latitude: 48.159744 
+            , longitude: 11.641981
+            , heading: 250
+            , is_heading_accurate: true
+    }
 
     ];
     var _current_position = null;
@@ -19,18 +34,17 @@ var positionManager = (function () {
         // eigene Implemenierung
         {
             window.setInterval(function () {
-
                 _last_position = _current_position;
                 _current_position = {
-                    latitude: 48.15961,
-                    longitude: 11.64087,
-                    heading: 200,
-                    is_heading_accurate: true
+                    latitude: 48.15961
+                    , longitude: 11.64087
+                    , heading: 200
+                    , is_heading_accurate: true
                 };
-                
                 _call_success_functions(_current_position);
-            }, 1000);
-        } else {
+            }, 10000);
+        }
+        else {
             navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition, _watchPosition_options);
         }
     }
@@ -38,12 +52,10 @@ var positionManager = (function () {
     function register(success, error) {
         if (!!success) {
             _success_functions.push(success);
-
         }
         if (!!error) {
             _error_functions.push(error);
         }
-
     }
     //Überwachung der Position 
     function _event_watchPosition(pos) {
@@ -51,29 +63,22 @@ var positionManager = (function () {
         _last_position = _current_position;
         //eigene Parameter
         _current_position = {
-            latitude: crd.latitude,
-            longitude: crd.longitude,
-            heading: crd.heading,
-            is_heading_accurate: true
+            latitude: crd.latitude
+            , longitude: crd.longitude
+            , heading: crd.heading
+            , is_heading_accurate: true
         };
-
-
         $('#divGeoWait').hide();
-
-
-
-
         if (!_last_position) {
             _call_success_functions(_current_position);
-        } else {
+        }
+        else {
             var d = getDistance.calculate(crd.latitude, crd.longitude, _last_position.latitude, _last_position.longitude);
-            if (d > 20) { //20
+            if (d > 1) { //20
                 _call_success_functions(_current_position);
             }
         }
-
     }
-
 
     function _call_success_functions(pos) {
         for (var i = 0; i < _success_functions.length; i++) {
@@ -95,9 +100,9 @@ var positionManager = (function () {
     }
     // Public API
     return {
-        init: init,
-        register: register,
-        get: function () {
+        init: init
+        , register: register
+        , get: function () {
             return _current_position;
         }
     }
