@@ -4,7 +4,6 @@
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Temmo - Tell me more about</title>
-
     <link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
     <!--    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">-->
     <link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
@@ -12,51 +11,26 @@
     <link rel="stylesheet" href="css/style.css"> </head>
 
 <body>
-
     <!-- Hauptseite: Hier befindet sich die Hauptfunktionalität der Applikation--->
-
     <div data-role="page" class="ui-page ui-page-active " id="main">
-       
-       <div id="pushMessage"></div>
+        <div id="pushMessage"></div>
         <!--        <div data-role="content" class="ui-content new_margin_content" >-->
-
         <!-- Wenn Position abgerufen wird wieder einblenden -->
-        <!--          <div id="divGeoWait"><img src="img/loading.svg" alt="loading"> </div>-->
-
-
+<!--          <div id="divGeoWait"><img src="img/loading.svg" alt="loading"> </div>-->
         <div id="center">
             <!-- N muss rotiert werden im selben winkel -->
-            <!--                <div id="north" style="left: 147.5px; top: 20px">N</div>-->
-
-
-            <!--Punkt zum Testen - Müssen dann wieder gelöscht werden-->
-           <!-- <div class="culinary culinaryactive" style=" left: 147.5px; top: -10px"></div>
-
-            <div class="insidertip " style=" left: 147.5px; top: 305px"></div>-->
-        </div>
+            <!--                <div id="north" style="left: 147.5px; top: 20px">N</div>--></div>
         <div class="text">
             <div id="title"></div>
         </div>
-        <div id="image">
-
-
-        </div>
-
+        <div id="image"> </div>
         <div id="direction"></div>
         <input type="button" id="direction-button">
-
-
-
-
-
         <div class="textdist">
             <div id="distance"></div>
         </div>
     </div>
     <!--    </div>-->
-
-
-
     <!--Filterseite: Auswahlmöglichkeiten zum Filtern nach Kategorie --->
     <div class="ui-page" id="filterPage">
         <div class="ui-header ">
@@ -72,12 +46,9 @@
                 <li id="culinary">Landestypische
                     <br/> Speisen &amp; Getränke</li>
                 <li id="insidertip">Insider Tipps</li>
-
-
             </ul>
         </div>
     </div>
-
     <!--Einstellungsseite: Stumm schalten der Applikation --->
     <div class="ui-page" id="settingsPage">
         <div class="ui-header"></div>
@@ -85,27 +56,30 @@
             <ul class="ui-listview ">
                 <li id="stumm">Stumm schalten</li>
             </ul>
-
-                
         </div>
     </div>
-    
-     <div class="ui-page" id="pushPage">
-          <div id="notificationimage">  </div>
-          <div class="notificationTitle">
-              
-          </div>
-
+    <!-- Notificationsseite: -->
+    <div class="ui-page" id="pushPage">
+        <div id="notificationimage"> </div>
+        <div>
+            <div class="notificationTitle"> </div>
+            
+            <div class="infoIcon"> </div>
+        </div>
+        
+        
+        
         
     </div>
-
-
-
+    
+    
+    
+    
+    
+    
     <script src="lib/jquery.js" type="text/javascript"></script>
     <script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
-
     <!--        <script src="lib/jquery-1.11.1.min.js" type="text/javascript"></script>-->
-
     <script src="minimongo/jsdelivr.js" type="text/javascript"></script>
     <script src="minimongo/dist/minimongo.js"></script>
     <script src="minimongo/point_of_interest.js" type="text/javascript"></script>

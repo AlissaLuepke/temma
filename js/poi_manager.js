@@ -40,7 +40,7 @@ var poiManager = (function () {
     for (var i in categories) {
         if (!categories.hasOwnProperty(i)) continue;
         $('#' + i).unbind().click(function () {
-            pushmessageManager.message("test");
+           
             if ($(this).hasClass($(this).attr('id') + 'filteractive')) {
                 $('#' + $(this).attr('id')).removeClass($(this).attr('id') + 'filteractive');
                 active[categories[$(this).attr('id')]] = false;
@@ -170,12 +170,14 @@ var poiManager = (function () {
     function bufferUser() {
         for (var i = 0; i < pois.length; i++) {
             if (pois[i]._radian.distance <= 40) {
+                console.log("bufferUser function");
                 notificationManager.message(pois[i]);
                 
                 // alert("Irgendeine Sehenswürdigekit");
             }
         }
     }
+    bufferUser();
     // rotation Clockwise und Counterclockwise
     function _event_rotaryEventHandler(e) {
         var index, len = pois.length,

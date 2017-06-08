@@ -42,7 +42,7 @@ var positionManager = (function () {
                     , is_heading_accurate: true
                 };
                 _call_success_functions(_current_position);
-            }, 30000);
+            }, 10000);
         }
         else {
             navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition, _watchPosition_options);
