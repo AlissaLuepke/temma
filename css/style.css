@@ -2,13 +2,14 @@
     font-family: 'Roboto-Regular';
     src: url('../font/Roboto/Roboto-Regular.ttf');
 }
+
 * {
     font-family: 'Roboto-Regular', sans-serif;
-    
 }
 
 body {
-    font-size: 1.9rem !important; /*27pt ----> Von den Design Team vorgegeben*/
+    font-size: 1.9rem !important;
+    /*27pt ----> Von den Design Team vorgegeben*/
     margin: 0px auto;
     background-color: #3B3A37;
     max-height: 200px;
@@ -17,116 +18,93 @@ body {
     height: 100%;
     overflow: hidden;
 }
-.centerText{
+
+/* Farben für Kategorien */
+
+#sightsColor{
+    color: #ff4646;
+}
+#insidertipColor{
+     color: #00cdff;
+}
+#insidertipColor{
+    color: #67d067;
+}
+
+
+
+
+.centerText {
     text-align: center;
 }
 
-#main{
-   overflow: hidden; 
-}
 
-#stumm{
-     color: #ffffff;
+/* Settingsseite: Button zum Stummschalten der  Applikation*/
+#stumm {
+    color: #ffffff;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
 }
-.stummactive{
-    background-color: #fff ;
+
+.stummactive {
+    background-color: #fff;
     color: #000000 !important;
 }
 
-#image{
-    height: 360px;
-    width: 360px;
-    margin: 0 !important;
-    padding: 0! important;
-    opacity: 0.6;
-    position:absolute;
-    top: 0;
-}
-
-#pushimage{
-    height: 360px;
-    width: 360px;
-    margin: 0 !important;
-    padding: 0! important;
-    opacity: 1;
-    position:absolute;
-    top: 0; 
-}
-#imgPOI{
-    height: 360px;
-    width: 360px;
-}
-#imgPOIfront{
-    height: 360px;
-    width: 360px;
-    z-index: 9999 !important;
-}
-
-#outer {
-    
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: blue;
-}
-
-.new_margin_content {
-    margin: 0 !important;
-    
-/*    padding: 0 !important;*/
-    /*max-height: 320px !important;*/
-
-}
-
-#center {
-    margin: auto;
-    top: -22.5px;
-    /* left: 90px; */
-    padding: 0;
-    max-height: 360px;
-    max-width: 360px;
-    height: 315px;
-    width: 315px;
-    border-radius: 157.5px;
-     transform: rotate(0deg);
-/*    background-color: rgba(255, 255, 0, 0.31);*/
-    position: relative;
-    z-index: 2;
-    /* left: 200px; */
-    /* top: 100px; */
-}
-/*#center :child {
-
-}*/
-#divGeoWait{
-     position: relative;
-    width: 120px;
-    height: 120px;
-    top: 120px;
-    left: 120px;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 9999;
-    overflow: hidden;
-}
-
-#pushMessage{
+/* Pushnotificationen */
+#pushMessage {
     height: 130px;
     width: 100%;
     text-align: center;
-    z-index: 8888;
+    z-index: 100;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
     display: none;
-    
 }
 
+
+#notificationimage{
+    height: 360px;
+    width: 360px;
+    margin: 0 !important;
+    padding: 0! important;
+    z-index: 2;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+}
+
+
+/* POI Manager */
+
+/*Dynamisches Bild für aktives POI*/
+#image {
+    height: 360px;
+    width: 360px;
+    margin: 0 !important;
+    padding: 0! important;
+    z-index: 2;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+}
+
+#imgPOI {
+    height: 360px;
+    width: 360px;
+}
+
+
+
+
+
+/*Dynamische Texte für aktives POI*/
 .text {
     position: absolute;
     width: 360px;
     top: 70px;
+    z-index: 3;
 }
 
 #title {
@@ -135,6 +113,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    z-index: 3;
 }
 
 .textdist {
@@ -142,14 +122,54 @@ body {
     width: 360px;
     max-height: 300px;
     top: 250px;
+    z-index: 3;
 }
+
 
 #distance {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    z-index: 3;
 }
 
+
+/* Kreis auf dem die Sehenswürdigkeiten gezeichnet werden */
+
+#center {
+    margin: auto;
+    top: -22.5px;
+    padding: 0;
+    max-height: 360px;
+    max-width: 360px;
+    height: 315px;
+    width: 315px;
+    border-radius: 157.5px;
+    transform: rotate(0deg);
+    /*    background-color: rgba(255, 255, 0, 0.31);*/
+    position: relative;
+    z-index: 4;
+  
+}
+
+/* SVG Ladezirkel */
+
+#divGeoWait {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    top: 120px;
+    left: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow: hidden;
+}
+
+
+
+
+/* Pfeil auf main Seite */
 #direction {
     position: absolute;
     width: 70px;
@@ -160,10 +180,7 @@ body {
     background-repeat: no-repeat;
     /*transition: all 1s ease-out;*/
     transform: rotate(0deg);
-}
-#north{
-    font-size: 20px !important;
-    position: absolute;
+    z-index: 3;
 }
 
 #direction-button {
@@ -176,8 +193,14 @@ body {
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     border-color: transparent;
+    z-index: 3;
 }
 
+/* Mögliche Anzeige wo Norden ist  */ 
+#north {
+    font-size: 20px !important;
+    position: absolute;
+}
 
 /* Filter */
 
@@ -202,11 +225,13 @@ body {
     margin-bottom: 10px;
 }
 
-#okButton{
+#okButton {
     color: #ffffff;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
 }
+
+
 #insidertip {
     color: #00cdff;
     border-top: 2px solid #00cdff;
@@ -220,10 +245,11 @@ body {
 }
 
 #culinary {
-    color:  #67d067;
+    color: #67d067;
     border-top: 2px solid #67d067;
     border-bottom: 2px solid #67d067;
 }
+
 .culinaryfilteractive {
     color: #000 !important;
     background-color: #67d067;
@@ -233,8 +259,6 @@ body {
     color: #000 !important;
     background-color: #ff4646;
 }
-
-
 
 .insidertipfilteractive {
     color: #000 !important;
@@ -314,7 +338,7 @@ body {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }
 
 .insidertipactive {
@@ -324,7 +348,7 @@ body {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }
 
 .culinaryactive {
@@ -334,5 +358,5 @@ body {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }
