@@ -53,17 +53,17 @@ pushPage.addEventListener("swipe", function (e) {
     }
 });
 
-/*
+
 $("#center").click(function () {
   poiManager.picture();
     console.log("hey");
-});*/
-
+});
+/*
 $("#center").click(function () {
     $("#pushMessage").fadeIn(600);
     
 });
-
+*/
 $('#image').click(function () {
    // $("#image").css("opacity", "0.6");
     $('#image').fadeOut(500);

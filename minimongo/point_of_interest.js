@@ -812,41 +812,42 @@ var database = (function () {
                 "sights": false,
                 "insidertip": false,
                 "culinary": true,
-                "poi_img": ""
+                "poi_img": "02_Schwein-Blume.jpg"
             },
             "geometry": {
                 "coordinates": [11.639609, 48.157723],
                 "type": "Point"
             }
-}, {
+            },
+        {
             "properties": {
                 "title": "DM",
                 "description": "",
                 "sights": true,
                 "insidertip": false,
                 "culinary": false,
-                "poi_img": ""
+                "poi_img": "04_Cafeteria_Rotes_Tor.jpg"
             },
             "geometry": {
                 "coordinates": [11.639984, 48.162806],
                 "type": "Point"
             }
-}
-        , {
+        },
+        {
             "properties": {
                 "title": "DM",
                 "description": "",
                 "sights": false,
                 "insidertip": true,
                 "culinary": false,
-                "poi_img": ""
+                "poi_img": "DSC_5181.jpg"
             },
             "geometry": {
                 "coordinates": [11.637035, 48.161222],
                 "type": "Point"
             }
-}
-        , {
+        },
+        {
             "properties": {
                 "title": "nähe uni",
                 "description": "",
@@ -859,10 +860,8 @@ var database = (function () {
                 "coordinates": [10.908508, 48.357167],
                 "type": "Point"
             }
-}
-
-
-, {
+        },
+        {
             "properties": {
                 "title": "Alt Athen",
                 "s_description": "Grichisches Restaurant",
@@ -876,7 +875,8 @@ var database = (function () {
                 "coordinates": [10.9065143, 48.3564486],
                 "type": "Point"
             }
-}, {
+        },
+        {
             "properties": {
                 "title": "Finas",
                 "s_description": "Scene bar",
@@ -890,7 +890,8 @@ var database = (function () {
                 "coordinates": [10.9025668, 48.3551092],
                 "type": "Point"
             }
-}, {
+            },
+        {
             "properties": {
                 "title": "Glücksbach",
                 "s_description": "aka Brunnenlech",
@@ -904,7 +905,8 @@ var database = (function () {
                 "coordinates": [10.9041288, 48.3552360],
                 "type": "Point"
             }
-}, {
+        },
+        {
             "properties": {
                 "title": "Flying Pig",
                 "s_description": "Kunstwerk",
@@ -918,7 +920,8 @@ var database = (function () {
                 "coordinates": [10.9055179, 48.3585586],
                 "type": "Point"
             }
-}, {
+        },
+        {
             "properties": {
                 "title": "Cafeteria",
                 "s_description": "Fh Cafeteria",
@@ -932,7 +935,8 @@ var database = (function () {
                 "coordinates": [10.9062763, 48.3584731],
                 "type": "Point"
             }
-}, {
+        },
+        {
             "properties": {
                 "title": "Smoking Man",
                 "s_description": "Graffiti",

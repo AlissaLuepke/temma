@@ -5,7 +5,7 @@ var positionManager = (function () {
         , maximumAge: 300000
         , timeout: 27000
     };
-    var DEBUG = true;
+    var DEBUG = false;
     var _success_functions = [];
     var _error_functions = [];
     var _debug_fake_positions = [{
@@ -74,7 +74,7 @@ var positionManager = (function () {
         }
         else {
             var d = getDistance.calculate(crd.latitude, crd.longitude, _last_position.latitude, _last_position.longitude);
-            if (d > 1) { //20
+            if (d > 10) { //20
                 _call_success_functions(_current_position);
             }
         }
