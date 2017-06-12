@@ -865,9 +865,7 @@ var database = (function () {
                     "description": "",
                     "sights": false,
                     "insidertip": true,
-                    "culinary": false
-
-                        "culinary": false,
+                    "culinary": false,
                     "poi_img": ""
                 },
                 "geometry": {
