@@ -165,15 +165,22 @@ var poiManager = (function () {
         redraw();
 
     }
+     function singleVibration() {
+            /* Vibrate for 2 seconds */
+            navigator.vibrate(1000);
+        }
+        
    
     // Puffer um den Nutzer bei Distanz von x Metern 
     function bufferUser() {
         for (var i = 0; i < pois.length; i++) {
             if (pois[i]._radian.distance <= 40) {
                 console.log("bufferUser function");
-                notificationManager.message(pois[i]);
+                 singleVibration();
                 
-                // alert("Irgendeine Sehenswürdigekit");
+                //notificationManager.message(pois[i]);
+                
+                alert("Irgendeine Sehenswürdigekit");
             }
         }
     }

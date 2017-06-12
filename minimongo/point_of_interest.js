@@ -626,9 +626,8 @@ var database = (function () {
                     "s_description": "",
                     "l_description": "",
                     "sights": false,
-                    "in, "
-                    poi_img ": "
-                    "sidertip": true,
+                    "poi_img ":"" ,
+                    "insidertip": true,
                     "culinary": false,
                     "poi_img": ""
                 },
