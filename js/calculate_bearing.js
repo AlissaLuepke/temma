@@ -18,7 +18,7 @@ var getBearing = (function () {
 				* Math.cos(dLon);
 
 		var bearing = (Math.atan2(y, x)) * 180 / Math.PI;
-		console.log("bearing1: " + bearing);
+		//console.log("bearing1: " + bearing);
 		var bearing2 = (bearing + 360) % 360;
 		//console.log("bearing2: " + bearing);
 		bearing = (bearing - 90) * Math.PI / 180;

@@ -70,8 +70,7 @@ body {
     margin: 0 !important;
     padding: 0! important;
     z-index: 2;
-    opacity: 1;
-    position: absolute;
+        position: absolute;
     top: 0;
 }
 
@@ -85,7 +84,7 @@ body {
     margin: 0 !important;
     padding: 0! important;
     z-index: 2;
-    opacity: 0.6;
+    opacity: 1;
     position: absolute;
     top: 0;
 }

@@ -840,7 +840,7 @@ var database = (function () {
                 "sights": false,
                 "insidertip": true,
                 "culinary": false,
-                "poi_img": "DSC_5181.jpg"
+                "poi_img": "DSC_5191.jpg"
             },
             "geometry": {
                 "coordinates": [11.637035, 48.161222],
@@ -869,7 +869,7 @@ var database = (function () {
                 "sights": false,
                 "insidertip": false,
                 "culinary": true,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\AltAthen.png"
+                "poi_img": "PointImgs\Test-Route-HSA/AltAthen.png"
             },
             "geometry": {
                 "coordinates": [10.9065143, 48.3564486],
@@ -884,7 +884,7 @@ var database = (function () {
                 "sights": false,
                 "insidertip": false,
                 "culinary": true,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\Finas.png"
+                "poi_img": "PointImgs/Test-Route-HSA/Finas.png"
             },
             "geometry": {
                 "coordinates": [10.9025668, 48.3551092],
@@ -899,7 +899,7 @@ var database = (function () {
                 "sights": true,
                 "insidertip": false,
                 "culinary": false,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\Glücksbach.png"
+                "poi_img": "PointImgs/Test-Route-HSA/Glücksbach.png"
             },
             "geometry": {
                 "coordinates": [10.9041288, 48.3552360],
@@ -914,7 +914,7 @@ var database = (function () {
                 "sights": true,
                 "insidertip": false,
                 "culinary": false,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_02_Schwein-Blume.png"
+                "poi_img": "PointImgs/Test-Route-HSA/Kreis_02_Schwein-Blume.png"
             },
             "geometry": {
                 "coordinates": [10.9055179, 48.3585586],
@@ -929,7 +929,7 @@ var database = (function () {
                 "sights": false,
                 "insidertip": false,
                 "culinary": true,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_04_Cafeteria_Rotes_Tor.png"
+                "poi_img": "PointImgs/Test-Route-HSA/Kreis_04_Cafeteria_Rotes_Tor.png"
             },
             "geometry": {
                 "coordinates": [10.9062763, 48.3584731],
@@ -944,7 +944,7 @@ var database = (function () {
                 "sights": false,
                 "insidertip": true,
                 "culinary": false,
-                "poi_img": "..\img\PointImgs\Test-Route-HSA\Kreis_05_Graffiti_Men.png"
+                "poi_img": "PointImgs/Test-Route-HSA/Kreis_05_Graffiti_Men.png"
             },
             "geometry": {
                 "coordinates": [10.904621, 48.357507],

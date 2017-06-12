@@ -1,13 +1,16 @@
 var mainpage = document.getElementById("main");
 tau.event.enableGesture(mainpage, new tau.event.gesture.Swipe());
 mainpage.addEventListener("swipe", function (e) {
-    
+
     if (e.detail.direction == "left") {
         tau.changePage(document.getElementById("filterPage"));
     } else {
         tau.changePage(document.getElementById("settingsPage"));
     }
 });
+
+var filterpage = document.getElementById("filterPage");
+// Rotary Event disable 
 
 
 var settingspage = document.getElementById("settingsPage")
@@ -35,8 +38,8 @@ $("#okButton").click(function () {
     tau.changePage(document.getElementById("main"));
 });
 
-$("#pushMessage").click(function(){
-   
+$("#pushMessage").click(function () {
+
     tau.changePage(document.getElementById("pushPage"));
     $("#pushMessage").hide();
 
@@ -46,16 +49,17 @@ $("#pushMessage").click(function(){
 var pushPage = document.getElementById("pushPage")
 tau.event.enableGesture(pushPage, new tau.event.gesture.Swipe());
 pushPage.addEventListener("swipe", function (e) {
-    
+
     if (e.detail.direction == "right") {
-        
+
         tau.changePage(document.getElementById("main"));
     }
 });
 
 
 $("#center").click(function () {
-  poiManager.picture();
+    poiManager.picture();
+    tau.event.disableGesture(mainpage);
     console.log("hey");
 });
 /*
@@ -65,7 +69,7 @@ $("#center").click(function () {
 });
 */
 $('#image').click(function () {
-   // $("#image").css("opacity", "0.6");
+    // $("#image").css("opacity", "0.6");
     $('#image').fadeOut(500);
 });
 
@@ -105,5 +109,5 @@ $("#direction").click(function () {
 
 
 positionManager.init();
-notificationManager.message();
+//notificationManager.message();
 poiManager.init(database.db);

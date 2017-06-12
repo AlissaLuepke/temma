@@ -5,7 +5,9 @@ var positionManager = (function () {
         , maximumAge: 300000
         , timeout: 27000
     };
-    var DEBUG = false;
+    
+    
+    var DEBUG = true;
     var _success_functions = [];
     var _error_functions = [];
     var _debug_fake_positions = [{
@@ -45,6 +47,7 @@ var positionManager = (function () {
             }, 10000);
         }
         else {
+            console.log("positionmanager");
             navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition, _watchPosition_options);
         }
     }
@@ -74,7 +77,7 @@ var positionManager = (function () {
         }
         else {
             var d = getDistance.calculate(crd.latitude, crd.longitude, _last_position.latitude, _last_position.longitude);
-            if (d > 10) { //20
+            if (d > 0) { //20
                 _call_success_functions(_current_position);
             }
         }
@@ -82,6 +85,7 @@ var positionManager = (function () {
 
     function _call_success_functions(pos) {
         for (var i = 0; i < _success_functions.length; i++) {
+            //console.log("sucessfull");
             _success_functions[i](pos);
         }
     }
