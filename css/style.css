@@ -8,39 +8,103 @@
 }
 
 body {
+    font-size: 1.9rem !important;
+    /*27pt ----> Von den Design Team vorgegeben*/
     margin: 0px auto;
     background-color: #3B3A37;
-}
-
-#outer {
-    position: absolute;
+    max-height: 200px;
+    max-width: 200px;
+    margin: 0;
     height: 100%;
+    overflow: hidden;
+}
+
+/* Farben für Kategorien */
+
+#sightsColor{
+    color: #ff4646;
+}
+#insidertipColor{
+     color: #00cdff;
+}
+#insidertipColor{
+    color: #67d067;
+}
+
+
+
+
+.centerText {
+    text-align: center;
+}
+
+
+/* Settingsseite: Button zum Stummschalten der  Applikation*/
+#stumm {
+    color: #ffffff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.stummactive {
+    background-color: #fff;
+    color: #000000 !important;
+}
+
+/* Pushnotificationen */
+#pushMessage {
+    height: 130px;
     width: 100%;
-    background-color: blue;
+    text-align: center;
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    display: none;
 }
 
-.new_margin_content {
-    margin-top: 0 !important;
+
+#notificationimage{
+    height: 360px;
+    width: 360px;
+    margin: 0 !important;
+    padding: 0! important;
+    z-index: 2;
+    opacity: 1;
+    position: absolute;
+    top: 0;
 }
 
-#center {
-    margin: auto;
-    top: 22.5px;
-    /* left: 90px; */
-    padding: 0;
-    width: 315px;
-    height: 315px;
-    border-radius: 157.5px;
-    /*background-color: yellow;*/
-    position: relative;
-    /* left: 200px; */
-    /* top: 100px; */
+
+/* POI Manager */
+
+/*Dynamisches Bild für aktives POI*/
+#image {
+    height: 360px;
+    width: 360px;
+    margin: 0 !important;
+    padding: 0! important;
+    z-index: 2;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
 }
 
+#imgPOI {
+    height: 360px;
+    width: 360px;
+}
+
+
+
+
+
+/*Dynamische Texte für aktives POI*/
 .text {
     position: absolute;
     width: 360px;
     top: 70px;
+    z-index: 3;
 }
 
 #title {
@@ -49,20 +113,63 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    z-index: 3;
 }
 
 .textdist {
     position: absolute;
     width: 360px;
+    max-height: 300px;
     top: 250px;
+    z-index: 3;
 }
+
 
 #distance {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    z-index: 3;
 }
 
+
+/* Kreis auf dem die Sehenswürdigkeiten gezeichnet werden */
+
+#center {
+    margin: auto;
+    top: -22.5px;
+    padding: 0;
+    max-height: 360px;
+    max-width: 360px;
+    height: 315px;
+    width: 315px;
+    border-radius: 157.5px;
+    transform: rotate(0deg);
+    /*    background-color: rgba(255, 255, 0, 0.31);*/
+    position: relative;
+    z-index: 4;
+  
+}
+
+/* SVG Ladezirkel */
+
+#divGeoWait {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    top: 120px;
+    left: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow: hidden;
+}
+
+
+
+
+/* Pfeil auf main Seite */
 #direction {
     position: absolute;
     width: 70px;
@@ -71,8 +178,9 @@ body {
     left: 145px;
     background-image: url('../img/arrow.svg');
     background-repeat: no-repeat;
-    transition: all 1s ease-out;
+    /*transition: all 1s ease-out;*/
     transform: rotate(0deg);
+    z-index: 3;
 }
 
 #direction-button {
@@ -85,13 +193,22 @@ body {
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     border-color: transparent;
+    z-index: 3;
 }
 
+/* Mögliche Anzeige wo Norden ist  */ 
+#north {
+    font-size: 20px !important;
+    position: absolute;
+}
 
 /* Filter */
 
 .ui-listview li {
     border-image: none;
+    line-height: 2.5rem;
+    font-size: 1.9rem;
+    padding: 1.9rem 1.9rem;
     /*    border-image: -webkit-linear-gradient(0deg,transparent,#245b85,transparent) 1; */
     */
 }
@@ -108,38 +225,44 @@ body {
     margin-bottom: 10px;
 }
 
+#okButton {
+    color: #ffffff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+
 #insidertip {
-    color: #FF00B2;
-    border-top: 2px solid #FF00B2;
-    border-bottom: 2px solid #FF00B2;
+    color: #00cdff;
+    border-top: 2px solid #00cdff;
+    border-bottom: 2px solid #00cdff;
 }
 
 #sights {
-    color: #FFDC19;
-    border-top: 2px solid #FFDC19;
-    border-bottom: 2px solid #FFDC19;
+    color: #ff4646;
+    border-top: 2px solid #ff4646;
+    border-bottom: 2px solid #ff4646;
 }
 
 #culinary {
-    color:  #14C9CC;
-    border-top: 2px solid #14C9CC;
-    border-bottom: 2px solid #14C9CC;
+    color: #67d067;
+    border-top: 2px solid #67d067;
+    border-bottom: 2px solid #67d067;
 }
+
 .culinaryfilteractive {
     color: #000 !important;
-    background-color: #14C9CC;
+    background-color: #67d067;
 }
 
 .sightsfilteractive {
     color: #000 !important;
-    background-color: #FFDC19;
+    background-color: #ff4646;
 }
-
-
 
 .insidertipfilteractive {
     color: #000 !important;
-    background-color: #FF00B2;
+    background-color: #00cdff;
 }
 
 
@@ -147,12 +270,14 @@ body {
 
 .culinary {
     /*opacity: 0.5;*/
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
+    /*height: 5.197px;
+    width: 5.197px;*/
     border-radius: 10px;
-    /*     background: #FFDC19; */
+    /*     background: #ff4646; */
     position: absolute;
-    border: 2px solid #14C9CC;
+    border: 2px solid #67d067;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -167,11 +292,12 @@ body {
 
 .sights {
     /*opacity: 0.5;*/
-    height: 20px;
-    width: 20px;
+    /* 22.541px */
+    height: 22px;
+    width: 22px;
     border-radius: 10px;
-    border: 2px solid #FFDC19;
-    /*background: #FFDC19;*/
+    border: 2px solid #ff4646;
+    /*background: #ff4646;*/
     position: absolute;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -187,11 +313,11 @@ body {
 
 .insidertip {
     /*opacity: 0.5;*/
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
     border-radius: 10px;
-    border: 2px solid #FF00B2;
-    /*background: #FFDC19;*/
+    border: 2px solid #00cdff;
+    /*background: #ff4646;*/
     position: absolute;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -206,31 +332,31 @@ body {
 }
 
 .sightsactive {
-    background-color: #FFDC19;
+    background-color: #ff4646;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }
 
 .insidertipactive {
-    background-color: #FF00B2;
+    background-color: #00cdff;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }
 
 .culinaryactive {
-    background-color: #14C9CC;
+    background-color: #67d067;
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    z-index: 9999;
+    z-index: 12;
 }

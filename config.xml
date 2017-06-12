@@ -12,16 +12,15 @@
     <feature name="tizen.org/feature/sensor.gyroscope"/>
     <feature name="tizen.org/feature/web.service"/>
     <feature name="tizen.org/feature/sensor.accelerometer"/>
-   <!--  <feature name="tizen.org/feature/sensor.magnetometer"/> -->
     <icon src="icon.png"/>
-    <name>Temma</name>
+    <name>Temmo</name>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://tizen.org/privilege/notification"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="wearable"/>
-    <!-- <tizen:service id="7pVzrIP6AZ.ServiceApplication" on-boot="false" auto-restart="true">
+    <!-- <tizen:service id="7pVzrIP6AZ.ServiceApplication" on-boot="false" auto-restart="false">
         <tizen:content src="js/temma_serviceapp.js"/>
         <tizen:name>TemmaWebserviceApplication</tizen:name>
         <tizen:icon src="icon.png"/>

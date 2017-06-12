@@ -4,7 +4,7 @@ module.exports.onStart = function()
 {
 	console.log("Temma:Service Started");
 	
-	var remoteMsgPort = tizen.messageport.requestRemoteMessagePort("websvcapp0.WebServiceApplication", "SERVICE_SAMPLE1");
+	var remoteMsgPort = tizen.messageport.requestRemoteMessagePort("7pVzrIP6AZ.ServiceApplication", "SERVICE_SAMPLE1");
 	var localMsgPort = tizen.messageport.requestTrustedLocalMessagePort("SERVICE_SAMPLE2");
 	
 	function onrecived(data, remoteMsgPort) {
@@ -18,6 +18,7 @@ module.exports.onStart = function()
 			}
 	}
 	var watchId = localMsgPort.addMessagePortListener(onrecived);
+    console.log("Temma:Service here");
 };
 
 
@@ -28,7 +29,7 @@ module.exports.onRequest = function()
    if (reqAppControl)
    {
 		   
-	   }
+	   
       if (reqAppControl.appControl.operation === "http://tizen.org/appcontrol/operation/service")
       {
          try
@@ -39,6 +40,7 @@ module.exports.onRequest = function()
          catch (e) {
 			// TODO: handle exception
 		}
+      }
       }
 };
 
