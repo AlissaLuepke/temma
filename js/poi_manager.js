@@ -26,6 +26,7 @@ var poiManager = (function () {
             alert('ERROR(' + err.code + '): ' + err.message);
         });
         document.addEventListener("rotarydetent", _event_rotaryEventHandler, false);
+        bufferUser();
         redraw();
     }
 

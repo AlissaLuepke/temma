@@ -10,7 +10,8 @@ mainpage.addEventListener("swipe", function (e) {
 });
 
 var filterpage = document.getElementById("filterPage");
-// Rotary Event disable 
+// TODO:
+// Rotary Event disabled
 
 
 var settingspage = document.getElementById("settingsPage")
