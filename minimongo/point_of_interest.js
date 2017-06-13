@@ -849,6 +849,20 @@ var database = (function () {
         },
         {
             "properties": {
+                "title": "zuhause",
+                "description": "",
+                "sights": false,
+                "insidertip": true,
+                "culinary": false,
+                "poi_img": "DSC_5191.jpg"
+            },
+            "geometry": {
+                "coordinates": [11.64087, 48.15961],
+                "type": "Point"
+            }
+        },
+        {
+            "properties": {
                 "title": "nähe uni",
                 "description": "",
                 "sights": false,

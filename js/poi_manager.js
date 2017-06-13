@@ -3,7 +3,10 @@ var poiManager = (function () {
     var db, deg, o_deg, new_deg, lat1, lon1, currentObj, heading;
     var pois = [];
     var radians = [];
+    var has_seen_poi = [1];
+
     var active_poi = 0;
+
     var categories = {
         sights: 0,
         culinary: 1,
@@ -12,7 +15,7 @@ var poiManager = (function () {
     var active = [false, false, false];
 
 
-    //48.15961   11.640874
+    //48.15961   11.640874s
     function init(_db) {
         db = _db;
 
@@ -85,15 +88,27 @@ var poiManager = (function () {
 
     function changePOIS(results) {
         pois = [];
-        var had_active = false;
+        var had_active;
         for (var i = 0; i < results.length; i++) {
-
+            console.log("new result")
+            var has_seen = false;
             var lat2 = results[i].geometry.coordinates[1];
             var lon2 = results[i].geometry.coordinates[0];
             var props = results[i].properties;
             var id = results[i]._id;
             var is_active = active_poi ? results[i]._id == active_poi._id : false;
-
+            //  var has_seen =  visited_poi ? pois[i]._radian.has_seen == : false;
+         /*for (var i = 0; i < has_seen_poi.length; i++) {
+                console.log("for has seen");
+                if(id == has_seen_poi[i]){
+                    console.log("has_seen true");
+                    has_seen = true;
+                }else{
+                    console.log("has_seen false");
+                    has_seen = false;
+                }
+                
+            }*/
             if (is_active) {
                 had_active = true;
             }
@@ -114,10 +129,13 @@ var poiManager = (function () {
                     is_active: is_active, //true oder false
                     distance: d,
                     heading: heading,
+                    has_seen: has_seen
                 };
                 // in pois werden die daten von Poi reingeschrieben 
                 pois.push(poi);
-
+                pois.sort(function (a, b) {
+                    return b._radian.angle - a._radian.angle
+                });
                 //console.log(poi._radian.is_active);
             }
         }
@@ -148,20 +166,30 @@ var poiManager = (function () {
     function singleVibration() {
         console.log("vibration");
         /* Vibrate for 2 seconds */
-        navigator.vibrate(1000);
+        navigator.vibrate(500);
     }
 
 
     // Puffer um den Nutzer bei Distanz von x Metern 
     function bufferUser() {
         for (var i = 0; i < pois.length; i++) {
-            if (pois[i]._radian.distance <= 40) {
+            if (pois[i]._radian.distance <= 20) {
                 console.log("bufferUser function");
-                singleVibration();
-
+                console.log("he " + pois[i]._radian.has_seen);
                 //notificationManager.message(pois[i]);
+                //  if(has_seen_poi.indexOf(pois[i])){
+                if (pois[i]._radian.has_seen == false) {
+                    singleVibration();
 
-                alert("Irgendeine Sehenswürdigekit");
+                    alert(pois[i]._radian.properties.s_description);
+                    pois[i]._radian.has_seen = true;
+                    has_seen_poi.push(pois[i]._radian.id);
+                    changePOIS();
+                    console.log("has seen: " + has_seen_poi)
+                }
+                //has_seen_poi[pois[i]];
+
+                //}
             }
         }
     }
@@ -169,13 +197,13 @@ var poiManager = (function () {
     // rotation Clockwise und Counterclockwise
     function _event_rotaryEventHandler(e) {
         var index, len = pois.length,
-            index_change = 1,
+            index_change = -1,
             activeP, currentIndex;
         // console.log("len: " + len);
 
         //console.log("active1 " + JSON.stringify(active_poi));
         if (e.detail.direction === "CCW") {
-            index_change = -1;
+            index_change = 1;
             // console.log("CCW: " + index_change);
         }
 
@@ -230,18 +258,20 @@ var poiManager = (function () {
              return null;
          }*/
         if (active_poi == null) {
-            var  smallestDistance = [];
-           
-                smallestDistance = pois.sort(function (a, b) {
-                    return a._radian.distance - b._radian.distance;
-                });
+            /*       var  smallestDistance = [];
+                 
+                      smallestDistance = pois.sort(function (a, b) {
+                          return a._radian.distance - b._radian.distance;
+                      });
 
-            console.log("smallest D: " + smallestDistance[0]);
-            
-            
+                  console.log("smallest D: " + smallestDistance[0]);*/
+            /*  pois.sort(function(a,b){
+                  return b._radian.angle - a._radian.angle
+              });*/
+
             console.log("active_POI function null");
 
-            active_poi == smallestDistance[0];
+            // active_poi == smallestDistance[0];
 
 
             return active_poi;
@@ -272,7 +302,7 @@ var poiManager = (function () {
         var activeImage = active_poi.properties.poi_img;
         $("#image").css("opacity", "0.6");
         $("#image").css("z-index", "2");
-        $('#image').html("<img  id='imgPOI' src='img/" + activeImage + "' alt='image'>").fadeIn(1000).show(4000).fadeOut(1000);
+        $('#image').html("<img  id='imgPOI' src='img/" + activeImage + "' alt='image'>").fadeIn(1000).delay(2000).fadeOut(1000);
     }
 
     function showPicture() {
@@ -291,7 +321,7 @@ var poiManager = (function () {
         //center.style.transform = 'rotate(' + poi_rotation + 'deg)';
         console.log("redraw Arrow");
         var arrow_rotation = poi_rotation - deg;
-        direction.style.transform = 'rotate(' + deg + 'deg)';
+        //direction.style.transform = 'rotate(' + deg + 'deg)';
     }
 
     function redrawTextelements() {
