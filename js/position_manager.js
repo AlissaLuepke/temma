@@ -47,7 +47,7 @@ var positionManager = (function () {
             }, 10000);
         }
         else {
-            console.log("positionmanager");
+            //console.log("positionmanager");
             navigator.geolocation.watchPosition(_event_watchPosition, _event_errorPosition, _watchPosition_options);
         }
     }
@@ -62,6 +62,7 @@ var positionManager = (function () {
     }
     //Überwachung der Position 
     function _event_watchPosition(pos) {
+       
         var crd = pos.coords;
         _last_position = _current_position;
         //eigene Parameter
@@ -69,9 +70,10 @@ var positionManager = (function () {
             latitude: crd.latitude
             , longitude: crd.longitude
             , heading: crd.heading
+            , accuracy: crd.accuracy
             , is_heading_accurate: true
         };
-        $('#divGeoWait').hide();
+       
         if (!_last_position) {
             _call_success_functions(_current_position);
         }

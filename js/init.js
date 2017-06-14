@@ -9,7 +9,14 @@ mainpage.addEventListener("swipe", function (e) {
     }
 });
 
-var filterpage = document.getElementById("filterPage");
+var filterpage = document.getElementById("filterPage")
+tau.event.enableGesture(filterpage, new tau.event.gesture.Swipe());
+filterpage.addEventListener("swipe", function (e) {
+
+    if (e.detail.direction == "right") {
+        tau.changePage(document.getElementById("main"));
+    }
+});
 // TODO:
 // Rotary Event disabled
 
@@ -34,10 +41,10 @@ discardMessage.addEventListener("swipe", function (e) {
     }
 });
 
-$("#okButton").click(function () {
+/*$("#okButton").click(function () {
 
     tau.changePage(document.getElementById("main"));
-});
+});*/
 
 $("#pushMessage").click(function () {
 

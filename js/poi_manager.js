@@ -1,9 +1,9 @@
 "use strict";
 var poiManager = (function () {
-    var db, deg, o_deg, new_deg, lat1, lon1, currentObj, heading;
+    var db, deg, lat1, lon1, currentObj, heading, accuracy;
     var pois = [];
     var radians = [];
-    var has_seen_poi = [1];
+    var has_seen_poi = [];
 
     var active_poi = 0;
 
@@ -26,7 +26,21 @@ var poiManager = (function () {
         // $('#divGeoWait').show();
         // $('#divGeoWait').hide();
         positionManager.register(_event_watchPosition, function (err) {
-            alert('ERROR(' + err.code + '): ' + err.message);
+            switch (err.code) {
+            case 1:
+                err.message = "permission denied";
+                break;
+            case 2:
+                err.message = "position unavalable";
+                break;
+            case 3:
+                err.message = "timeout";
+                break;
+            default:
+                err.message = "Unbekannter Fehler";
+            }
+            // error Code löschen
+            alert(err.code + ': ' + err.message);
         });
         document.addEventListener("rotarydetent", _event_rotaryEventHandler, false);
         bufferUser();
@@ -90,7 +104,7 @@ var poiManager = (function () {
         pois = [];
         var had_active;
         for (var i = 0; i < results.length; i++) {
-            console.log("new result")
+
             var has_seen = false;
             var lat2 = results[i].geometry.coordinates[1];
             var lon2 = results[i].geometry.coordinates[0];
@@ -98,17 +112,16 @@ var poiManager = (function () {
             var id = results[i]._id;
             var is_active = active_poi ? results[i]._id == active_poi._id : false;
             //  var has_seen =  visited_poi ? pois[i]._radian.has_seen == : false;
-         /*for (var i = 0; i < has_seen_poi.length; i++) {
-                console.log("for has seen");
-                if(id == has_seen_poi[i]){
-                    console.log("has_seen true");
+            for (var j = 0; j < has_seen_poi.length; j++) {
+                //console.log("for has seen");
+                if (id == has_seen_poi[j]) {
+
                     has_seen = true;
-                }else{
-                    console.log("has_seen false");
+                } else {
                     has_seen = false;
                 }
-                
-            }*/
+
+            }
             if (is_active) {
                 had_active = true;
             }
@@ -146,17 +159,11 @@ var poiManager = (function () {
     }
     //Überwachung der Position 
     function _event_watchPosition(pos) {
-
-        // console.log("watch");
+          $('#divGeoWait').hide();
         lat1 = pos.latitude;
-        console.log("positions: " + JSON.stringify(pos));
         lon1 = pos.longitude;
         heading = pos.heading;
-        // var heading = crd.heading;
-        // console.log("richtung: " + heading);
-        // direction2.style.transform = 'rotate(' + heading +
-        // 'deg)';
-
+        accuracy = pos.accuracy;
         updatePOIS();
 
         redraw();
@@ -173,35 +180,28 @@ var poiManager = (function () {
     // Puffer um den Nutzer bei Distanz von x Metern 
     function bufferUser() {
         for (var i = 0; i < pois.length; i++) {
-            if (pois[i]._radian.distance <= 20) {
-                console.log("bufferUser function");
-                console.log("he " + pois[i]._radian.has_seen);
+            if (pois[i]._radian.distance <= 30) {
+
                 //notificationManager.message(pois[i]);
-                //  if(has_seen_poi.indexOf(pois[i])){
+
                 if (pois[i]._radian.has_seen == false) {
                     singleVibration();
-
                     alert(pois[i]._radian.properties.s_description);
-                    pois[i]._radian.has_seen = true;
-                    has_seen_poi.push(pois[i]._radian.id);
-                    changePOIS();
-                    console.log("has seen: " + has_seen_poi)
-                }
-                //has_seen_poi[pois[i]];
 
-                //}
+                    has_seen_poi.push(pois[i]._radian.id);
+
+                }
+
             }
         }
     }
-    //bufferUser();
+
     // rotation Clockwise und Counterclockwise
     function _event_rotaryEventHandler(e) {
         var index, len = pois.length,
             index_change = -1,
             activeP, currentIndex;
-        // console.log("len: " + len);
 
-        //console.log("active1 " + JSON.stringify(active_poi));
         if (e.detail.direction === "CCW") {
             index_change = 1;
             // console.log("CCW: " + index_change);
@@ -233,14 +233,10 @@ var poiManager = (function () {
         for (var i = 0; i < len; i++) {
             if (i === index) {
                 currentIndex = (index += pois.length + (index_change)) % pois.length;
-                //console.log(pois.length);
-                //console.log("current index: " + JSON.stringify(currentIndex));
-                deg = pois[currentIndex]._radian.angle;
-                console.log("deg: " + deg);
 
+                deg = pois[currentIndex]._radian.angle;
                 pois[currentIndex]._radian.is_active = true;
                 active_poi = pois[currentIndex];
-                // console.log("active Poi: " + JSON.stringify(active_poi));
                 index = currentIndex;
                 break;
             }
@@ -341,7 +337,7 @@ var poiManager = (function () {
             //pois[]._radian in var schreiben
             var props = pois[i]._radian.properties;
             var color = (props.sights === true) ? "sights" : (props.culinary === true) ? "culinary" : "insidertip";
-            // Wenn ich richtigung Westen gehe (Heading = 270°) müssen die Punkte um (350°-270°) gedreht werden
+            // Wenn ich richtung Westen gehe (Heading = 270°) müssen die Punkte um (350°-270°) gedreht werden
             // heißt: poi_rotation = 360° - heading
             var poi_rotation = 360 - pois[i]._radian.heading;
             console.log("angle: " + pois[i]._radian.angle);

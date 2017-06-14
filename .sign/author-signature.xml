@@ -24,7 +24,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>OsAziSAsrn1TAO0C86SAN6kCAqvs/5jzI/1a6R2+Gzo=</DigestValue>
+<DigestValue>B6UOUYPEtTrWrk0aC+4gqqLrahlSac0t5oFEY+vZ+ks=</DigestValue>
 </Reference>
 <Reference URI="font%2FRoboto%2FLICENSE.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -216,7 +216,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hObvzf60OwaXmDvfzcoaKFiUUJwCmCW9PEXXtcRd/Cc=</DigestValue>
+<DigestValue>Ev1bqz/mc3p4724wkx2Jv76tlDaI/kJR3MDelt0HPVk=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_bearing.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -236,7 +236,7 @@
 </Reference>
 <Reference URI="js%2Finit.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>L2ZoFWPZpjbn3bIMlBdKsGeDNmDYwk0sirsNLBJnfq4=</DigestValue>
+<DigestValue>Q+mKfbk6K35AzqpDRpClEdXACrOYzeLBblFCMjSfAog=</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery-1.11.1.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -252,11 +252,11 @@
 </Reference>
 <Reference URI="js%2Fpoi_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Man+vg+S+HbzCmm9kuZe58hUSR3EEebT07F528fm1cw=</DigestValue>
+<DigestValue>u++82hXJmQFzuHTGDviVompD8il4bANVdCjuWm6r4v8=</DigestValue>
 </Reference>
 <Reference URI="js%2Fposition_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>pNHTHnDr7fLPTdg5ZS/jUP9BeZqDgR6qybHNoPDeCTY=</DigestValue>
+<DigestValue>guRdOHjBIXsPKebw8OmAjrAzh0YgWrL9IwaoxpjtM5M=</DigestValue>
 </Reference>
 <Reference URI="js%2Ftemma_serviceapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1519,11 +1519,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-dKtFN97/XESHqCtyf1j9PUNDyqxWOKRoQ9BURifD/jExrIfsiQlrXhjwfjhdAtwG4dyOsYz+KyKo
-V8kUQQhiAWkXJOVyJrn/jJdhKKzqFdQEjzHtiUc57iFIODO0V3bQPUL7+C60A1P8ivw3NTETpnOa
-7asYh7ZOI+3MKVe0x0I/fmHfSmXaYrg7Fl+CmUwxS1UJVvuI0PfcGKsxU2/EP4aqg6UZqjFCWuMb
-FOmQEnSJza3UXIbz34ZoT+ifaUdPBGj0zQuv/iEd3WGi/NNQ9RsXpiAF7HE54js9iJJ7/bFQCtWl
-1yg17HmYd5/62xLXviGegKedWQ4i4oTRiGlHMA==
+WCzJiCAIO18xl3zxEj5mZCyib6qwtuWImIo/X0y9nyj8MPIaXmNU9U0QAdkpr3eNM4NFqsL5dht5
+sfODv2Q05wrUFcdmleWLK6SCRxMi/PMvyuxHvyh5xyaa90Tyecs+98mFywkYoNqii9aMFNAbEn2A
++OLcJGeSheArwv19fwkSNdCtLMr2jmHFZjJU3T7iZwLr9Ud4kYnRwM0g7Ao0azgrlmanEa3AyNdR
+HDVCu+2ta+zaouD4o0wZV5f5FQvvrRaPq2bVb07GJtd2ZvL5rDSjWy2B1voRni2aMx7LyQdEizlb
+7NACWOS/XmJ7C/gLZO5AmuDYfHKWKugh6ka5PQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
