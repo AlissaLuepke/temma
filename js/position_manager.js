@@ -7,7 +7,7 @@ var positionManager = (function () {
     };
     
     
-    var DEBUG = true;
+    var DEBUG = false;
     var _success_functions = [];
     var _error_functions = [];
     var _debug_fake_positions = [{
