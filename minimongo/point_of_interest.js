@@ -850,7 +850,8 @@ var database = (function () {
         {
             "properties": {
                 "title": "zuhause",
-                "description": "",
+                "s_description": "kurzer text",
+                "l_description": "langer text mit vielen wörtern",
                 "sights": false,
                 "insidertip": true,
                 "culinary": false,

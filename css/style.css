@@ -58,8 +58,8 @@ body {
     text-align: center;
     z-index: 100;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: green;
     display: none;
 }
 
@@ -69,12 +69,33 @@ body {
     width: 360px;
     margin: 0 !important;
     padding: 0! important;
-    z-index: 2;
-        position: absolute;
+    z-index: 0;
+    position: fixed;
     top: 0;
+	float: left;
 }
-
-
+.notificationMessage{
+background-color: black;
+	opacity: 0.6;
+	position: relative;
+	top:63px;
+}
+.notificationTitle{
+	position: relative;
+	text-align: center;
+	z-index: 10000;
+}
+.lDescription{
+	position: relative;
+	text-align: center;
+	z-index: 10000;
+}
+.infoIcon{
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/Push_Info_Symbol.svg);
+	background-position: center;
+}
 /* POI Manager */
 
 /*Dynamisches Bild für aktives POI*/

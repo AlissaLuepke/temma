@@ -185,9 +185,11 @@ var poiManager = (function () {
                 //notificationManager.message(pois[i]);
 
                 if (pois[i]._radian.has_seen == false) {
-                    singleVibration();
-                    alert(pois[i]._radian.properties.s_description);
-
+                    //console.log("bin hier");
+					singleVibration();
+					notificationManager.message(pois[i]);
+                    //alert(pois[i]._radian.properties.s_description);
+                    //console.log("komme bis hier");
                     has_seen_poi.push(pois[i]._radian.id);
 
                 }
