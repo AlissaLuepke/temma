@@ -19,7 +19,7 @@ var notificationManager = (function () {
         // - slide in 
         // länge
         $("#pushMessage").fadeIn(600);
-       $('#pushMessage').html("<p class=color:red;>hier steht ein event</p>");
+       //$('#pushMessage').html("<p class=color:red;>hier steht ein event</p>");
         
 		function puschmessagenotification(){
 		//alert("wird ausgeführt");
@@ -49,7 +49,7 @@ var notificationManager = (function () {
      console.log("notificationText clappt bis hier");
             
             //Title der im eingeblendeten DIV auf Main dargestellt wird
-             $('#pushMessage').html("<p class=color:red;>"+title+"</p>");
+             $('#pushMessage').html("<p class='"+color +"'>"+title+"</p>");
             
             //Titel auf Seite:
             // - 1 mit Bild
@@ -63,7 +63,7 @@ var notificationManager = (function () {
             //Texte
             //Short Description und Long Description
             //für Seite 2 und 3
-            $('.sDescription').html("<p class=color:red;>" +s_description + "</p>");
+            //$('.sDescription').html("<p class=color:red;>" +s_description + "</p>");
             $('.lDescription').html(l_description);
 			//$('#sDescription').html("<p class=color:red;>hier steht kurz was</p>");
             //$('#lDescription').html(l_description);
