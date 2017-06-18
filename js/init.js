@@ -48,7 +48,7 @@ pushPage.addEventListener("swipe", function (e) {
     }
 });
 $("#center").click(function () {
-    document.removeEventListener("rotarydetent", poiManager.rotary, false);
+  //  document.removeEventListener("rotarydetent", poiManager.rotary, false);
     poiManager.picture();
     tau.event.disableGesture(mainpage);
     console.log("hey");
@@ -61,7 +61,7 @@ $("#center").click(function () {
 */
 $('#image').click(function () {
     // $("#image").css("opacity", "0.6");
-    document.addEventListener("rotarydetent", poiManager.rotary, false);
+   // document.addEventListener("rotarydetent", poiManager.rotary, false);
     $('#image').fadeOut(500);
 });
 $("#stumm").click(function () {
