@@ -199,7 +199,7 @@ background-color: black;
     padding: 0;
     width: 80px;
     margin-left: 140px;
-    margin-top: 107px;
+    margin-top: 95px;
 }
 /* Pfeil auf main Seite */
 #direction {
@@ -306,7 +306,7 @@ background-color: black;
     width: 22px;
     /*height: 5.197px;
     width: 5.197px;*/
-    border-radius: 10px;
+    border-radius: 11px;
     /*     background: #ff4646; */
     position: absolute;
     border: 2px solid #67d067;
@@ -327,7 +327,7 @@ background-color: black;
     /* 22.541px */
     height: 22px;
     width: 22px;
-    border-radius: 10px;
+    border-radius: 11x;
     border: 2px solid #ff4646;
     /*background: #ff4646;*/
     position: absolute;
@@ -347,7 +347,7 @@ background-color: black;
     /*opacity: 0.5;*/
     height: 22px;
     width: 22px;
-    border-radius: 10px;
+    border-radius: 11px;
     border: 2px solid #00cdff;
     /*background: #ff4646;*/
     position: absolute;
