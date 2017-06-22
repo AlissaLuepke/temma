@@ -31,16 +31,16 @@ var poiManager = (function () {
         positionManager.register(_event_watchPosition, function (err) {
             switch (err.code) {
             case 1:
-                err.message = "permission denied";
+                err.message = "GPS deaktiviert";
                 break;
             case 2:
-                err.message = "position unavalable";
+                err.message = "GPS derzeit nicht verfügbar";
                 break;
             case 3:
-                err.message = "timeout";
+                err.message = "Fehler durch Zeitüberschreitung";
                 break;
             default:
-                err.message = "Unbekannter Fehler";
+                err.message = "unbekannter Fehler";
             }
             // error Code löschen
             alert(err.code + ': ' + err.message);
@@ -123,6 +123,31 @@ var poiManager = (function () {
             }
             var d = getDistance.calculate(lat1, lon1, lat2, lon2);
             var coords = getBearing.calculate(lat1, lon1, lat2, lon2);
+            
+            //neuer CODE 
+            
+            if (d <= 500 && d > 300) {
+                console.log("<500")
+                var x2 = Math.cos(coords[3]) * 162.5 + 162.5;
+                var y2 = Math.sin(coords[3]) * 162.5 + 162.5;
+            }else if(d <= 300 && d >100){
+                console.log("<200")
+                 var x2 = Math.cos(coords[3]) * 137.5 + 137.5;
+                var y2 = Math.sin(coords[3]) * 137.5 + 137.5;
+            }else if(d <= 100){
+                console.log("<100")
+                 var x2 = Math.cos(coords[3]) * 112.5 + 112.5;
+                var y2 = Math.sin(coords[3]) * 112.5 + 112.5;
+            }/*else{
+                 var x2 = Math.cos(coords[3]) * 112.5 + 112.5;
+                var y2 = Math.sin(coords[3]) * 112.5 + 112.5;
+            }*/
+            
+            //alter code  
+            //  var x2 = Math.cos(coords[3]) * 157.5 + 157.5;
+            //  var y2 = Math.sin(coords[3]) * 157.5 + 157.5;
+            //
+            
             // Welche Punkte werden angezeigt - die in einbem bestimmten radius sind 
             if (d < 500) {
                 // results POIS - werden in var poi geschrieben
@@ -131,8 +156,8 @@ var poiManager = (function () {
                 poi._radian = {
                     angle: coords[3]
                     , properties: props
-                    , x: coords[0]
-                    , y: coords[1]
+                    , x: x2
+                    , y: y2
                     , id: id
                     , is_active: is_active, //true oder false
                     distance: d
@@ -147,6 +172,7 @@ var poiManager = (function () {
                 //console.log(poi._radian.is_active);
             }
         }
+   
         if (!had_active) {
             active_poi = null;
             getActivePoi();
@@ -308,6 +334,8 @@ var poiManager = (function () {
     function redrawPOIS() {
         //console.log("redrawPOIS");
         $('#center').empty();
+        $('#center2').empty();
+        $('#center3').empty();
         var len = pois.length;
         for (var i = 0; i < len; i++) {
             //pois[]._radian in var schreiben
@@ -317,8 +345,27 @@ var poiManager = (function () {
             // heißt: poi_rotation = 360° - heading
             var poi_rotation = 360 - pois[i]._radian.heading;
             console.log("angle: " + pois[i]._radian.angle);
-            center.style.transform = 'rotate(' + poi_rotation + 'deg)';
-            $("#center").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+            console.log("distane: " + pois[i]._radian.distance);
+            
+            //alter CODE ohne dynamischer Distanz
+            /// nur center.style.transform
+            // nur $('#center').append zeichnen alle anderen nicht
+            // keine if abfrage
+           /* center.style.transform = 'rotate(' + poi_rotation + 'deg)';
+            center2.style.transform = 'rotate(' + poi_rotation + 'deg)';
+            center3.style.transform = 'rotate(' + poi_rotation + 'deg)';*/
+            
+            
+
+            if (pois[i]._radian.distance <= 500 && pois[i]._radian.distance > 300) {
+                $("#center").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+            }
+            else if (pois[i]._radian.distance <= 300 && pois[i]._radian.distance > 100) {
+                $("#center2").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+            }
+            else if (pois[i]._radian.distance <= 100) {
+                $("#center3").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+            }
         }
     }
     // Public API
@@ -328,5 +375,7 @@ var poiManager = (function () {
             return showPicture();
         }
         , rotary: _event_rotaryEventHandler
+        
+      
     }
 })();

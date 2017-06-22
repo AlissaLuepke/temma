@@ -1,25 +1,19 @@
 "use strict";
 var notificationManager = (function () {
     function message(poi) {
-        console.log("hier rein");
+        
         //poi = null;
         //Vibration ausführen für x Sekunden     
-        function singleVibration() {
+        //function singleVibration() {
             /* Vibrate for 2 seconds */
-            navigator.vibrate(1000);
-        }
+          //  navigator.vibrate(1000);
+        //}
         
-        // Kurze Vibration
-        // TODO:
-        // überlegen wie lang bzw. ob man ein bestimmtes Muster einführt
-        singleVibration();
-        // Push Benachrichtigung wird auf Main eingeblendet 
-        // TODO:
-        // - fade in 
-        // - slide in 
-        // länge
+        
+    //    singleVibration();
+       
         $("#pushMessage").fadeIn(600);
-       //$('#pushMessage').html("<p class=color:red;>hier steht ein event</p>");
+       
         
 		function puschmessagenotification(){
 		//alert("wird ausgeführt");
@@ -34,7 +28,7 @@ var notificationManager = (function () {
             // Alle Bilder in die Datenbank einpflegen
             var activeImage = poi._radian.properties.poi_img;
 			//console.log("führt notificationP aus");
-            $('#notificationimage').html("<img  id='imgPOI' src='img/" + activeImage + "' alt='image'>"); 
+            $('.notificationimage').css("background-image", "url('img/" + activeImage + "')"); 
             
             //$('#image').html("<img  id='imgPOIfront' src='img/DSC_5191.jpg' alt='image'>").fadeIn(500).show();
         }
@@ -46,7 +40,9 @@ var notificationManager = (function () {
              var s_description = props.s_decription;
             var l_description = props.l_description;
             var title = props.title;
-     console.log("notificationText clappt bis hier");
+            
+            // - dynamische Farbe je nach Kategorie 
+           var color = (props.sights === true) ? "sightsColor" : (props.culinary === true) ? "culinaryColor" : "insidertipColor";
             
             //Title der im eingeblendeten DIV auf Main dargestellt wird
              $('#pushMessage').html("<p class='"+color +"'>"+title+"</p>");
@@ -55,8 +51,6 @@ var notificationManager = (function () {
             // - 1 mit Bild
             // - 2 mit Text
             // TODO:
-            // - dynamische Farbe je nach Kategorie 
-           var color = (props.sights === true) ? "sightscolor" : (props.culinary === true) ? "culinarycolor" : "insidertipcolor";
             
             $('.notificationTitle').html("<p class='"+color +"'>" +title+"</p>");
             //$('.notificationTitle').html("<p class='"+color +"'>hiertitel</p>");

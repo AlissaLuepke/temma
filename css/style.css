@@ -19,20 +19,20 @@ body {
     overflow: hidden;
 }
 
+
 /* Farben für Kategorien */
 
-#sightsColor{
+.sightsColor {
     color: #ff4646;
 }
-#insidertipColor{
-     color: #00cdff;
+
+.insidertipColor {
+    color: #00cdff;
 }
-#insidertipColor{
+
+.culinaryColor {
     color: #67d067;
 }
-
-
-
 
 .centerText {
     text-align: center;
@@ -40,6 +40,7 @@ body {
 
 
 /* Settingsseite: Button zum Stummschalten der  Applikation*/
+
 #stumm {
     color: #ffffff;
     border-top: 2px solid #fff;
@@ -51,20 +52,24 @@ body {
     color: #000000 !important;
 }
 
+
 /* Pushnotificationen */
+
 #pushMessage {
+    padding-top: 15px;
     height: 130px;
     width: 100%;
     text-align: center;
     z-index: 100;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.8);
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
     display: none;
 }
 
-
-#notificationimage{
-    height: 360px;
+.notificationimage {
+    background-size: 360px 360px;
+    /*height: 360px;
     width: 360px;
     margin: 0 !important;
     padding: 0! important;
@@ -72,33 +77,41 @@ body {
     position: fixed;
     top: 0;
 	float: left;
+*/
 }
-.notificationMessage{
-background-color: black;
-	opacity: 0.6;
-	position: relative;
-	top:150px;
-	z-index: 20
+
+.notificationMessage {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    top: 150px;
+    z-index: 20
 }
-.notificationTitle{
-	position: relative;
-	text-align: center;
-	z-index: 10000;
+
+.notificationTitle {
+    position: relative;
+    text-align: center;
+    z-index: 10000;
 }
-.lDescription{
-	position: relative;
-	text-align: center;
-	z-index: 10000;
+
+.lDescription {
+    position: relative;
+    text-align: center;
+    z-index: 10000;
 }
-.infoIcon{
-	width: 30px;
-	height: 30px;
-	background-image: url(../img/Push_Info_Symbol.svg);
-	background-position: center;
+
+.infoIcon {
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/Push_Info_Symbol.svg);
+    background-position: center;
 }
+
+
 /* POI Manager */
 
+
 /*Dynamisches Bild für aktives POI*/
+
 #image {
     height: 360px;
     width: 360px;
@@ -116,19 +129,17 @@ background-color: black;
 }
 
 
-
-
-
 /*Dynamische Texte für aktives POI*/
+
 .text {
     position: absolute;
     width: 360px;
-    top: 70px;
+    top: 90px;
     z-index: 3;
 }
 
 #title {
-    width: 200px;
+   
     /*	top: 110px;*/
     display: block;
     margin-left: auto;
@@ -141,10 +152,9 @@ background-color: black;
     position: absolute;
     width: 360px;
     max-height: 300px;
-    top: 250px;
+    top: 215px;
     z-index: 3;
 }
-
 
 #distance {
     display: block;
@@ -156,10 +166,12 @@ background-color: black;
 
 
 /* Kreis auf dem die Sehenswürdigkeiten gezeichnet werden */
-
+/* ALter Kreis */
+/*
 #center {
     margin: auto;
-    top: -22.5px;
+    top: 22.5px;
+    left: 22.5px;
     padding: 0;
     max-height: 360px;
     max-width: 360px;
@@ -167,11 +179,62 @@ background-color: black;
     width: 315px;
     border-radius: 157.5px;
     transform: rotate(0deg);
-    /*    background-color: rgba(255, 255, 0, 0.31);*/
-    position: relative;
+
+    position: absolute;
     z-index: 4;
-  
 }
+*/
+
+/* Neu */ 
+
+#center {
+    margin: auto;
+    top: 17.5px;
+    left: 17.5px;
+    padding: 0;
+    max-height: 360px;
+    max-width: 360px;
+    height: 325px;
+    width: 325px;
+    border-radius: 162.5px;
+    transform: rotate(0deg);
+/*    background-color: rgba(255, 255, 0, 0.31);*/
+    position: absolute;
+    z-index: 4;
+}
+
+#center2 {
+    margin: auto;
+    top: 42.5px;
+    left: 42.5px;
+    padding: 0;
+    max-height: 360px;
+    max-width: 360px;
+    height: 275px;
+    width: 275px;
+    border-radius: 137.5px;
+    transform: rotate(0deg);
+/* background-color: rgba(255, 70, 70, 0.51);*/
+    position: absolute;
+    z-index: 5;
+}
+
+#center3 {
+    margin: auto;
+    top: 67.5px;
+    left: 67.5px;
+    padding: 0;
+    max-height: 360px;
+    max-width: 360px;
+    height: 225px;
+    width: 225px;
+    border-radius: 112.5px;
+    transform: rotate(0deg);
+/*   background-color: rgba(0, 205, 255, 0.35);*/
+    position: absolute;
+    z-index: 6;
+}
+
 
 /* SVG Ladezirkel */
 
@@ -183,7 +246,8 @@ background-color: black;
     z-index: 100;
     overflow: hidden;
 }
-#textGeoWait{
+
+#textGeoWait {
     position: absolute;
     width: 250px;
     font-size: 0.85em;
@@ -194,21 +258,24 @@ background-color: black;
     overflow: hidden;
 }
 
-
-#loader{
+#loader {
     padding: 0;
     width: 80px;
     margin-left: 140px;
     margin-top: 95px;
 }
+
+
 /* Pfeil auf main Seite */
+
 #direction {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 145px;
-    left: 145px;
+    width: 35px;
+    height: 35px;
+    top: 162.5px;
+    left: 162.5px;
     background-image: url('../img/arrow.svg');
+    opacity: 0.9;
     background-repeat: no-repeat;
     /*transition: all 1s ease-out;*/
     transform: rotate(0deg);
@@ -228,11 +295,14 @@ background-color: black;
     z-index: 3;
 }
 
-/* Mögliche Anzeige wo Norden ist  */ 
+
+/* Mögliche Anzeige wo Norden ist  */
+
 #north {
     font-size: 20px !important;
     position: absolute;
 }
+
 
 /* Filter */
 
@@ -245,13 +315,7 @@ background-color: black;
     */
 }
 
-.filter {
-    display: inline-block !important;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    position: relative;
-}
+
 
 .margin-bottom {
     margin-bottom: 10px;
@@ -262,7 +326,6 @@ background-color: black;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
 }
-
 
 #insidertip {
     color: #00cdff;

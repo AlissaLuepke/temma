@@ -40,7 +40,7 @@ var positionManager = (function () {
                 _current_position = {
                     latitude: 48.15961
                     , longitude: 11.64087
-                    , heading: 200
+                    , heading: 0
                     , is_heading_accurate: true
                 };
                 _call_success_functions(_current_position);

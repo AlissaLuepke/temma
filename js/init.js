@@ -48,10 +48,11 @@ pushPage.addEventListener("swipe", function (e) {
     }
 });
 $("#center").click(function () {
+
   //  document.removeEventListener("rotarydetent", poiManager.rotary, false);
     poiManager.picture();
     tau.event.disableGesture(mainpage);
-    console.log("hey");
+
 });
 /*
 $("#center").click(function () {
