@@ -29,22 +29,25 @@ var poiManager = (function () {
         // $('#divGeoWait').show();
         // $('#divGeoWait').hide();
         positionManager.register(_event_watchPosition, function (err) {
+            var error;
             switch (err.code) {
-            case 1:
-                err.message = "GPS deaktiviert";
+            case err.PERMISSION_DENIED:
+                error = "GPS nicht verfügbar";
                 break;
-            case 2:
-                err.message = "GPS derzeit nicht verfügbar";
+            case err.POSITION_UNAVAILABLE:
+                error = "GPS deaktiviert"
                 break;
-            case 3:
-                err.message = "Fehler durch Zeitüberschreitung";
+            case err.TIMEOUT:
+                error = "Fehler durch Zeitüberschreitung";
                 break;
             default:
-                err.message = "unbekannter Fehler";
+                error = "unbekannter Fehler";
             }
-            // error Code löschen
-            alert(err.code + ': ' + err.message);
+            alert(err.code + ': ' + error);
+           
         });
+        
+        
         document.addEventListener("rotarydetent", _event_rotaryEventHandler, false);
         bufferUser();
         redraw();
@@ -123,31 +126,24 @@ var poiManager = (function () {
             }
             var d = getDistance.calculate(lat1, lon1, lat2, lon2);
             var coords = getBearing.calculate(lat1, lon1, lat2, lon2);
-            
             //neuer CODE 
-            
-            if (d <= 500 && d > 300) {
-                console.log("<500")
-                var x2 = Math.cos(coords[3]) * 162.5 + 162.5;
-                var y2 = Math.sin(coords[3]) * 162.5 + 162.5;
-            }else if(d <= 300 && d >100){
-                console.log("<200")
-                 var x2 = Math.cos(coords[3]) * 137.5 + 137.5;
-                var y2 = Math.sin(coords[3]) * 137.5 + 137.5;
-            }else if(d <= 100){
-                console.log("<100")
-                 var x2 = Math.cos(coords[3]) * 112.5 + 112.5;
-                var y2 = Math.sin(coords[3]) * 112.5 + 112.5;
-            }/*else{
-                 var x2 = Math.cos(coords[3]) * 112.5 + 112.5;
-                var y2 = Math.sin(coords[3]) * 112.5 + 112.5;
-            }*/
-            
+            /* if (d <= 500 && d > 300) {
+                 console.log("<500")
+                 var x2 = Math.cos(coords[3]) * 162.5 + 162.5;
+                 var y2 = Math.sin(coords[3]) * 162.5 + 162.5;
+             }else if(d <= 300 && d >100){
+                 console.log("<200")
+                  var x2 = Math.cos(coords[3]) * 137.5 + 137.5;
+                 var y2 = Math.sin(coords[3]) * 137.5 + 137.5;
+             }else if(d <= 100){
+                 console.log("<100")
+                  var x2 = Math.cos(coords[3]) * 112.5 + 112.5;
+                 var y2 = Math.sin(coords[3]) * 112.5 + 112.5;
+             }*/
             //alter code  
             //  var x2 = Math.cos(coords[3]) * 157.5 + 157.5;
             //  var y2 = Math.sin(coords[3]) * 157.5 + 157.5;
             //
-            
             // Welche Punkte werden angezeigt - die in einbem bestimmten radius sind 
             if (d < 500) {
                 // results POIS - werden in var poi geschrieben
@@ -156,8 +152,8 @@ var poiManager = (function () {
                 poi._radian = {
                     angle: coords[3]
                     , properties: props
-                    , x: x2
-                    , y: y2
+                    , x: coords[0]
+                    , y: coords[1]
                     , id: id
                     , is_active: is_active, //true oder false
                     distance: d
@@ -169,10 +165,8 @@ var poiManager = (function () {
                 pois.sort(function (a, b) {
                     return b._radian.angle - a._radian.angle
                 });
-                //console.log(poi._radian.is_active);
             }
         }
-   
         if (!had_active) {
             active_poi = null;
             getActivePoi();
@@ -185,6 +179,7 @@ var poiManager = (function () {
         lon1 = pos.longitude;
         heading = pos.heading;
         accuracy = pos.accuracy;
+        console.log("accuracy: " + accuracy);
         updatePOIS();
         redraw();
         bufferUser();
@@ -199,39 +194,29 @@ var poiManager = (function () {
     function bufferUser() {
         for (var i = 0; i < pois.length; i++) {
             if (pois[i]._radian.distance <= 30) {
-                //notificationManager.message(pois[i]);
                 if (pois[i]._radian.has_seen == false) {
-                    //console.log("bin hier");
                     singleVibration();
                     notificationManager.message(pois[i]);
-                    //alert(pois[i]._radian.properties.s_description);
-                    //console.log("komme bis hier");
                     has_seen_poi.push(pois[i]._radian.id);
                 }
             }
         }
     }
-    // rotation Clockwise und Counterclockwise
+    // rotation Clockwise und Counterclockwise - Aktiv setzen der POIs 
     function _event_rotaryEventHandler(e) {
         var index, len = pois.length
             , index_change = -1
             , activeP, currentIndex;
         if (e.detail.direction === "CCW") {
             index_change = 1;
-            // console.log("CCW: " + index_change);
         }
-        // console.log(JSON.stringify(pois));
         activeP = getActivePoi();
-        //console.log("activeP: " + JSON.stringify(activeP));
         // wenn es noch keinen aktiven punkt gibt, dann soll der aktive auf den Wert im array gesetzt werden der die kleinste Distanz zum Nutzer hat
         // wenn es einen gibt dann nimm diesen
         currentObj = activeP != null ? activeP : pois[0];
-        console.log("current Object: " + JSON.stringify(currentObj));
         for (var i = 0; i < len; i++) {
-            //if (pois[i]._radian.angle === deg) {
             if (pois[i]._radian.id === currentObj._radian.id) {
                 index = i; //0
-                // console.log("index " + index);
                 pois[index]._radian.is_active = false;
                 break;
             }
@@ -252,26 +237,8 @@ var poiManager = (function () {
     }
 
     function getActivePoi() {
-        console.log("Get active POI");
-        console.log("Get active POI active_poi: " + active_poi);
-        //if (!active_poi) return null;
-        /* if (typeof active_poi == "undefined") {
-             console.log("active_POI function null");
-             return null;
-         }*/
+        console.log("Get active POI: " + active_poi);
         if (active_poi == null) {
-            /*       var  smallestDistance = [];
-                 
-                      smallestDistance = pois.sort(function (a, b) {
-                          return a._radian.distance - b._radian.distance;
-                      });
-
-                  console.log("smallest D: " + smallestDistance[0]);*/
-            /*  pois.sort(function(a,b){
-                  return b._radian.angle - a._radian.angle
-              });*/
-            console.log("active_POI function null");
-            // active_poi == smallestDistance[0];
             return active_poi;
         }
         else {
@@ -308,18 +275,19 @@ var poiManager = (function () {
     }
 
     function redrawArrow() {
-        var len = pois.length;
+      /*  var len = pois.length;
         for (var i = 0; i < len; i++) {
             var poi_rotation = 360 - pois[i]._radian.heading;
+            direction.style.transform = 'rotate(' + poi_rotation + 'deg)';
         }
         //center.style.transform = 'rotate(' + poi_rotation + 'deg)';
         console.log("redraw Arrow");
-        var arrow_rotation = poi_rotation - deg;
-        //direction.style.transform = 'rotate(' + deg + 'deg)';
+        // var arrow_rotation = poi_rotation - deg;*/
     }
 
     function redrawTextelements() {
         var title = active_poi.properties.title;
+        $('#title').html(title);
         for (var i = 0; i < pois.length; i++) {
             if (pois[i]._radian.is_active == true) {
                 var distance = pois[i]._radian.distance;
@@ -327,45 +295,39 @@ var poiManager = (function () {
             }
         }
         //var reUnit =  distance >= 1000 ? (reUnit = 'km', distance = distance/1000) : reUnit = 'm';
-        $('#title').html(title);
         //$('#distance').html(distance.toFixed(0) + " " + reUnit);
     };
 
     function redrawPOIS() {
-        //console.log("redrawPOIS");
         $('#center').empty();
-        $('#center2').empty();
-        $('#center3').empty();
+        /*   $('#center2').empty();
+           $('#center3').empty();*/
         var len = pois.length;
         for (var i = 0; i < len; i++) {
-            //pois[]._radian in var schreiben
             var props = pois[i]._radian.properties;
             var color = (props.sights === true) ? "sights" : (props.culinary === true) ? "culinary" : "insidertip";
             // Wenn ich richtung Westen gehe (Heading = 270°) müssen die Punkte um (350°-270°) gedreht werden
             // heißt: poi_rotation = 360° - heading
             var poi_rotation = 360 - pois[i]._radian.heading;
             console.log("angle: " + pois[i]._radian.angle);
-            console.log("distane: " + pois[i]._radian.distance);
-            
+            console.log("distance: " + pois[i]._radian.distance);
             //alter CODE ohne dynamischer Distanz
             /// nur center.style.transform
             // nur $('#center').append zeichnen alle anderen nicht
             // keine if abfrage
-           /* center.style.transform = 'rotate(' + poi_rotation + 'deg)';
-            center2.style.transform = 'rotate(' + poi_rotation + 'deg)';
-            center3.style.transform = 'rotate(' + poi_rotation + 'deg)';*/
-            
-            
-
-            if (pois[i]._radian.distance <= 500 && pois[i]._radian.distance > 300) {
-                $("#center").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
-            }
-            else if (pois[i]._radian.distance <= 300 && pois[i]._radian.distance > 100) {
-                $("#center2").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
-            }
-            else if (pois[i]._radian.distance <= 100) {
-                $("#center3").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
-            }
+            center.style.transform = 'rotate(' + poi_rotation + 'deg)';
+            /*   center2.style.transform = 'rotate(' + poi_rotation + 'deg)';
+               center3.style.transform = 'rotate(' + poi_rotation + 'deg)';*/
+            $("#center").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>");
+            /* if (pois[i]._radian.distance <= 500 && pois[i]._radian.distance > 300) {
+                 $("#center").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+             }
+             else if (pois[i]._radian.distance <= 300 && pois[i]._radian.distance > 100) {
+                 $("#center2").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+             }
+             else if (pois[i]._radian.distance <= 100) {
+                 $("#center3").append("<div class='" + color + " " + (pois[i]._radian.is_active ? color + "active" : " ") + "' id=" + pois[i]._radian.id + " style='left:" + (pois[i]._radian.x - 11) + "px;top:" + (pois[i]._radian.y - 11) + "px'></div>")
+             }*/
         }
     }
     // Public API
@@ -375,7 +337,5 @@ var poiManager = (function () {
             return showPicture();
         }
         , rotary: _event_rotaryEventHandler
-        
-      
     }
 })();

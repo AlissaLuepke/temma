@@ -821,29 +821,29 @@ var database = (function () {
             },
         {
             "properties": {
-                "title": "DM",
-                "description": "",
+                "title": "REWE",
+                "l_description": "Willkommen beim REWE Hier gibt es Lebensmittel",
                 "sights": true,
                 "insidertip": false,
                 "culinary": false,
                 "poi_img": "04_Cafeteria_Rotes_Tor.jpg"
             },
             "geometry": {
-                "coordinates": [11.639984, 48.162806],
+                "coordinates": [11.641234, 48.157921],
                 "type": "Point"
             }
         },
         {
             "properties": {
                 "title": "DM",
-                "description": "",
+                "l_description": "Der Drogeriemarkt",
                 "sights": false,
                 "insidertip": true,
                 "culinary": false,
                 "poi_img": "DSC_5191.jpg"
             },
             "geometry": {
-                "coordinates": [11.637035, 48.161222],
+                "coordinates": [11.643284, 48.159234],
                 "type": "Point"
             }
         },

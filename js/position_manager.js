@@ -7,7 +7,7 @@ var positionManager = (function () {
     };
     
     
-    var DEBUG = false;
+    var DEBUG = true;
     var _success_functions = [];
     var _error_functions = [];
     var _debug_fake_positions = [{
@@ -100,6 +100,8 @@ var positionManager = (function () {
 
     function _event_errorPosition(err) {
         $('#divGeoWait').show();
+        
+           
         _last_position = null;
         _current_position = null;
         _call_error_functions(err);

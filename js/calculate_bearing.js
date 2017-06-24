@@ -20,11 +20,12 @@ var getBearing = (function () {
 		var bearing = (Math.atan2(y, x)) * 180 / Math.PI;
 		//console.log("bearing1: " + bearing);
 		var bearing2 = (bearing + 360) % 360;
-		//console.log("bearing2: " + bearing);
+		//Der normale kreis beginnt 0 im Osten(rechts), 
+        //deshalb muss dem Winkel 90° Abgezogen werden damit die Winkel im Norden anfangen
 		bearing = (bearing - 90) * Math.PI / 180;
-		//console.log("bearing3: " + bearing);
-
-		// return bearing;
+		  
+        //Wird derzeit im poi_manager berechnet
+        
 		var x2 = Math.cos(bearing) * 157.5 + 157.5;
 		var y2 = Math.sin(bearing) * 157.5 + 157.5;
 		return [ x2, y2, bearing, bearing2];

@@ -61,10 +61,14 @@ $("#center").click(function () {
 });
 */
 $('#image').click(function () {
+tau.event.enableGesture(mainpage, new tau.event.gesture.Swipe());
     // $("#image").css("opacity", "0.6");
    // document.addEventListener("rotarydetent", poiManager.rotary, false);
     $('#image').fadeOut(500);
+    
 });
+
+
 $("#stumm").click(function () {
     if ($("#stumm").hasClass("stummactive")) {
         console.log("removeClass");

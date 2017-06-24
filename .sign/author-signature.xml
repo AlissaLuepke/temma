@@ -12,11 +12,11 @@
 </Reference>
 <Reference URI="app.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zCnLBV/xP4P2sDTRZawvtkhbwKP1p7aR4aW7MLeX+B4=</DigestValue>
+<DigestValue>8oTiTdmmXXO2f3iNP1YdH4y4YuUGjcfGEZriJzE9DDU=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Y1w+R35G2vCyiajsMo4UY33R549Ksf5/s5247xnMtV4=</DigestValue>
+<DigestValue>Wu4WFfh9IBj8nepvSC8VhWIuI/7cW3G8o+5dxXQbEic=</DigestValue>
 </Reference>
 <Reference URI="css%2Fjquery.mobile-1.4.5.min.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -24,7 +24,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sB0AqLJlpLHUZBrCowQN+gPFPxRUKGNGvDNY+ZpeBtU=</DigestValue>
+<DigestValue>yhUwEbbqCyFmcl23XRFdh599mGCaWCeM/Nwic3xjzpE=</DigestValue>
 </Reference>
 <Reference URI="font%2FRoboto%2FLICENSE.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -216,11 +216,11 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>F+gJ0xw7YyuL0gJRyJUqw2BMLyS03OMXbfiUYclodug=</DigestValue>
+<DigestValue>WTISWCMIspjbaIovULTwKDM7HoiFXSI05B3d2xcwmHs=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_bearing.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>NCh0h+uOCj1Q4ViiBLAcXhkwxC8NED4NZznwZDLMvy8=</DigestValue>
+<DigestValue>ISVrEZcHSglK+WVjU4xSW21Dy3fxWqHk/n8wIxvn90k=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_distance.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -236,7 +236,7 @@
 </Reference>
 <Reference URI="js%2Finit.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>oRvKmkhzFLXiPvTYvJblgIZA0f8Y2FemwkzJl4jQeOE=</DigestValue>
+<DigestValue>lOe5LIzG3AZM4c2khsSaOlnnIdBAD+OevrfX/zAEqGQ=</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery-1.11.1.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -252,11 +252,11 @@
 </Reference>
 <Reference URI="js%2Fpoi_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sPCYIAR7ptn53CBbYwLv4JSqV2Cx2f/hoQkhjRGSf/s=</DigestValue>
+<DigestValue>eCL7nY+EhtDP424XW93XIetZYvklz0xSxtYujJ5IZnQ=</DigestValue>
 </Reference>
 <Reference URI="js%2Fposition_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>mIQHWcGxcvCiHtStCDWKDYxdQcHP6eNrcJZvjdpLfFE=</DigestValue>
+<DigestValue>CDvTjxA3kCvRXTydiKTzC7hNWeju4ASCbBGG2uJYh1A=</DigestValue>
 </Reference>
 <Reference URI="js%2Ftemma_serviceapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1370,21 +1370,9 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>mKgDqUJif8gib2GMrUcW38enfGcAIZ1vVfcY0sSq+Hw=</DigestValue>
 </Reference>
-<Reference URI="minimongo%2Fpoi_muc.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RvqlXISvYN0WJmDqCAiuG9/VkAGMDRxGarhYQ68+O/s=</DigestValue>
-</Reference>
 <Reference URI="minimongo%2Fpoint_of_interest.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ntNztPLT5YZU+Gr4WJo3Fv5UPZ2aQj76/fWybI4bL4o=</DigestValue>
-</Reference>
-<Reference URI="minimongo%2Fpoint_of_interest_001.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RbgkrqGOFd8vQlwblaTWOgjpfH6gFboeinc6W/H4tEo=</DigestValue>
-</Reference>
-<Reference URI="minimongo%2Fpoint_of_interest_002.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>JnjeBnAz4hajOp/chdcLJkyWMfgglKSM0csXjUlRnMI=</DigestValue>
+<DigestValue>+BzHPmOycCuEOxItSHOXxWEZP0QE04ZHL5ClNGDpHao=</DigestValue>
 </Reference>
 <Reference URI="minimongo%2Fsrc%2FEJSON.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1519,11 +1507,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-ODK1NMsoNfQLIEuVq6IFqftxei7WOD326m9/sMi+AYP0sx963ZB40QGYCPWkOHC2rDrrOJhzqqmq
-eVkz30B5k0gXQTOsnBHIZzfwa+z3Niw4wDMZ6fdoR3z6sTJtcr1KhDLVY4NoY6VLRTf59IBx2bWt
-3MvhI4qqdyw8BwdxpmF9MFCLeXR7SlTQY/aSmWv6Kray4FckyX1cJZMY7TRsmBccYUmG8ApLdcSR
-5FjUj4LcvMPNzMwTK3L5XiWGJv7MwXTkHit5ArB8QWap5YyCHvdlyOLamYko1R+L6yzFOt7vtk2Q
-YfKxwUFfrD2PV0CmEI8IaB1T0Jv+7/Kmae3bVg==
+aZ4c+ojyPFoNElhhO5yaxCaDwbxyPs+CvcUi3WgHCVdClzam1U7vnkrNk4tnTtrjquJ9P9rhIQtc
+xoq4GfyEbc995kkFwxbKBgGSk9gBJ2U6iPbjDuIDBe1LT0orIZ0H5+EE4jQnoGMyFQm+ToGg4rwk
++ajUi3HdlQImY4vdzCn4IUPiJR/FAJ9Mu++RtTDNmS6XR6RIAhvJdkD/YAhsc20Pce7os4mztMzf
+ZSx2PxCrwTt4gkG6fBn8NWOYaGi9+IU1vpjdP1ywmbjNrAYWi+EkVBk9uTm75pSAYPFFisp0PzDc
+aWPo4BbJchiyXpmtAb3hBgB7GXfvtbDGEKOKuQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

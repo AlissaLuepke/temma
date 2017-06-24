@@ -167,11 +167,10 @@ body {
 
 /* Kreis auf dem die Sehenswürdigkeiten gezeichnet werden */
 /* ALter Kreis */
-/*
 #center {
     margin: auto;
-    top: 22.5px;
-    left: 22.5px;
+    top: -22.5px;
+/*    left: 22.5px;*/
     padding: 0;
     max-height: 360px;
     max-width: 360px;
@@ -180,13 +179,12 @@ body {
     border-radius: 157.5px;
     transform: rotate(0deg);
 
-    position: absolute;
+    position: relative;
     z-index: 4;
 }
-*/
 
 /* Neu */ 
-
+/*
 #center {
     margin: auto;
     top: 17.5px;
@@ -198,10 +196,11 @@ body {
     width: 325px;
     border-radius: 162.5px;
     transform: rotate(0deg);
-/*    background-color: rgba(255, 255, 0, 0.31);*/
+   background-color: rgba(255, 255, 0, 0.31);
     position: absolute;
     z-index: 4;
 }
+
 
 #center2 {
     margin: auto;
@@ -214,7 +213,7 @@ body {
     width: 275px;
     border-radius: 137.5px;
     transform: rotate(0deg);
-/* background-color: rgba(255, 70, 70, 0.51);*/
+ background-color: rgba(255, 70, 70, 0.51);
     position: absolute;
     z-index: 5;
 }
@@ -230,10 +229,11 @@ body {
     width: 225px;
     border-radius: 112.5px;
     transform: rotate(0deg);
-/*   background-color: rgba(0, 205, 255, 0.35);*/
+   background-color: rgba(0, 205, 255, 0.35);
     position: absolute;
     z-index: 6;
 }
+*/
 
 
 /* SVG Ladezirkel */
