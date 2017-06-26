@@ -24,7 +24,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>yhUwEbbqCyFmcl23XRFdh599mGCaWCeM/Nwic3xjzpE=</DigestValue>
+<DigestValue>CVSQD2V4pxs8qWzyzUkmprc7ClvXNRkqQVhfi3WXeWE=</DigestValue>
 </Reference>
 <Reference URI="font%2FRoboto%2FLICENSE.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -93,6 +93,130 @@
 <Reference URI="img%2FDSC_5191.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>V5Lqu72cDgrTIInRoYjcTDxBRxMf68PxFaiaP3kDY+M=</DigestValue>
+</Reference>
+<Reference URI="img%2FLadezirkel_schwarz.gif">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>chubN20G7f3xHUCGcCsPthukrbfxRjERBMGZeQrbpRg=</DigestValue>
+</Reference>
+<Reference URI="img%2FLadezirkel_tranzparenz.gif">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>sVf2YlmDl8ul277axblERI3zJmgkb2LDjgs0wEKIWj0=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FAlte-Kom%C3%B6die1-2(1).jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Cc1ff0Pti3e7jbQmwDwBrR3Dp0VPZzrp3VOxbTprL64=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FAlte-Kom%C3%B6die1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Cc1ff0Pti3e7jbQmwDwBrR3Dp0VPZzrp3VOxbTprL64=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FAlte-Metzgerschule1.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5W8ufK+dZPqTYN5bKMFPHhwJOGdtMNn5lYuP90+hdMM=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FAmtsgericht1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>X/X2ml5rR67raTXiM59y3/FljL8A+aQlMmpSBv7EqhM=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FBrunnen-am-roten-Tor-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>py58qgEFlL8DqSlcalXKKJ5idu5XahWOVLGG6axD/Bg=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FDomenikanerinnen-Kloster-St.-Ursula2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>s8eZqT6xMiFGd3KtaUbNvRw8N18edCmyj0vaEa21WoY=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FFischmarkt2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>dayAqYzdXb4zibu8T8CUc6WTfz0Vh+Ga4YAbvV8HHlg=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FGasthaus-Bauerntanz1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>bIq5V/C3UsyeYL3Me35XfBP5Mhsl+2cbrUAwl5L3RWM=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FHans-Jakob-Fugger-Denkmal1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>zqvQQd8N7PIbUeKcZRedIMqG0F1DZfTVSc/czYyzsvE=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FHeilig-Kreuz-Kirche1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>wGroZrso/3YlXIgOOx6dbtcFZi2b3iCmle3vwcdmGjk=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FHofgarten2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>pIEIg2aStKp0HeDobYuMlBUZctQoHjo/V8GfbzvIPsA=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FHoher-Dom3-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>nA5OWMEjIgQebmY5XjkfK2m1HUquKtH6CaUqDcSTkMc=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FHotel-drei-Mohren-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>lt/YnZwOlXUJOgxdmBkP+nkLfVqQtMRTrpPvjj/rw2Q=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FKathan-Haus-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>g2F9XWM9JcTiwCKJLqxhxa0aqeoq8NCdrcf0/jJ+yzI=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FKnabenschule-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>cps5l0mWy2w8w0VgCMmvfa24ZhsvhYdslcErxdtJ8vQ=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FK%C3%B6nig-von-Flandern1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>1iIHybmck20fX+V/b8uZ6T+azf5sGG4VxtJR6CM+zFs=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FMaria-Stern-Klosterkirche1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Z5M1AfkxrQyoftUg7Ytq3gIlf2zNuH6XLMDSh9IMeoY=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FMaximilianmuseum1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>QBqFVdanpynqh/0+RY14MKMxs47hlUuwcJ+imYz+EyE=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FParit%C3%A4tisches-Hospiz-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+mpd4qNUINhvrbiHpXWTLvOaB3IiIHFiQ1DIP+yqWiY=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FPerlachturm1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>X4L3KHyq/q5INCLfL8dOWmGNFDeyr8+15L7uAAzHzdU=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FRathaus1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>HOumA77aPW2Cq9q6DVbYpt1QkNGhC+0pEbqB7gdXbVE=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FRokokosaal2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>wpW/XBofz5ccK1lFJaOzl12qa08HHRlw4qaJkFE4z7Y=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FRotes-Tor-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>8yOKc8ZEKZCkeSM66Ljgnh7278iaxHOjYvefP8QeUgA=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FSchwibbogengasse-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>0rOKurZko0hdKZQdtSdwXq6l/VQbCKQcDawos8kwxgw=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FSch%C3%A4fflerei-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ZtoStVuKt6pH9tPears3vK4hcR5ZO/ik3rvWPar+J08=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FSch%C3%A4tzlerpalais-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>u0X251b3QHtqTyYt4qRb7kxbRqvzD7ImC8YP0Qt2GJc=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FSt.-Moritz1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>5E2RE6dW6lzXm10inSKJKoAWsDpD5ikGtyvrzy/Q9g4=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FSt.-Ulrich-und-Afra-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>XfaU41sMXzFV59wiDcuhniMdmcr5DjriRxE1GhSSkhM=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FStadtpalast-der-Fugger1-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>JmEpFoFnZfSc6MpZEUSmiWFDUAzpjmEKCW2yn4mtNuk=</DigestValue>
 </Reference>
 <Reference URI="img%2FPointImgs%2FTest-Route-HSA%2F01.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -194,6 +318,30 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>rEwoqwlOQWMTQ12VAoQ40rYxbX04mywpCXsYWw+6+D0=</DigestValue>
 </Reference>
+<Reference URI="img%2FPointImgs%2FTheater2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>nCb0Isgb+/uRFEEsSo5Bvm3BdhyGLWmYuIDjE0NrKsU=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FVogeltor2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2m8ljDnLRFfZyf5vqTyeHls4j6dKx6y0sfJKtACKY5M=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FWasserrad-am-Schwallech-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>nd9L1AEtTirpDWKtDEPZ2icz/SMHfsvoPVM0fxSB/20=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FWeberhaus3-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>zF+q4p9HrF2xo8jFZqFv9yvUk1Gd7qaJz10x9DuIlpM=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FWollmarkt-Innenhof-St.-Margareth-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>t1/s/vmIxm/sVNNm35UMaOr1b4BwP8nEgw9eDp5/BTQ=</DigestValue>
+</Reference>
+<Reference URI="img%2FPointImgs%2FZeughaus2-2.jpg">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>sOnjXHImRou+uqWssE0lTlykbXRRLrxUVETgqk1JuWw=</DigestValue>
+</Reference>
 <Reference URI="img%2FTemmo_Logo.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>FE1QRXF5+9WvQQdTYhTozrP2yTkYY9HaNeu6EeZhPrQ=</DigestValue>
@@ -204,7 +352,7 @@
 </Reference>
 <Reference URI="img%2FThumbs.db">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>LaBEHYwZ+gSxii01F/eqKbFjpdyTZVqvrJFoH4qn5dk=</DigestValue>
+<DigestValue>c/aG7rbEb5ebbX1TyZDEYFzF4KvlaQuDmPKm/wm6pGc=</DigestValue>
 </Reference>
 <Reference URI="img%2Farrow.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -216,7 +364,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WTISWCMIspjbaIovULTwKDM7HoiFXSI05B3d2xcwmHs=</DigestValue>
+<DigestValue>0E6zyqsHms676h50teOC9QIosI/CB3nL0lY7Lbdy4mE=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcalculate_bearing.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -236,7 +384,7 @@
 </Reference>
 <Reference URI="js%2Finit.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>lOe5LIzG3AZM4c2khsSaOlnnIdBAD+OevrfX/zAEqGQ=</DigestValue>
+<DigestValue>LOcNHf0r12xMJ1BYJ6b/JweygOK956yVU8SA88omd0I=</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery-1.11.1.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -256,7 +404,7 @@
 </Reference>
 <Reference URI="js%2Fposition_manager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CDvTjxA3kCvRXTydiKTzC7hNWeju4ASCbBGG2uJYh1A=</DigestValue>
+<DigestValue>JTTlXH6zeE5xRYSZXFHVnvXty2SiSW9C3oc2ig0JJU8=</DigestValue>
 </Reference>
 <Reference URI="js%2Ftemma_serviceapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1507,11 +1655,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-aZ4c+ojyPFoNElhhO5yaxCaDwbxyPs+CvcUi3WgHCVdClzam1U7vnkrNk4tnTtrjquJ9P9rhIQtc
-xoq4GfyEbc995kkFwxbKBgGSk9gBJ2U6iPbjDuIDBe1LT0orIZ0H5+EE4jQnoGMyFQm+ToGg4rwk
-+ajUi3HdlQImY4vdzCn4IUPiJR/FAJ9Mu++RtTDNmS6XR6RIAhvJdkD/YAhsc20Pce7os4mztMzf
-ZSx2PxCrwTt4gkG6fBn8NWOYaGi9+IU1vpjdP1ywmbjNrAYWi+EkVBk9uTm75pSAYPFFisp0PzDc
-aWPo4BbJchiyXpmtAb3hBgB7GXfvtbDGEKOKuQ==
+QFagsY0nTetHANgh8u88wBGwJuYxRZ6zY+QbCL5WkHKbQeolPErKTZsE1C5n+Buqks6CaKKLhsFK
+ZIJhd4N4rfqpaDJDHdUDAejSgiorsQJp2PWD1BApLTrQd8vlFqozEPAQ1N2IbqfnfFOtdmaiXz9V
+TPjaN3k2wADdsIv75YeAjq0HfgPouIfuH+W/74BBupy3+CwlE8J05w7wi6gYk0Oo3Sm71WFnxFG9
+GjGdWJJzGB7Cfu3oXMd1QSlL8xDVf9NZiueVacwCE2fHK5wox6hEu55w8q5OSkllVcPBsqXyxMQ3
+XDsbkrrFuchINEUXHj3aZNSJzVs4GWmK1R/czg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

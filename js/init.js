@@ -1,3 +1,4 @@
+  tizen.power.request("SCREEN", "SCREEN_NORMAL");
 var mainpage = document.getElementById("main");
 tau.event.enableGesture(mainpage, new tau.event.gesture.Swipe());
 mainpage.addEventListener("swipe", function (e) {
@@ -45,6 +46,7 @@ tau.event.enableGesture(pushPage, new tau.event.gesture.Swipe());
 pushPage.addEventListener("swipe", function (e) {
     if (e.detail.direction == "right") {
         tau.changePage(document.getElementById("main"));
+         $(window).scrollTop(0);
     }
 });
 $("#center").click(function () {

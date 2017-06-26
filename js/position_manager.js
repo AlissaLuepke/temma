@@ -44,7 +44,7 @@ var positionManager = (function () {
                     , is_heading_accurate: true
                 };
                 _call_success_functions(_current_position);
-            }, 10000);
+            }, 1000);
         }
         else {
             //console.log("positionmanager");
